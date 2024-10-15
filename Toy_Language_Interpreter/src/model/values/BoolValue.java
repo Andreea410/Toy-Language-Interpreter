@@ -24,4 +24,6 @@ public class BoolValue implements Value
         return new BoolType();
     }
 
+
+
 }
