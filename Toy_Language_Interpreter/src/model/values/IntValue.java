@@ -26,7 +26,7 @@ public class IntValue implements Value
     @Override
     public String toString()
     {
-        return "";
+        return "int";
     }
 
 

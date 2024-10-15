@@ -15,7 +15,7 @@ public class BoolValue implements Value
     @Override
     public String toString()
     {
-        return "";
+        return "bool";
     }
 
     @Override
