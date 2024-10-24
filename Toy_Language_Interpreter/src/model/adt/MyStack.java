@@ -6,7 +6,7 @@ import exceptions.EmptyStackException;
 
 public class MyStack<T> implements IMyStack<T>{
 
-    private final Stack<T> stack;
+    private Stack<T> stack;
 
     public MyStack()
     {
@@ -17,9 +17,7 @@ public class MyStack<T> implements IMyStack<T>{
     public T pop() throws EmptyStackException{
         if(stack.isEmpty())
             throw new EmptyStackException("Stack is empty");
-        T element;
-        element = stack.pop();
-        return element;
+        return this.stack.pop();
     }
 
     @Override
@@ -38,5 +36,20 @@ public class MyStack<T> implements IMyStack<T>{
     public Stack<T> getStack()
     {
         return this.stack;
+    }
+
+    @Override
+    public boolean isEmpty()
+    {
+        return this.stack.isEmpty();
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder str = new StringBuilder();
+        for(T element: this.stack)
+            str.append(element).append("\n");
+        return "My stack contains : " + str;
     }
 }

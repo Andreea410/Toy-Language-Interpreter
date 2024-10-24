@@ -11,4 +11,5 @@ public interface IMyStack<T>
     void push(T v);
     int getSize() ;
     Stack<T> getStack();
+    boolean isEmpty();
 }
