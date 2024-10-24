@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="fixed MyDictionary functions and implemented the remove" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added two more methods in MyIStack and implemented them in MyStack">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ArithmeticalOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/LogicalOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +20,7 @@
         <option value="Interface" />
         <option value="Exception" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -114,7 +119,7 @@
       <workItem from="1729584450690" duration="2650000" />
       <workItem from="1729609820713" duration="4857000" />
       <workItem from="1729695655675" duration="997000" />
-      <workItem from="1729767642030" duration="997000" />
+      <workItem from="1729767642030" duration="2793000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -188,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729768558889</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added two more methods in MyIStack and implemented them in MyStack">
+      <option name="closed" value="true" />
+      <created>1729768970269</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729768970269</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +225,7 @@
     <MESSAGE value="added the ADT Stack" />
     <MESSAGE value="added the full model.Need to fix some functionalities" />
     <MESSAGE value="fixed MyDictionary functions and implemented the remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed MyDictionary functions and implemented the remove" />
+    <MESSAGE value="added two more methods in MyIStack and implemented them in MyStack" />
+    <option name="LAST_COMMIT_MESSAGE" value="added two more methods in MyIStack and implemented them in MyStack" />
   </component>
 </project>
