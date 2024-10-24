@@ -1,29 +1,31 @@
 package model.statements;
-import model.adt.IMyDictionary;
+import exceptions.ExpressionException;
+import model.states.PrgState;
 import model.types.IType;
-import model.values.IValue;
+
 
 public class VariablesDeclarationStmt implements IStmt {
-    private String name;
-    private IType typ;
+    private final String name;
+    private final IType type;
 
     public VariablesDeclarationStmt(String n , IType t)
     {
         this.name = n;
-        this.typ = t;
+        this.type = t;
     }
 
     @Override
-    public IValue eval(IMyDictionary<String,IValue> symTable)
+    public PrgState execute(PrgState prgState) throws ExpressionException
     {
-        return symTable.getValue(name);
+        if(prgState.getSymTable().contains(this.name))
+            throw new ExpressionException("A variable with the same name already exists");
+        prgState.getSymTable().insert(name,this.type.getDefaultValue());
+        return prgState;
     }
 
     public String toString()
     {
         return name;
     }
-
-
 
 }

@@ -4,13 +4,13 @@ import model.adt.IMyDictionary;
 import model.types.IntIType;
 import model.values.IValue;
 import model.values.IntIValue;
-
-import javax.xml.xpath.XPathExpressionException;
+import exceptions.ADTException;
+import exceptions.ExpressionException;
 
 public class ArithmeticalExpression implements IExp {
     private IExp left;
     private IExp right;
-    private ArithmeticalOperator operator;
+    private final ArithmeticalOperator operator;
 
 
     public ArithmeticalExpression(IExp l ,ArithmeticalOperator operator , IExp r)
@@ -39,17 +39,31 @@ public class ArithmeticalExpression implements IExp {
     @Override
     public IValue eval(IMyDictionary<String , IValue> symTbl) throws ADTException, ExpressionException
     {
-        IValue valueRight =left.eval(symTbl);
-        IValue valueLeft = right.eval(symTbl);
-        if(!valueRight.getType().equals(new IntIType()))
+        IValue valueLeft =left.eval(symTbl);
+        IValue valueRight = right.eval(symTbl);
+        if(valueRight.getType().equals(new IntIType()))
             throw new ExpressionException("Second value is not int ");
-        if(!valueLeft.getType().equals(new IntIType()))
+        if(valueLeft.getType().equals(new IntIType()))
             throw new ExpressionException("First value is not int ");
 
-        IntIValue v1 = (In)
-        switch(operator)
-        {
+        IntIValue v1 = (IntIValue) valueLeft;
+        IntIValue v2 = (IntIValue) valueRight;
 
+        switch(this.operator)
+        {
+            case ADD:
+                return new IntIValue(v1.getVal() + v2.getVal());
+            case SUBTRACT:
+                return new IntIValue(v1.getVal()-v2.getVal());
+            case MULTIPLY:
+                return new IntIValue(v1.getVal()* v2.getVal());
+            case DIVIDE: {
+                if (v2.getVal() == 0)
+                    throw new ExpressionException("Divide by zero");
+                return new IntIValue(v1.getVal()/ v2.getVal());
+            }
+            default:
+                throw new ExpressionException("Unknown operator");
         }
     }
 

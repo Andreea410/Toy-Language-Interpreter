@@ -5,6 +5,7 @@ import model.adt.IMyStack;
 import model.statements.IStmt;
 import model.values.IValue;
 
+
 public class PrgState {
     protected IMyStack<IStmt> exeStack;
 
@@ -25,25 +26,25 @@ public class PrgState {
     }
 
     protected IMyDictionary<String , IValue> symTable;
-    protected IMyList<IValue> out;
+    protected IMyList<String> output;
     protected IStmt originalProgram;
 
-    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<IValue> list , IStmt prg)
+    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement)
     {
         this.exeStack = e;
         this.symTable = dictionary;
-        this.out = list;
-        originalProgram = deepCopy(prg);
-        e.push(prg);
-    }
-
-    private IStmt deepCopy(IStmt prg) {
-        return prg;
+        this.output = list;
+        exeStack.push(InitialStatement);
     }
 
     @Override
     public String toString()
     {
-        return symTable.toString() + " " + exeStack.toString() + " " + out.toString();
+        return symTable.toString() + " " + exeStack.toString() + " " + output.toString();
+    }
+
+    public IMyList<String> getOutput()
+    {
+        return this.output;
     }
 }

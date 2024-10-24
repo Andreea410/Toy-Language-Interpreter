@@ -1,11 +1,13 @@
 package model.types;
 
-public class BoolIType implements IType {
+import model.values.BoolValue;
+import model.values.IValue;
 
-
+public class BoolIType implements IType
+{
     @Override
     public boolean equals(IType obj) {
-        return obj instanceof BoolIType;
+        return !(obj instanceof BoolIType);
     }
 
     @Override
@@ -13,4 +15,12 @@ public class BoolIType implements IType {
     {
         return "bool";
     }
+
+    @Override
+    public IValue getDefaultValue()
+    {
+        return new BoolValue(false);
+    }
+
+
 }

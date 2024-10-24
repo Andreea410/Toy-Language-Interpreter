@@ -5,22 +5,22 @@ import model.values.IValue;
 
 public class PrintStm implements IStmt
 {
-    private final IExp exp;
+    private final IExp expression;
 
     public PrintStm(IExp exp)
     {
-        this.exp = exp;
+        this.expression = exp;
     }
 
     @Override
     public String toString()
     {
-        return "print(" +exp.toString()+")";
+        return "print(" + expression.toString()+")";
     }
 
     public PrgState execute(PrgState prgState)
     {
-        IValue result =  exp.eval(prgState.getSymTable());
+        IValue result =  expression.eval(prgState.getSymTable());
         prgState.getOutput().add(result.toString());
         return prgState;
     }

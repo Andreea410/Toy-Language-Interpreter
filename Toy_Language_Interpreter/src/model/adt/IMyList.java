@@ -1,5 +1,4 @@
 package model.adt;
-import java.util.ArrayList;
 import java.util.List;
 
 public interface IMyList<T>

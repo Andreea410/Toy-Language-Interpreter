@@ -2,42 +2,32 @@
 
 package model.statements;
 import exceptions.StatementException;
-import model.statements.IStmt;
 import model.states.PrgState;
 import model.values.IValue;
 
-import javax.management.ValueExp;
-
 public class CompStmt implements IStmt{
-    private final IStmt first;
-    private final IStmt second;
+    private final IStmt statement1;
+    private final IStmt statement2;
 
     public CompStmt(IStmt f , IStmt s)
     {
-        first = f;
-        second = s;
+        statement1 = f;
+        statement2 = s;
     }
 
     @Override
     public String toString()
     {
-       return "("+first.toString() + ";" + second.toString()+")";
+       return "("+statement1.toString() + ";" + statement2.toString()+")";
     }
 
     @Override
     public PrgState execute(PrgState prgState) throws StatementException
     {
-        prgState.getExeStack().push(second);
-        prgState.getExeStack().push(first);
+        prgState.getExeStack().push(statement2);
+        prgState.getExeStack().push(statement1);
+        return prgState;
     }
-
-    public ValueExp(IValue value)
-    {
-
-    }
-
-
-
 
 
 }

@@ -1,17 +1,17 @@
 package model.expressions;
-
-
-import model.adt.MyDictionary;
+import exceptions.ADTException;
+import exceptions.ExpressionException;
+import model.adt.IMyDictionary;
 import model.types.BoolIType;
 import model.values.BoolValue;
 import model.values.IValue;
 
 public class LogicalExpression implements IExp{
-    private IExp left;
-    private IExp right;
-    private LogicalOperator operator;
+    private final IExp left;
+    private final IExp right;
+    private final LogicalOperator operator;
 
-    public LogicalExpression(IExp l, LogicalOpeartor opeartor, IExp r)
+    public LogicalExpression(IExp l, LogicalOperator opeartor, IExp r)
     {
         this.left =l;
         this.operator = opeartor;
@@ -19,25 +19,34 @@ public class LogicalExpression implements IExp{
     }
 
     @Override
-    public IValue eval(MyDictionary<String,IValue> symtbl) throws ADTExcetpion , ExpressionException
+    public IValue eval(IMyDictionary<String, IValue> symTable) throws ADTException, ExpressionException
     {
-       IValue evaluatedExpressionLeft = left.eval(symtbl);
-       IValue evaluatedExpressionRight = right.eval(symtbl);
-       if(!evaluatedExpressionLeft.getType().equals(new BoolIType()))
+       IValue evaluatedExpressionLeft = left.eval(symTable);
+       IValue evaluatedExpressionRight = right.eval(symTable);
+       if(evaluatedExpressionLeft.getType().equals(new BoolIType()))
        {
            throw new ExpressionException("Left expression is not of type BoolType");
        }
-       if(!evaluatedExpressionRight.getType().equals(new BoolIType()))
+       if(evaluatedExpressionRight.getType().equals(new BoolIType()))
        {
            throw new ExpressionException("Right expression is not of type BoolType");
        }
-       switch(operator)
-       {
-           case AND:
-               return new BoolValue()
-       }
+
+        return switch (operator) {
+            case AND ->
+                    new BoolValue(((BoolValue) evaluatedExpressionLeft).getVal() && ((BoolValue) evaluatedExpressionRight).getVal());
+            case OR ->
+                    new BoolValue(((BoolValue) evaluatedExpressionLeft).getVal() || ((BoolValue) evaluatedExpressionRight).getVal());
+            default -> throw new ExpressionException("Unknown operator");
+        };
 
 
+    }
+
+    @Override
+    public String toString()
+    {
+        return left.toString()+ " " + this.operator + " " + right.toString();
     }
 
 }
