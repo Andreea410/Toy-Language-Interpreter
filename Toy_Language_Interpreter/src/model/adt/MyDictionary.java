@@ -10,7 +10,7 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
 
     public MyDictionary()
     {
-        this.map = new HashMap<>();
+        this.map = new HashMap<K,V>();
     }
 
     @Override

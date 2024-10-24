@@ -28,7 +28,10 @@ public class IntIValue implements IValue
         return "int";
     }
 
-
+    public boolean equals(IValue value)
+    {
+        return value.getType() instanceof IntIType && ((IntIValue) value).getVal() == this.getVal();
+    }
 
 
 }

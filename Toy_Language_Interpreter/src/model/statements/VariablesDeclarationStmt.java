@@ -23,6 +23,7 @@ public class VariablesDeclarationStmt implements IStmt {
         return prgState;
     }
 
+    @Override
     public String toString()
     {
         return name;
