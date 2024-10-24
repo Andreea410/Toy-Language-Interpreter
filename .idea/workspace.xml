@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added some new exceptions and implemented the execute functions">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="fixed some details and implemented new functions">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/ExecState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/IExecState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyDictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/PrintStm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/PrintStm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/VariablesDeclarationStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/VariablesDeclarationStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/BoolValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/BoolValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IntIValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IntIValue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +17,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="Exception" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,7 +120,7 @@
       <workItem from="1729609820713" duration="4857000" />
       <workItem from="1729695655675" duration="997000" />
       <workItem from="1729767642030" duration="6742000" />
-      <workItem from="1729780726966" duration="819000" />
+      <workItem from="1729780726966" duration="1900000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -223,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729777615279</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed some details and implemented new functions">
+      <option name="closed" value="true" />
+      <created>1729781621636</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729781621636</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +253,7 @@
     <MESSAGE value="added two more methods in MyIStack and implemented them in MyStack" />
     <MESSAGE value="added the ArithmeticalOperator and LogicalOperator" />
     <MESSAGE value="added some new exceptions and implemented the execute functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some new exceptions and implemented the execute functions" />
+    <MESSAGE value="fixed some details and implemented new functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some details and implemented new functions" />
   </component>
 </project>
