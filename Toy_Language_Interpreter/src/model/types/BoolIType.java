@@ -1,10 +1,11 @@
 package model.types;
 
-public class BoolType implements Type {
+public class BoolIType implements IType {
+
 
     @Override
-    public boolean equals(Object obj) {
-        return obj instanceof BoolType;
+    public boolean equals(IType obj) {
+        return obj instanceof BoolIType;
     }
 
     @Override

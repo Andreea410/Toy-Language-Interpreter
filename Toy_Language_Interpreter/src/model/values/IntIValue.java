@@ -1,21 +1,20 @@
 package model.values;
-import model.types.IntType;
-import model.types.Type;
-import model.values.Value;
+import model.types.IntIType;
+import model.types.IType;
 
-public class IntValue implements Value
+public class IntIValue implements IValue
 {
-    int val;
+    private final int val;
 
-    public IntValue(int v)
+    public IntIValue(int v)
     {
         this.val =v;
     }
 
     @Override
-    public Type getType()
+    public IType getType()
     {
-        return new IntType();
+        return new IntIType();
     }
 
     public int getVal()
@@ -28,6 +27,8 @@ public class IntValue implements Value
     {
         return "int";
     }
+
+
 
 
 }

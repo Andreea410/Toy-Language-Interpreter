@@ -1,9 +1,8 @@
 package model.values;
-import model.types.BoolType;
-import model.values.Value;
-import model.types.Type;
+import model.types.BoolIType;
+import model.types.IType;
 
-public class BoolValue implements Value
+public class BoolValue implements IValue
 {
     boolean val;
 
@@ -19,9 +18,19 @@ public class BoolValue implements Value
     }
 
     @Override
-    public Type getType()
+    public IType getType()
     {
-        return new BoolType();
+        return new BoolIType();
+    }
+
+    public boolean getVal()
+    {
+        return val;
+    }
+
+    public boolean equals(IValue other)
+    {
+        return other instanceof BoolValue && ((BoolValue)other).val == this.val;
     }
 
 

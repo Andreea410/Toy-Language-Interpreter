@@ -1,20 +1,22 @@
 package model.adt;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Stack;
+import exceptions.EmptyStackException;
 
 public class MyStack<T> implements IMyStack<T>{
 
-    private final Deque<T> stack;
+    private final Stack<T> stack;
 
     public MyStack()
     {
-        this.stack = new ArrayDeque<>();
+        this.stack = new Stack<>();
     }
 
     @Override
-    public T pop(){
+    public T pop() throws EmptyStackException{
         if(stack.isEmpty())
-            throw new IllegalStateException("Stack is empty");
+            throw new EmptyStackException("Stack is empty");
         T element;
         element = stack.pop();
         return element;
@@ -26,8 +28,15 @@ public class MyStack<T> implements IMyStack<T>{
         stack.push(v);
     }
 
+    @Override
     public int getSize()
     {
         return stack.size();
+    }
+
+    @Override
+    public Stack<T> getStack()
+    {
+        return this.stack;
     }
 }

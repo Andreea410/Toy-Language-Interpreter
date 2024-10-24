@@ -1,11 +1,13 @@
 package model.statements;
-import model.expressions.Exp;
+import model.expressions.IExp;
+import model.states.PrgState;
+import model.values.IValue;
 
 public class PrintStm implements IStmt
 {
-    private final Exp exp;
+    private final IExp exp;
 
-    public PrintStm(Exp exp)
+    public PrintStm(IExp exp)
     {
         this.exp = exp;
     }
@@ -14,6 +16,13 @@ public class PrintStm implements IStmt
     public String toString()
     {
         return "print(" +exp.toString()+")";
+    }
+
+    public PrgState execute(PrgState prgState)
+    {
+        IValue result =  exp.eval(prgState.getSymTable());
+        prgState.getOutput().add(result.toString());
+        return prgState;
     }
 
 }

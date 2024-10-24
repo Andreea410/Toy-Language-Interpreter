@@ -1,13 +1,29 @@
 package model.statements;
-import model.types.Type;
+import model.adt.IMyDictionary;
+import model.types.IType;
+import model.values.IValue;
 
 public class VariablesDeclarationStmt implements IStmt {
     private String name;
-    private Type typ;
+    private IType typ;
 
-    public VariablesDeclarationStmt(String n , Type t)
+    public VariablesDeclarationStmt(String n , IType t)
     {
         this.name = n;
         this.typ = t;
     }
+
+    @Override
+    public IValue eval(IMyDictionary<String,IValue> symTable)
+    {
+        return symTable.getValue(name);
+    }
+
+    public String toString()
+    {
+        return name;
+    }
+
+
+
 }
