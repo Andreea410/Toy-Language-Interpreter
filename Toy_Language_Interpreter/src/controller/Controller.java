@@ -41,4 +41,9 @@ public class Controller
         System.out.println(prgState.toString() + "\n");
     }
 
+    public void addProgram(IStmt statement)
+    {
+        this.repository.addProgram(new PrgState(statement));
+    }
+
 }

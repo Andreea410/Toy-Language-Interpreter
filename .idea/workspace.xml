@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the repo">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the controller">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ValueExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/VariableExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/IExp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/IExp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IntIValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IntIValue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +127,7 @@
       <workItem from="1729767642030" duration="6742000" />
       <workItem from="1729780726966" duration="2573000" />
       <workItem from="1730059441488" duration="1020000" />
-      <workItem from="1730060491257" duration="1354000" />
+      <workItem from="1730060491257" duration="3875000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -243,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730060523233</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added the controller">
+      <option name="closed" value="true" />
+      <created>1730062195772</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730062195772</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +287,7 @@
     <MESSAGE value="fixed some details and implemented new functions" />
     <MESSAGE value="added the ExeStack" />
     <MESSAGE value="added the repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the repo" />
+    <MESSAGE value="added the controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the controller" />
   </component>
 </project>

@@ -32,6 +32,4 @@ public class IntIValue implements IValue
     {
         return value.getType() instanceof IntIType && ((IntIValue) value).getVal() == this.getVal();
     }
-
-
 }
