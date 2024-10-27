@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the ExeStack">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" afterDir="false" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the repo">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,26 +46,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/EXTRAS FOR CV/CCC/TRAINING/LAWN MOWER",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/EXTRAS FOR CV/CCC/TRAINING/LAWN MOWER&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\model" />
@@ -122,6 +121,7 @@
       <workItem from="1729767642030" duration="6742000" />
       <workItem from="1729780726966" duration="2573000" />
       <workItem from="1730059441488" duration="1020000" />
+      <workItem from="1730060491257" duration="1354000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -235,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729782958286</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added the repo">
+      <option name="closed" value="true" />
+      <created>1730060523233</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730060523233</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +272,7 @@
     <MESSAGE value="added some new exceptions and implemented the execute functions" />
     <MESSAGE value="fixed some details and implemented new functions" />
     <MESSAGE value="added the ExeStack" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the ExeStack" />
+    <MESSAGE value="added the repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the repo" />
   </component>
 </project>
