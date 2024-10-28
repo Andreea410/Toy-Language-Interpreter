@@ -11,9 +11,9 @@ public class Controller
     private final IRepository repository;
     private boolean displayFlag;
 
-    public Controller(IRepository repo)
+    public Controller(IRepository repo , boolean flag)
     {
-        displayFlag = false;
+        displayFlag =flag;
         this.repository = repo;
     }
 
@@ -33,7 +33,7 @@ public class Controller
     public void executeAllSteps() throws EmptyStackException
     {
         PrgState currentPrgState = this.repository.getCurrentProgram();
-        while(!currentPrgState.getExeStack().isEmpty())
+        while(!currentPrgState.getExeStack().isEmpty()) 
             executeOneStep(currentPrgState);
     }
 
@@ -46,4 +46,8 @@ public class Controller
         this.repository.addProgram(new PrgState(statement));
     }
 
+    public IRepository getRepository()
+    {
+        return  this.repository;
+    }
 }

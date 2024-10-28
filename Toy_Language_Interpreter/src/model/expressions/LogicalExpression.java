@@ -33,9 +33,9 @@ public class LogicalExpression implements IExp{
        }
 
         return switch (operator) {
-            case AND ->
+            case LogicalOperator.AND ->
                     new BoolValue(((BoolValue) evaluatedExpressionLeft).getVal() && ((BoolValue) evaluatedExpressionRight).getVal());
-            case OR ->
+            case LogicalOperator.OR ->
                     new BoolValue(((BoolValue) evaluatedExpressionLeft).getVal() || ((BoolValue) evaluatedExpressionRight).getVal());
             default -> throw new ExpressionException("Unknown operator");
         };

@@ -1,5 +1,5 @@
 package model.expressions;
 
 public enum ArithmeticalOperator {
-    ADD , SUBTRACT, MULTIPLY , DIVIDE
+    ADD, SUBTRACT, MULTIPLY , DIVIDE
 }

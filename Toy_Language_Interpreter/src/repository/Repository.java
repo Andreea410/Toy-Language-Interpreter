@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Repository implements IRepository
 {
-    private List<PrgState> programs;
+    private final List<PrgState> programs;
     private int currentProgramIndex;
 
     public Repository()

@@ -5,6 +5,7 @@ import model.values.IValue;
 
 
 public class PrgState {
+    private IStmt statement;
     protected IMyStack<IStmt> exeStack;
 
     public IMyStack<IStmt> getExeStack() {
@@ -29,11 +30,12 @@ public class PrgState {
 
     public PrgState(IStmt statement)
     {
+        this.statement = statement;
         this.exeStack = new MyStack<>();
         this.symTable = new MyDictionary<>();
         this.output = new MyList<>();
 
-        exeStack.push(originalProgram);
+        exeStack.push(statement);
     }
 
     public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement)
