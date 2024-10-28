@@ -26,6 +26,7 @@ public class Repository implements IRepository
     public void addProgram(PrgState program)
     {
         this.programs.add(program);
+        currentProgramIndex++;
     }
 
 }
