@@ -1,5 +1,6 @@
 package repository;
 
+import exceptions.RepoException;
 import model.states.PrgState;
 
 import java.io.BufferedWriter;
@@ -33,12 +34,14 @@ public class TextRepository implements IRepository
         currentIndex++;
     }
 
-    public void logPrgStateExec() throws IOException {
+    public void logPrgStateExec() throws RepoException {
         try
         {
-            PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(fileName,true)));
+            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName,true)));
+            writer.println(this.getCurrentProgram());
+            writer.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RepoException("Error while writting to the file");
         }
 
     }

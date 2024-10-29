@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added all the functionalities">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/TextRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" afterDir="false" />
-    </list>
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the file Repository class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +122,7 @@
       <workItem from="1730113364252" duration="3732000" />
       <workItem from="1730117929314" duration="316000" />
       <workItem from="1730124073258" duration="281000" />
-      <workItem from="1730126118435" duration="2195000" />
+      <workItem from="1730126118435" duration="2404000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -280,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730124315386</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added the file Repository class">
+      <option name="closed" value="true" />
+      <created>1730128517868</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1730128517868</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +317,7 @@
     <MESSAGE value="added the controller" />
     <MESSAGE value="." />
     <MESSAGE value="added all the functionalities" />
-    <option name="LAST_COMMIT_MESSAGE" value="added all the functionalities" />
+    <MESSAGE value="added the file Repository class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the file Repository class" />
   </component>
 </project>
