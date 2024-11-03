@@ -28,7 +28,7 @@ public class PrintStm implements IStmt
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new PrintStm(this.expression.deepCopy());
     }
 
 }

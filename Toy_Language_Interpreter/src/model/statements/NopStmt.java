@@ -12,7 +12,7 @@ public class NopStmt implements IStmt
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new NopStmt();
     }
 
     @Override

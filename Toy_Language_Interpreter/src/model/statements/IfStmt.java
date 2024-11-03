@@ -39,7 +39,7 @@ public class IfStmt implements IStmt{
 
     @Override
     public IStmt deepCopy() {
-        return new PrintStm(this.expression);
+        return new IfStmt(this.expression.deepCopy() , this.thenStatement.deepCopy() , this.elseStatement.deepCopy());
     }
 
 }

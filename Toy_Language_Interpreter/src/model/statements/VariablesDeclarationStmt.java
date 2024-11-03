@@ -25,7 +25,7 @@ public class VariablesDeclarationStmt implements IStmt {
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new VariablesDeclarationStmt(this.name , this.type);
     }
 
     @Override

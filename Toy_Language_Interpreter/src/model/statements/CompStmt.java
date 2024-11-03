@@ -31,7 +31,7 @@ public class CompStmt implements IStmt{
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new CompStmt(this.statement1.deepCopy() , this.statement2.deepCopy());
     }
 
 

@@ -14,12 +14,12 @@ import java.io.IOException;
 
 public class ReadFileStatement implements IStmt
 {
-    private IExp expressiom;
-    private String variableName;
+    private final IExp expression;
+    private final String variableName;
 
     public ReadFileStatement(IExp ex , String variableName)
     {
-        this.expressiom = ex;
+        this.expression = ex;
         this.variableName = variableName;
     }
 
@@ -37,7 +37,7 @@ public class ReadFileStatement implements IStmt
             throw new StatementException("The type is incorrect");
         }
 
-        var res = expressiom.eval(table);
+        var res = expression.eval(table);
 
         if(!res.getType().equals(new StringType()))
         {
@@ -58,6 +58,6 @@ public class ReadFileStatement implements IStmt
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new ReadFileStatement(this.expression.deepCopy() , this.variableName);
     }
 }
