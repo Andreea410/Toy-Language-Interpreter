@@ -10,7 +10,6 @@ import java.nio.Buffer;
 
 
 public class PrgState {
-    private IStmt statement;
     protected IMyStack<IStmt> exeStack;
 
     public IMyStack<IStmt> getExeStack() {
@@ -38,7 +37,6 @@ public class PrgState {
 
     public PrgState(IStmt statement)
     {
-        this.statement = statement;
         this.exeStack = new MyStack<>();
         this.symTable = new MyDictionary<>();
         this.output = new MyList<>();
@@ -46,13 +44,18 @@ public class PrgState {
         exeStack.push(statement);
     }
 
-    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , MyDictionary<StringValue , BufferedReader> dic)
+    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , MyDictionary<StringValue , BufferedReader> fileTable)
     {
         this.exeStack = e;
         this.symTable = dictionary;
         this.output = list;
-        this.fileTable = dic;
+        this.fileTable = fileTable;
         exeStack.push(InitialStatement);
+    }
+
+    public IMyDictionary<StringValue,BufferedReader> getFileTable()
+    {
+        return this.fileTable;
     }
 
     public String fileTableToString()
@@ -60,7 +63,7 @@ public class PrgState {
         StringBuilder text = new StringBuilder();
         text.append("FileTable: \n");
         for(StringValue key : this.fileTable.getKeys())
-            text.append(key);
+            text.append(key).append("\n");
         return text.toString();
     }
 
