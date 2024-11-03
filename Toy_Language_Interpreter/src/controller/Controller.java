@@ -35,8 +35,12 @@ public class Controller
 
     public void executeAllSteps() throws EmptyStackException, StatementException, ADTException, IOException {
         PrgState currentPrgState = this.repository.getCurrentProgram();
-        while(!currentPrgState.getExeStack().isEmpty()) 
+        repository.logPrgStateExec();
+        while(!currentPrgState.getExeStack().isEmpty())
+        {
             executeOneStep(currentPrgState);
+            repository.logPrgStateExec();
+        }
     }
 
     public void displayCurrentState(PrgState prgState) {
