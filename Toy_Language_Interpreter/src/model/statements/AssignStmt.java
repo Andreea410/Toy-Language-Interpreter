@@ -36,8 +36,10 @@ public class AssignStmt implements IStmt{
         return prgState;
     }
 
-
-
+    @Override
+    public IStmt deepCopy() {
+        return null;
+    }
 
 
 }

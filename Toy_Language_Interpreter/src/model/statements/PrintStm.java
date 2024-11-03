@@ -26,4 +26,9 @@ public class PrintStm implements IStmt
         return prgState;
     }
 
+    @Override
+    public IStmt deepCopy() {
+        return null;
+    }
+
 }

@@ -1,6 +1,8 @@
 package controller;
 
+import exceptions.ADTException;
 import exceptions.EmptyStackException;
+import exceptions.StatementException;
 import model.adt.IMyStack;
 import model.statements.IStmt;
 import model.states.PrgState;
@@ -17,7 +19,7 @@ public class Controller
         this.repository = repo;
     }
 
-    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException
+    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException , StatementException , ADTException
     {
         IMyStack<IStmt> executionStack = prgState.getExeStack();
         if(executionStack.isEmpty())
@@ -30,7 +32,7 @@ public class Controller
         return prgState;
     }
 
-    public void executeAllSteps() throws EmptyStackException
+    public void executeAllSteps() throws EmptyStackException , StatementException , ADTException
     {
         PrgState currentPrgState = this.repository.getCurrentProgram();
         while(!currentPrgState.getExeStack().isEmpty()) 

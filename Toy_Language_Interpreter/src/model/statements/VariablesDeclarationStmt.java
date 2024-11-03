@@ -24,6 +24,11 @@ public class VariablesDeclarationStmt implements IStmt {
     }
 
     @Override
+    public IStmt deepCopy() {
+        return null;
+    }
+
+    @Override
     public String toString()
     {
         return name;

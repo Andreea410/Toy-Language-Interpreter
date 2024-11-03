@@ -16,6 +16,11 @@ public class ValueExpression implements IExp{
         return value;
     }
 
+    @Override
+    public IExp deepCopy() {
+        return new ValueExpression(this.value);
+    }
+
     public IType getType(IMyDictionary<String, IType> typeTable) {
         return value.getType();
     }

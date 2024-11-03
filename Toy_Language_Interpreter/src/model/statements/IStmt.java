@@ -6,4 +6,5 @@ import model.states.PrgState;
 
 public interface IStmt {
     PrgState execute(PrgState prgState) throws StatementException , ADTException;
+    IStmt deepCopy();
 }

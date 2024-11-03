@@ -37,4 +37,9 @@ public class IfStmt implements IStmt{
         return state;
     }
 
+    @Override
+    public IStmt deepCopy() {
+        return new PrintStm(this.expression);
+    }
+
 }

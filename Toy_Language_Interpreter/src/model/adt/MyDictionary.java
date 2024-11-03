@@ -3,6 +3,7 @@ import exceptions.KeyNotFoundException;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Set;
 
 public class MyDictionary<K,V> implements IMyDictionary<K,V>
 {
@@ -50,6 +51,12 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
             str.append(key).append("-> ").append(this.map.get(key)).append("\n");
         }
         return "My dictionary contains " + str;
+    }
+
+    @Override
+    public Set<K> getKeys()
+    {
+        return this.map.keySet();
     }
 
 }

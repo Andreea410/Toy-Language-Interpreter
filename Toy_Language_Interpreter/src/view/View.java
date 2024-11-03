@@ -1,7 +1,9 @@
 package view;
 
 import controller.Controller;
+import exceptions.ADTException;
 import exceptions.EmptyStackException;
+import exceptions.StatementException;
 import model.expressions.ArithmeticalExpression;
 import model.expressions.ArithmeticalOperator;
 import model.expressions.ValueExpression;
@@ -68,7 +70,13 @@ public class View
         this.controller.addProgram(statement);
 
 
-        controller.executeAllSteps();
-        System.out.println("Result: " + controller.getRepository().getCurrentProgram().toString());
+        try {
+            controller.executeAllSteps();
+            System.out.println("Result: " + controller.getRepository().getCurrentProgram().toString());
+        }
+        catch (StatementException | ADTException | EmptyStackException e)
+        {
+            System.out.println(e.toString());
+        }
     }
 }

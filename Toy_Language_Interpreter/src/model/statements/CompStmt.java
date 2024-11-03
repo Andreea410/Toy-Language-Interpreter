@@ -29,5 +29,10 @@ public class CompStmt implements IStmt{
         return prgState;
     }
 
+    @Override
+    public IStmt deepCopy() {
+        return null;
+    }
+
 
 }

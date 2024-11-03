@@ -6,5 +6,5 @@ import model.values.IValue;
 
 public interface IExp {
     IValue eval(IMyDictionary<String, IValue> symtbl) throws ADTException, ExpressionException;
-
+    IExp deepCopy();
 }

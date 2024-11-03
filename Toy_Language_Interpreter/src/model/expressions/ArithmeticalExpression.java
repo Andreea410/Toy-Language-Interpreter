@@ -50,16 +50,21 @@ public class ArithmeticalExpression implements IExp {
         IntIValue v2 = (IntIValue) valueRight;
 
         switch (this.operator) {
-//            case '+' -> new IntIValue(v1.getVal() + v2.getVal());
-//            case '-' -> new IntIValue(v1.getVal() - v2.getVal());
-//            case '*' -> new IntIValue(v1.getVal() * v2.getVal());
-//            case ':' -> {
-//                if (v2.getVal() == 0)
-//                    throw new ExpressionException("Divide by zero");
-//                yield new IntIValue(v1.getVal() / v2.getVal());
-//            }
+            case '+' -> new IntIValue(v1.getVal() + v2.getVal());
+            case '-' -> new IntIValue(v1.getVal() - v2.getVal());
+            case '*' -> new IntIValue(v1.getVal() * v2.getVal());
+            case ':' -> {
+                if (v2.getVal() == 0)
+                    throw new ExpressionException("Divide by zero");
+                yield new IntIValue(v1.getVal() / v2.getVal());
+            }
             default -> throw new ExpressionException("Unknown operator");
         }
+    }
+
+    @Override
+    public IExp deepCopy() {
+        return null;
     }
 
 }
