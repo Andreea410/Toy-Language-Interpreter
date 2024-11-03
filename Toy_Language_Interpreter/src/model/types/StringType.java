@@ -6,12 +6,11 @@ import model.values.StringValue;
 public class StringType implements IType{
     public StringType()
     {
-
     }
 
     @Override
     public boolean equals(IType another) {
-        return false;
+        return another instanceof StringType;
     }
 
     @Override

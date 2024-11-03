@@ -17,29 +17,37 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
     @Override
     public void insert(K key , V value)
     {
-        this.map.put(key , value);
+        synchronized (map) {
+            this.map.put(key, value);
+        }
     }
 
     @Override
     public V getValue(K key) throws KeyNotFoundException
     {
-        if(!contains(key))
-            throw new KeyNotFoundException("The key doesn t exist");
-        return this.map.get(key);
+        synchronized (map) {
+            if (!contains(key))
+                throw new KeyNotFoundException("The key doesn t exist");
+            return this.map.get(key);
+        }
     }
 
     @Override
     public boolean contains(K key)
     {
-        return map.containsKey(key);
+        synchronized (map){
+            return map.containsKey(key);
+        }
     }
 
     @Override
     public void remove(K key) throws KeyNotFoundException
     {
-        if(!contains(key))
-            throw new KeyNotFoundException("The key doesn t exist");
-        this.map.remove(key);
+        synchronized (map) {
+            if (!contains(key))
+                throw new KeyNotFoundException("The key doesn t exist");
+            this.map.remove(key);
+        }
     }
 
     @Override
@@ -56,7 +64,9 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
     @Override
     public Set<K> getKeys()
     {
-        return this.map.keySet();
+        synchronized (map) {
+            return this.map.keySet();
+        }
     }
 
 }

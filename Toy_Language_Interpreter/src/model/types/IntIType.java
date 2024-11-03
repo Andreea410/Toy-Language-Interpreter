@@ -8,7 +8,7 @@ public class IntIType implements IType {
     @Override
     public boolean equals(IType another)
     {
-        return !(another instanceof IntIType);
+        return another instanceof IntIType;
     }
 
     @Override

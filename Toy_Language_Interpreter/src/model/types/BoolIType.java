@@ -7,7 +7,7 @@ public class BoolIType implements IType
 {
     @Override
     public boolean equals(IType obj) {
-        return !(obj instanceof BoolIType);
+        return obj instanceof BoolIType;
     }
 
     @Override

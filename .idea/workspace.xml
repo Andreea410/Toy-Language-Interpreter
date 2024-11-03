@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="fixed ReadFileStatement" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implement deepCopy for statements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +124,7 @@
       <workItem from="1730124073258" duration="281000" />
       <workItem from="1730126118435" duration="2404000" />
       <workItem from="1730204660691" duration="11761000" />
-      <workItem from="1730644228297" duration="1825000" />
+      <workItem from="1730644228297" duration="2952000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -318,7 +318,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730646056444</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="implement deepCopy for expressions">
+      <option name="closed" value="true" />
+      <created>1730646697053</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1730646697053</updated>
+    </task>
+    <task id="LOCAL-00026" summary="implement deepCopy for statements">
+      <option name="closed" value="true" />
+      <created>1730647190526</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1730647190526</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +371,8 @@
     <MESSAGE value="added a new exception and the logPrgStateExec function" />
     <MESSAGE value="deleted TextRepository and added the function in the Repo.Added a new function in Dictonary to get the keys and added the ReadFileStatement" />
     <MESSAGE value="fixed ReadFileStatement" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed ReadFileStatement" />
+    <MESSAGE value="implement deepCopy for expressions" />
+    <MESSAGE value="implement deepCopy for statements" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement deepCopy for statements" />
   </component>
 </project>

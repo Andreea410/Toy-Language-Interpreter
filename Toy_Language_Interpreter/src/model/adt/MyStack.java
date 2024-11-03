@@ -15,15 +15,19 @@ public class MyStack<T> implements IMyStack<T>{
 
     @Override
     public T pop() throws EmptyStackException{
-        if(stack.isEmpty())
-            throw new EmptyStackException("Stack is empty");
-        return this.stack.pop();
+        synchronized (stack) {
+            if (stack.isEmpty())
+                throw new EmptyStackException("Stack is empty");
+            return this.stack.pop();
+        }
     }
 
     @Override
     public void push(T v)
     {
-        stack.push(v);
+        synchronized (stack) {
+            stack.push(v);
+        }
     }
 
     @Override

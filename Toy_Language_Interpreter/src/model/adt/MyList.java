@@ -1,6 +1,6 @@
 package model.adt;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MyList<T> implements IMyList<T>
@@ -9,7 +9,7 @@ public class MyList<T> implements IMyList<T>
 
     public MyList()
     {
-        this.list = new ArrayList<>();
+        this.list = new LinkedList<>();
     }
 
     @Override
@@ -20,7 +20,9 @@ public class MyList<T> implements IMyList<T>
     @Override
     public void add(T element)
     {
-        list.add(element);
+        synchronized (list) {
+            list.add(element);
+        }
     }
 
     @Override
@@ -30,5 +32,10 @@ public class MyList<T> implements IMyList<T>
         for(T element : this.list)
             str.append(element).append("\n");
         return "My list contains " + str;
+    }
+
+    public List<T> getList()
+    {
+        return this.list;
     }
 }
