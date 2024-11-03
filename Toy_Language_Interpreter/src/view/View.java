@@ -15,6 +15,7 @@ import model.values.BoolValue;
 import model.values.IntIValue;
 
 import javax.management.ValueExp;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class View
@@ -77,6 +78,8 @@ public class View
         catch (StatementException | ADTException | EmptyStackException e)
         {
             System.out.println(e.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

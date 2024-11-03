@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="deleted TextRepository and added the function in the Repo.Added a new function in Dictonary to get the keys and added the ReadFileStatement">
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" afterDir="false" />
-    </list>
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="fixed ReadFileStatement" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +124,7 @@
       <workItem from="1730124073258" duration="281000" />
       <workItem from="1730126118435" duration="2404000" />
       <workItem from="1730204660691" duration="11761000" />
-      <workItem from="1730644228297" duration="960000" />
+      <workItem from="1730644228297" duration="1825000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -304,7 +302,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730644937524</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixed ReadFileStatement">
+      <option name="closed" value="true" />
+      <created>1730646032845</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730646032845</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fixed ReadFileStatement">
+      <option name="closed" value="true" />
+      <created>1730646056444</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1730646056444</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +354,7 @@
     <MESSAGE value="added the file Repository class" />
     <MESSAGE value="added a new exception and the logPrgStateExec function" />
     <MESSAGE value="deleted TextRepository and added the function in the Repo.Added a new function in Dictonary to get the keys and added the ReadFileStatement" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted TextRepository and added the function in the Repo.Added a new function in Dictonary to get the keys and added the ReadFileStatement" />
+    <MESSAGE value="fixed ReadFileStatement" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed ReadFileStatement" />
   </component>
 </project>

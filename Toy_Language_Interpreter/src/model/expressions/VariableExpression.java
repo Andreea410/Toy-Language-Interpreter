@@ -19,6 +19,11 @@ public class VariableExpression implements IExp {
     }
 
     @Override
+    public IExp deepCopy() {
+        return new VariableExpression(this.variable);
+    }
+
+    @Override
     public String toString(){
         return variable;
     }

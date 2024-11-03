@@ -8,6 +8,8 @@ import model.statements.IStmt;
 import model.states.PrgState;
 import repository.IRepository;
 
+import java.io.IOException;
+
 public class Controller
 {
     private final IRepository repository;
@@ -19,8 +21,7 @@ public class Controller
         this.repository = repo;
     }
 
-    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException , StatementException , ADTException
-    {
+    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
         IMyStack<IStmt> executionStack = prgState.getExeStack();
         if(executionStack.isEmpty())
             throw new EmptyStackException("The execution stack is empty");
@@ -32,8 +33,7 @@ public class Controller
         return prgState;
     }
 
-    public void executeAllSteps() throws EmptyStackException , StatementException , ADTException
-    {
+    public void executeAllSteps() throws EmptyStackException, StatementException, ADTException, IOException {
         PrgState currentPrgState = this.repository.getCurrentProgram();
         while(!currentPrgState.getExeStack().isEmpty()) 
             executeOneStep(currentPrgState);

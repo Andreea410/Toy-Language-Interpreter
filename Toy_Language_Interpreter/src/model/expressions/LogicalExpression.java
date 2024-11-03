@@ -45,7 +45,7 @@ public class LogicalExpression implements IExp{
 
     @Override
     public IExp deepCopy() {
-        return null;
+        return new LogicalExpression(this.left.deepCopy() , this.operator , this.right.deepCopy());
     }
 
     @Override
