@@ -69,4 +69,13 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
         }
     }
 
+    @Override
+    public IMyDictionary<K,V> copy()
+    {
+        IMyDictionary<K,V> newDictionary = new MyDictionary<>();
+        for(K key : getKeys())
+            newDictionary.insert(key , getValue(key));
+        return newDictionary;
+    }
+
 }
