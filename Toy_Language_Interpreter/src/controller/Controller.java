@@ -1,15 +1,13 @@
 package controller;
 
-import exceptions.ADTException;
-import exceptions.EmptyStackException;
-import exceptions.RepoException;
-import exceptions.StatementException;
+import exceptions.*;
 import model.adt.IMyStack;
 import model.statements.IStmt;
 import model.states.PrgState;
 import repository.IRepository;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Controller
 {
@@ -31,16 +29,17 @@ public class Controller
         currentStatement.execute(prgState);
         if (displayFlag)
             displayCurrentState(prgState);
+        repository.logPrgStateExec();
         return prgState;
     }
 
-    public void executeAllSteps() throws EmptyStackException, StatementException, ADTException, IOException, RepoException {
-        PrgState currentPrgState = this.repository.getCurrentProgram();
+    public void executeAllSteps() throws StatementException, ExpressionException, ADTException, IOException, EmptyStackException {
+        PrgState currentProgramState = repository.getCurrentProgram();
+        displayCurrentState(currentProgramState);
         repository.logPrgStateExec();
-        while(!currentPrgState.getExeStack().isEmpty())
-        {
-            executeOneStep(currentPrgState);
-            repository.logPrgStateExec();
+
+        while (!currentProgramState.getExeStack().isEmpty()) {
+                executeOneStep(currentProgramState);
         }
     }
 

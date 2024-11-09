@@ -37,7 +37,7 @@ public class PrgState {
         this.exeStack = new MyStack<>();
         this.symTable = new MyDictionary<>();
         this.output = new MyList<>();
-
+        this.fileTable = new MyDictionary<>();
         exeStack.push(statement);
     }
 
@@ -58,7 +58,6 @@ public class PrgState {
     public String fileTableToString()
     {
         StringBuilder text = new StringBuilder();
-        text.append("FileTable: \n");
         for(StringValue key : this.fileTable.getKeys())
             text.append(key).append("\n");
         return text.toString();
@@ -75,9 +74,8 @@ public class PrgState {
     }
 
     @Override
-    public String toString()
-    {
-        return symTable.toString() + " " + exeStack.toString() + " " + output.toString();
+    public String toString() {
+        return String.format("EXE_STACK\n%s\nSYM_TABLE\n%s\nOUT\n%s\nFILE_TABLE\n%s\n", exeStack.toString(), symTableToString(), output.toString(), fileTableToString());
     }
 
     public IMyList<String> getOutput()

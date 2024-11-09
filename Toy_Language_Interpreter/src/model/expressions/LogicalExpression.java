@@ -23,11 +23,11 @@ public class LogicalExpression implements IExp{
     {
        IValue evaluatedExpressionLeft = left.eval(symTable);
        IValue evaluatedExpressionRight = right.eval(symTable);
-       if(evaluatedExpressionLeft.getType().equals(new BoolIType()))
+       if(!evaluatedExpressionLeft.getType().equals(new BoolIType()))
        {
            throw new ExpressionException("Left expression is not of type BoolType");
        }
-       if(evaluatedExpressionRight.getType().equals(new BoolIType()))
+       if(!evaluatedExpressionRight.getType().equals(new BoolIType()))
        {
            throw new ExpressionException("Right expression is not of type BoolType");
        }

@@ -26,7 +26,7 @@ public class TextMenu {
     {
         for(Command cm : this.map.values())
         {
-            String line = String.format("4% : %s" , cm.getKey(),cm.getDescription());
+            String line = String.format("%s : %s" , cm.getKey(),cm.getDescription());
             System.out.println(line);
         }
     }

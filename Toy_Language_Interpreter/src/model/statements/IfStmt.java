@@ -28,9 +28,9 @@ public class IfStmt implements IStmt{
     public PrgState execute(PrgState state) throws StatementException
     {
         IValue value = expression.eval(state.getSymTable());
-        if(value.getType().equals(new BoolIType()))
+        if(!value.getType().equals(new BoolIType()))
             throw new StatementException("Expression is not boolean");
-        if(((BoolValue)value).getVal())
+        if(!((BoolValue)value).getVal())
             state.getExeStack().push(thenStatement);
         else
             state.getExeStack().push(elseStatement);

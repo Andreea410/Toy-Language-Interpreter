@@ -31,7 +31,7 @@ public class VariablesDeclarationStmt implements IStmt {
     @Override
     public String toString()
     {
-        return name;
+        return String.format("%s %s",type.toString(),name);
     }
 
 }

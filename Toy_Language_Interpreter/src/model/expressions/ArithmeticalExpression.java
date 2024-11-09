@@ -41,9 +41,9 @@ public class ArithmeticalExpression implements IExp {
     {
         IValue valueLeft =left.eval(symTbl);
         IValue valueRight = right.eval(symTbl);
-        if(valueRight.getType().equals(new IntIType()))
+        if(!valueRight.getType().equals(new IntIType()))
             throw new ExpressionException("Second value is not int ");
-        if(valueLeft.getType().equals(new IntIType()))
+        if(!valueLeft.getType().equals(new IntIType()))
             throw new ExpressionException("First value is not int ");
 
         IntIValue v1 = (IntIValue) valueLeft;

@@ -47,7 +47,7 @@ public class Repository implements IRepository
     {
         try
         {
-            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
+            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(filename , true)));
             writer.println(this.getCurrentProgram().toString());
             writer.close();
         } catch (IOException e) {
