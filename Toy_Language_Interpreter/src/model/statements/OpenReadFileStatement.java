@@ -2,43 +2,43 @@ package model.statements;
 
 import exceptions.ADTException;
 import exceptions.StatementException;
-import model.adt.MyDictionary;
+import model.adt.IMyDictionary;
 import model.expressions.IExp;
 import model.states.PrgState;
 import model.types.StringType;
+import model.values.StringValue;
 
-import java.beans.Expression;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class OpenRFileStatement implements IStmt {
+public class OpenReadFileStatement implements IStmt {
 
     private final IExp expression;
-    private final String filename;
 
-    OpenRFileStatement(IExp exp , String value)
+    public OpenReadFileStatement(IExp exp)
     {
         this.expression = exp;
-        this.filename = value;
     }
 
     @Override
     public PrgState execute(PrgState prgState) throws StatementException, ADTException, IOException {
         var table = prgState.getSymTable();
-
         var res = expression.eval(table);
+
         if(!res.getType().equals(new StringType()))
-            throw new StatementException("It must be of String type");
-        if(table.contains(filename))
-            throw new ADTException("It results in a duplicate value");
+            throw new StatementException("The type is incorrect");
+
+        StringValue filename = (StringValue) res;
+        var fileTable = prgState.getFileTable();
+
+        if(fileTable.contains(filename))
+            throw new StatementException("File is already opened.");
 
         try
         {
-            BufferedReader reader = new BufferedReader(new FileReader(filename));
-            reader.readLine();
-
-
+            BufferedReader reader = new BufferedReader(new FileReader(filename.getValue()));
+            table.insert(filename.getValue(),reader);
         }
         catch(IOException e)
         {
@@ -49,11 +49,8 @@ public class OpenRFileStatement implements IStmt {
     @Override
     public IStmt deepCopy()
     {
-        return new OpenRFileStatement(expression);
+        return new OpenReadFileStatement(expression);
     }
 
-    public IStmt pop()
-    {
-        return null;
-    }
+
 }
