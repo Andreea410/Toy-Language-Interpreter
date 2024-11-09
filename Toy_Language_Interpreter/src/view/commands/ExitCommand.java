@@ -1,4 +1,4 @@
-package view;
+package view.commands;
 
 public class ExitCommand extends Command
 {
@@ -10,6 +10,6 @@ public class ExitCommand extends Command
     @Override
     public void execute()
     {
-        System.out.println("a");
+        System.exit(0);
     }
 }

@@ -1,11 +1,11 @@
-package view;
+package view.commands;
 
 import controller.Controller;
 import exceptions.EmptyStackException;
 
 import java.io.IOException;
 
-public class RunExampleCommand extends Command{
+public class RunExampleCommand extends Command {
 
     private final Controller controller;
 

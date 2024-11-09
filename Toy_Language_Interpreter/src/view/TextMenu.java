@@ -1,15 +1,14 @@
 package view;
 
-import exceptions.EmptyStackException;
+import view.commands.Command;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class TextMenu {
 
-    private Map<String,Command> map;
+    private Map<String, Command> map;
 
     public TextMenu()
     {
