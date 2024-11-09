@@ -30,7 +30,7 @@ public class MyList<T> implements IMyList<T>
     {
         StringBuilder str = new StringBuilder();
         for(T element : this.list)
-            str.append(element).append("\n");
+            str.append(element.toString()).append("\n");
         return "My list contains " + str;
     }
 

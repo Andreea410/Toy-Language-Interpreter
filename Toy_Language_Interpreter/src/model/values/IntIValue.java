@@ -25,7 +25,7 @@ public class IntIValue implements IValue
     @Override
     public String toString()
     {
-        return "int";
+        return String.valueOf(this.val);
     }
 
     public boolean equals(IValue value)

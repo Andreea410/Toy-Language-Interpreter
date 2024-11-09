@@ -3,6 +3,7 @@ package view;
 import controller.Controller;
 import exceptions.ADTException;
 import exceptions.EmptyStackException;
+import exceptions.RepoException;
 import exceptions.StatementException;
 import model.expressions.ArithmeticalExpression;
 import model.expressions.ArithmeticalOperator;
@@ -32,7 +33,7 @@ public class View
     {
         try
         {
-            runProgram1();
+            runProgram2();
         } catch (EmptyStackException e) {
             throw new RuntimeException(e);
         }
@@ -69,17 +70,16 @@ public class View
 
     private void runStatement(IStmt statement) throws EmptyStackException {
         this.controller.addProgram(statement);
-
-
         try {
             controller.executeAllSteps();
             System.out.println("Result: " + controller.getRepository().getCurrentProgram().toString());
         }
-        catch (StatementException | ADTException | EmptyStackException e)
+        catch (StatementException | ADTException | EmptyStackException | RepoException e)
         {
             System.out.println(e.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }

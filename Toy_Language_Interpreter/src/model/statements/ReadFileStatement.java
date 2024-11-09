@@ -58,6 +58,7 @@ public class ReadFileStatement implements IStmt
 
     @Override
     public IStmt deepCopy() {
-        return new ReadFileStatement(this.expression.deepCopy() , this.variableName);
+        return new ReadFileStatement(this.expression.deepCopy() , this.variableName );
+
     }
 }

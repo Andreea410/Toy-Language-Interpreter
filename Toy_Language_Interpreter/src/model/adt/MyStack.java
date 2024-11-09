@@ -53,7 +53,7 @@ public class MyStack<T> implements IMyStack<T>{
     {
         StringBuilder str = new StringBuilder();
         for(T element: this.stack)
-            str.append(element).append("\n");
+            str.append(element.toString()).append("\n");
         return "My stack contains : " + str;
     }
 }

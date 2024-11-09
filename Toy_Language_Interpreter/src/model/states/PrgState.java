@@ -11,6 +11,10 @@ import java.nio.Buffer;
 
 public class PrgState {
     protected IMyStack<IStmt> exeStack;
+    protected IMyDictionary<String , IValue> symTable;
+    protected IMyList<String> output;
+    protected IStmt originalProgram;
+    private IMyDictionary<StringValue, BufferedReader> fileTable;
 
     public IMyStack<IStmt> getExeStack() {
         return exeStack;
@@ -27,13 +31,6 @@ public class PrgState {
     public void setSymTable(IMyDictionary<String, IValue> symTable) {
         this.symTable = symTable;
     }
-
-    protected IMyDictionary<String , IValue> symTable;
-    protected IMyList<String> output;
-    protected IStmt originalProgram;
-
-    private IMyDictionary<StringValue, BufferedReader> fileTable;
-
 
     public PrgState(IStmt statement)
     {
@@ -67,10 +64,20 @@ public class PrgState {
         return text.toString();
     }
 
+    public String symTableToString() {
+        StringBuilder symbolTableStringBuilder = new StringBuilder();
+
+        for (String key : symTable.getKeys()) {
+            symbolTableStringBuilder.append(String.format("%s -> %s\n", key, symTable.getValue(key).toString()));
+        }
+
+        return symbolTableStringBuilder.toString();
+    }
+
     @Override
     public String toString()
     {
-        return symTable.toString() + " " + exeStack.toString() + " " + output.toString() + " " + this.fileTableToString();
+        return symTable.toString() + " " + exeStack.toString() + " " + output.toString();
     }
 
     public IMyList<String> getOutput()
