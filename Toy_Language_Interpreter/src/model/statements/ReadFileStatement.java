@@ -31,34 +31,35 @@ public class ReadFileStatement implements IStmt
         {
             throw new StatementException("The variable was not defined earlier");
         }
-
         if(!table.getValue(variableName).getType().equals(new IntIType()))
         {
             throw new StatementException("The type is incorrect");
         }
-
         var res = expression.eval(table);
-
         if(!res.getType().equals(new StringType()))
         {
             throw new StatementException("The result is not a String type");
         }
 
         BufferedReader reader = prgState.getFileTable().getValue((StringValue) res);
-        String read = reader.readLine();
+        try {
+            String read = reader.readLine();
+            if (read.isEmpty())
+                read = "0";
 
-        if(read.isEmpty())
-            read = "0";
-
-        int parser = Integer.parseInt(read);
-        table.insert(variableName,new IntIValue(parser));
-        return prgState;
+            int parser = Integer.parseInt(read);
+            table.insert(variableName, new IntIValue(parser));
+            return prgState;
+        }
+        catch (IOException e)
+        {
+            throw new StatementException("Could not read the file: " + e.toString());
+        }
 
     }
 
     @Override
     public IStmt deepCopy() {
         return new ReadFileStatement(this.expression.deepCopy() , this.variableName );
-
     }
 }

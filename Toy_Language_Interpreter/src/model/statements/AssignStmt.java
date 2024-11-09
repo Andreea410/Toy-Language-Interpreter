@@ -38,7 +38,7 @@ public class AssignStmt implements IStmt{
 
     @Override
     public IStmt deepCopy() {
-        return new AssignStmt(new String(this.variableName), this.expression.deepCopy());
+        return new AssignStmt(this.variableName, this.expression.deepCopy());
     }
 
 
