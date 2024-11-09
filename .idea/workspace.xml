@@ -4,30 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="writes all programStates also in the file">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/OpenRFileStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/ExitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/RunExampleCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IntIValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/IntIValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyList.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/states/PrgState.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/states/PrgState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/types/BoolIType.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/types/BoolIType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/types/IntIType.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/types/IntIType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/types/StringType.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/types/StringType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/values/StringValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/values/StringValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/View.class" afterDir="false" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added try and catch in the text menu">
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Exception" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -155,6 +134,7 @@
       <workItem from="1730721760555" duration="1910000" />
       <workItem from="1730823483753" duration="3284000" />
       <workItem from="1730840996299" duration="1291000" />
+      <workItem from="1731167167489" duration="5387000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -380,7 +360,79 @@
       <option name="project" value="LOCAL" />
       <updated>1730648745781</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added some new statements">
+      <option name="closed" value="true" />
+      <created>1731167256385</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1731167256385</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added copy function for dictionary">
+      <option name="closed" value="true" />
+      <created>1731167661539</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1731167661539</updated>
+    </task>
+    <task id="LOCAL-00031" summary="implemented RelationalExpression">
+      <option name="closed" value="true" />
+      <created>1731168515001</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1731168515001</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added try and catch in the ReadFileStatement">
+      <option name="closed" value="true" />
+      <created>1731168822806</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1731168822806</updated>
+    </task>
+    <task id="LOCAL-00033" summary="almost implemented the OpenReadFileStatement , need to fix smth in the ProgramState">
+      <option name="closed" value="true" />
+      <created>1731169628367</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1731169628367</updated>
+    </task>
+    <task id="LOCAL-00034" summary="implemented the OpenReadFileStatement">
+      <option name="closed" value="true" />
+      <created>1731169937546</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1731169937546</updated>
+    </task>
+    <task id="LOCAL-00035" summary="implemented the CloseReadFileStatement">
+      <option name="closed" value="true" />
+      <created>1731170722881</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1731170722881</updated>
+    </task>
+    <task id="LOCAL-00036" summary="moved the commands">
+      <option name="closed" value="true" />
+      <created>1731171428029</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1731171428029</updated>
+    </task>
+    <task id="LOCAL-00037" summary="added try and catch in the text menu">
+      <option name="closed" value="true" />
+      <created>1731171711640</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1731171711640</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,13 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the project" />
-    <MESSAGE value="added some hierarchies of classes" />
-    <MESSAGE value="changed some attributes and added new methods" />
-    <MESSAGE value="added the ADT Stack" />
-    <MESSAGE value="added the full model.Need to fix some functionalities" />
-    <MESSAGE value="fixed MyDictionary functions and implemented the remove" />
-    <MESSAGE value="added two more methods in MyIStack and implemented them in MyStack" />
     <MESSAGE value="added the ArithmeticalOperator and LogicalOperator" />
     <MESSAGE value="added some new exceptions and implemented the execute functions" />
     <MESSAGE value="fixed some details and implemented new functions" />
@@ -421,6 +466,15 @@
     <MESSAGE value="implement deepCopy for statements" />
     <MESSAGE value="syncronized ADTs" />
     <MESSAGE value="writes all programStates also in the file" />
-    <option name="LAST_COMMIT_MESSAGE" value="writes all programStates also in the file" />
+    <MESSAGE value="added some new statements" />
+    <MESSAGE value="added copy function for dictionary" />
+    <MESSAGE value="implemented RelationalExpression" />
+    <MESSAGE value="added try and catch in the ReadFileStatement" />
+    <MESSAGE value="almost implemented the OpenReadFileStatement , need to fix smth in the ProgramState" />
+    <MESSAGE value="implemented the OpenReadFileStatement" />
+    <MESSAGE value="implemented the CloseReadFileStatement" />
+    <MESSAGE value="moved the commands" />
+    <MESSAGE value="added try and catch in the text menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="added try and catch in the text menu" />
   </component>
 </project>
