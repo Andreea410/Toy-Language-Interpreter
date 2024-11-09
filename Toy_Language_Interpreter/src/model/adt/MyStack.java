@@ -6,7 +6,7 @@ import exceptions.EmptyStackException;
 
 public class MyStack<T> implements IMyStack<T>{
 
-    private Stack<T> stack;
+    private final Stack<T> stack;
 
     public MyStack()
     {
