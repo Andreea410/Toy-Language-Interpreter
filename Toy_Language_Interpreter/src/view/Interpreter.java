@@ -1,10 +1,7 @@
 package view;
 
 import controller.Controller;
-import exceptions.ADTException;
 import exceptions.EmptyStackException;
-import exceptions.RepoException;
-import exceptions.StatementException;
 import model.expressions.ArithmeticalExpression;
 import model.expressions.ArithmeticalOperator;
 import model.expressions.ValueExpression;
@@ -25,7 +22,6 @@ import java.io.IOException;
 
 public class Interpreter
 {
-
     public static void main(String[] args) throws EmptyStackException, IOException {
         //int v; v=2; Print(v)
         IStmt statement1 = new CompStmt(new VariablesDeclarationStmt("v", new IntIType()),
@@ -76,8 +72,8 @@ public class Interpreter
                                                                                 new VariableExpression("varf"))))))))));
 
 
-        IRepository repo4 = new Repository("test.in");
-        Controller controller4 = new Controller(repo3,true);
+        IRepository repo4 = new Repository("log4.txt");
+        Controller controller4 = new Controller(repo4,true);
         controller4.addProgram(statement4);
 
         TextMenu menu = new TextMenu();

@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added Interpreter">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="finished A3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ArithmeticalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ArithmeticalExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/LogicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/LogicalExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/AssignStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/AssignStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyDictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/expressions/ArithmeticalExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/expressions/ArithmeticalExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/expressions/LogicalExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/expressions/LogicalExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/AssignStmt.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/AssignStmt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/IfStmt.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/IfStmt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/ReadFileStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/ReadFileStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/states/IExecState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/states/PrgState.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/states/PrgState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/values/IntIValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/values/IntIValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/VariablesDeclarationStmt.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/VariablesDeclarationStmt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,30 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Interpreter.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/to",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Interpreter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/to&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="model.types" />
@@ -155,7 +140,8 @@
       <workItem from="1730721760555" duration="1910000" />
       <workItem from="1730823483753" duration="3284000" />
       <workItem from="1730840996299" duration="1291000" />
-      <workItem from="1731167167489" duration="8170000" />
+      <workItem from="1731167167489" duration="8478000" />
+      <workItem from="1731322608729" duration="1299000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -461,7 +447,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731172630700</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="finished A3">
+      <option name="closed" value="true" />
+      <created>1731176068299</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1731176068299</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added some new exceptions and implemented the execute functions" />
     <MESSAGE value="fixed some details and implemented new functions" />
     <MESSAGE value="added the ExeStack" />
     <MESSAGE value="added the repo" />
@@ -504,6 +497,7 @@
     <MESSAGE value="moved the commands" />
     <MESSAGE value="added try and catch in the text menu" />
     <MESSAGE value="added Interpreter" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Interpreter" />
+    <MESSAGE value="finished A3" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished A3" />
   </component>
 </project>
