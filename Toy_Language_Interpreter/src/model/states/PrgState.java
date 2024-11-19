@@ -15,6 +15,7 @@ public class PrgState {
     protected IMyList<String> output;
     protected IStmt originalProgram;
     private IMyDictionary<StringValue, BufferedReader> fileTable;
+    private IMyHeap heap;
 
     public IMyStack<IStmt> getExeStack() {
         return exeStack;
@@ -41,12 +42,13 @@ public class PrgState {
         exeStack.push(statement);
     }
 
-    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , MyDictionary<StringValue , BufferedReader> fileTable)
+    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , MyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap)
     {
         this.exeStack = e;
         this.symTable = dictionary;
         this.output = list;
         this.fileTable = fileTable;
+        this.heap = heap;
         exeStack.push(InitialStatement);
     }
 
@@ -71,6 +73,16 @@ public class PrgState {
         }
 
         return symbolTableStringBuilder.toString();
+    }
+
+    public IMyHeap getHeap()
+    {
+        return this.heap;
+    }
+
+    public void setHeap(IMyHeap heap)
+    {
+        this.heap = heap;
     }
 
     @Override

@@ -1,12 +1,16 @@
 package controller;
 
 import exceptions.*;
+import model.adt.IMyHeap;
+import model.adt.IMyList;
 import model.adt.IMyStack;
 import model.statements.IStmt;
 import model.states.PrgState;
+import model.values.IValue;
 import repository.IRepository;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Controller
@@ -55,5 +59,10 @@ public class Controller
     public IRepository getRepository()
     {
         return  this.repository;
+    }
+
+    private Map<Integer, IValue> unsafeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap)
+    {
+        return heap.getMap()
     }
 }
