@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="finished A3 with some modifications">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="seminar 8">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapWriteStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapAllocationStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapAllocationStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/RefValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/RefValue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -145,6 +148,9 @@
       <workItem from="1731519234765" duration="194000" />
       <workItem from="1732032801404" duration="142000" />
       <workItem from="1732033450485" duration="88000" />
+      <workItem from="1732034223739" duration="3332000" />
+      <workItem from="1732200034116" duration="1207000" />
+      <workItem from="1732374105203" duration="3040000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -474,7 +480,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731324222751</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="seminar 8">
+      <option name="closed" value="true" />
+      <created>1732037325948</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1732037325948</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the ExeStack" />
     <MESSAGE value="added the repo" />
     <MESSAGE value="added the controller" />
     <MESSAGE value="." />
@@ -517,6 +530,7 @@
     <MESSAGE value="added Interpreter" />
     <MESSAGE value="finished A3" />
     <MESSAGE value="finished A3 with some modifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished A3 with some modifications" />
+    <MESSAGE value="seminar 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="seminar 8" />
   </component>
 </project>

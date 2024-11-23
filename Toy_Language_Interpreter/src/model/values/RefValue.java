@@ -3,8 +3,8 @@ import model.types.IType;
 import model.types.RefType;
 
 public class RefValue implements IValue{
-    int address;
-    IType locationType;
+    private final int address;
+    private final IType locationType;
 
     public RefValue(int address , IType locationType)
     {
@@ -36,7 +36,7 @@ public class RefValue implements IValue{
     @Override
     public String toString()
     {
-
+        return String.format("(%d %s)",address,locationType);
     }
 
 }
