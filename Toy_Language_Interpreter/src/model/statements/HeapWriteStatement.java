@@ -30,12 +30,12 @@ public class HeapWriteStatement implements IStmt{
         IValue evaluated = expression.eval(prgState.getSymTable(), prgState.getHeap());
         if(!evaluated.getType().equals(referenceValue.getLocationType()))
             throw new StatementException(String.format("Heap Error: %s is not of type %s.",evaluated,referenceValue.getLocationType()));
-        prgState.getHeap().referenceValue.getAddress(),evaluated);
-        return null;
+        prgState.getHeap().update(referenceValue.getAddress(),evaluated);
+        return prgState;
     }
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new HeapWriteStatement(this.expression.deepCopy() , this.variable);
     }
 }

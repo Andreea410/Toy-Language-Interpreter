@@ -4,10 +4,10 @@ import java.util.Map;
 
 public interface IMyHeap
 {
-    Integer getFreeValue();
+    Integer getFirstFree();
     public void update(Integer position , IValue value);
-    public IValue getValue(int key);
-    public void set(int key , IValue value);
+    public IValue getValue(Integer key);
+    public Integer add(IValue value);
     Map<Integer , IValue> getMap();
-    public boolean containsKey(int key);
+    public boolean containsKey(Integer key);
 }
