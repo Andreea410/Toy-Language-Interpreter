@@ -10,6 +10,7 @@ import model.values.IValue;
 import repository.IRepository;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -61,8 +62,10 @@ public class Controller
         return  this.repository;
     }
 
-    private Map<Integer, IValue> unsafeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap)
+    private Map<Integer, IValue> unsafeGarbageCollector(IMyList<Integer> symTableAddr, Map<Integer,IValue> heap)
     {
-        return heap.getMap()
+        HashMap<Integer,IValue> newHeap = new HashMap<>();
+
+        for(IValue val: symTableAddr)
     }
 }
