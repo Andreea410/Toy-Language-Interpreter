@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the heap statements.They need some modifications">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="finished HeapWriteStatement">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapWriteStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapWriteStatement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +148,7 @@
       <workItem from="1732033450485" duration="88000" />
       <workItem from="1732034223739" duration="3332000" />
       <workItem from="1732200034116" duration="1207000" />
-      <workItem from="1732374105203" duration="3747000" />
+      <workItem from="1732374105203" duration="4325000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -492,7 +494,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732377341351</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="finished HeapWriteStatement">
+      <option name="closed" value="true" />
+      <created>1732378609080</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1732378609080</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the controller" />
     <MESSAGE value="." />
     <MESSAGE value="added all the functionalities" />
     <MESSAGE value="added the file Repository class" />
@@ -535,6 +544,7 @@
     <MESSAGE value="finished A3 with some modifications" />
     <MESSAGE value="seminar 8" />
     <MESSAGE value="added the heap statements.They need some modifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the heap statements.They need some modifications" />
+    <MESSAGE value="finished HeapWriteStatement" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished HeapWriteStatement" />
   </component>
 </project>
