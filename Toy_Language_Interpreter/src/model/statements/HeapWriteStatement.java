@@ -38,4 +38,9 @@ public class HeapWriteStatement implements IStmt{
     public IStmt deepCopy() {
         return new HeapWriteStatement(this.expression.deepCopy() , this.variable);
     }
+
+    @Override
+    public String toString() {
+        return String.format("WriteHeap(%s, %s)", variable, expression);
+    }
 }

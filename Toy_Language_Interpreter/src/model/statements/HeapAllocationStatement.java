@@ -47,4 +47,10 @@ public class HeapAllocationStatement implements IStmt
     public IStmt deepCopy() {
         return new HeapAllocationStatement(this.expression.deepCopy() , this.var);
     }
+
+    @Override
+    public String toString()
+    {
+        return String.format("(%s %s)",var,expression);
+    }
 }

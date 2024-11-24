@@ -29,4 +29,9 @@ public class HeapReadExpression implements IExp
     public IExp deepCopy() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return String.format("HeapRead(%s)", expression);
+    }
 }
