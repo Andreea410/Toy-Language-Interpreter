@@ -1,0 +1,32 @@
+EXE_STACK
+My stack contains : (Ref(int) v;(model.statements.HeapAllocationStatement@3d646c37;(Ref(Ref(int)) a;(model.statements.HeapAllocationStatement@41cf53f9;(print(v);print(a))))))
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.HeapAllocationStatement@3d646c37;(Ref(Ref(int)) a;(model.statements.HeapAllocationStatement@41cf53f9;(print(v);print(a)))))
+Ref(int) v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.HeapAllocationStatement@3d646c37;(Ref(Ref(int)) a;(model.statements.HeapAllocationStatement@41cf53f9;(print(v);print(a)))))
+Ref(int) v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
