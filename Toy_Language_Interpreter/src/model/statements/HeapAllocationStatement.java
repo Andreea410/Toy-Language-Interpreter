@@ -38,7 +38,7 @@ public class HeapAllocationStatement implements IStmt
         if(!variableValue.getType().equals(value.getType()))
             throw new StatementException("Wrong type for expression");
 
-        int address = prgState.getHeap().allocate(value);
+        int address = prgState.getHeap().add(value);
         prgState.getSymTable().insert(var ,new RefValue(address,value.getType()));
         return prgState;
     }

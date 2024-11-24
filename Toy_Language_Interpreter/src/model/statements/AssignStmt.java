@@ -28,7 +28,7 @@ public class AssignStmt implements IStmt{
         if(!prgState.getSymTable().contains(this.variableName))
             throw new StatementException("Variable was not found");
         IValue value = prgState.getSymTable().getValue(this.variableName);
-        IValue evalValue = this.expression.eval(prgState.getSymTable());
+        IValue evalValue = this.expression.eval(prgState.getSymTable(), prgState.getHeap());
 
         if(!value.getType().equals(evalValue.getType()))
             throw new StatementException("Value type mismatch");

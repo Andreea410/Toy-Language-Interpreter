@@ -1,6 +1,7 @@
 package model.expressions;
 
 import model.adt.IMyDictionary;
+import model.adt.IMyHeap;
 import model.types.IntIType;
 import model.values.IValue;
 import model.values.IntIValue;
@@ -37,10 +38,10 @@ public class ArithmeticalExpression implements IExp {
     }
 
     @Override
-    public IValue eval(IMyDictionary<String , IValue> symTbl) throws ADTException, ExpressionException
+    public IValue eval(IMyDictionary<String , IValue> symTbl, IMyHeap heap) throws ADTException, ExpressionException
     {
-        IValue valueLeft =left.eval(symTbl);
-        IValue valueRight = right.eval(symTbl);
+        IValue valueLeft =left.eval(symTbl,heap);
+        IValue valueRight = right.eval(symTbl,heap);
         if(!valueRight.getType().equals(new IntIType()))
             throw new ExpressionException("Second value is not int ");
         if(!valueLeft.getType().equals(new IntIType()))

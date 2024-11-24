@@ -21,7 +21,7 @@ public class PrintStm implements IStmt
     @Override
     public PrgState execute(PrgState prgState)
     {
-        IValue result =  expression.eval(prgState.getSymTable());
+        IValue result =  expression.eval(prgState.getSymTable(), prgState.getHeap());
         prgState.getOutput().add(result.toString());
         return prgState;
     }

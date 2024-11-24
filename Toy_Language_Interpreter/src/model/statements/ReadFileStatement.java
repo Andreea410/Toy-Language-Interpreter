@@ -35,7 +35,7 @@ public class ReadFileStatement implements IStmt
         {
             throw new StatementException("The type is incorrect");
         }
-        var res = expression.eval(table);
+        var res = expression.eval(table, prgState.getHeap());
         if(!res.getType().equals(new StringType()))
         {
             throw new StatementException("The result is not a String type");

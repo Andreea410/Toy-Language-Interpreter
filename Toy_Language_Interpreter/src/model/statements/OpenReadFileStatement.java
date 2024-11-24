@@ -24,7 +24,7 @@ public class OpenReadFileStatement implements IStmt {
     @Override
     public PrgState execute(PrgState prgState) throws StatementException, ADTException, IOException {
         var table = prgState.getSymTable();
-        var res = expression.eval(table);
+        var res = expression.eval(table,prgState.getHeap());
 
         if(!res.getType().equals(new StringType()))
             throw new StatementException("The type is incorrect");

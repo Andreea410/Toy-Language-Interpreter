@@ -9,6 +9,7 @@ import model.expressions.VariableExpression;
 import model.statements.*;
 import model.types.BoolIType;
 import model.types.IntIType;
+import model.types.RefType;
 import model.types.StringType;
 import model.values.BoolValue;
 import model.values.IntIValue;
@@ -75,13 +76,26 @@ public class Interpreter
         IRepository repo4 = new Repository("log4.txt");
         Controller controller4 = new Controller(repo4,true);
         controller4.addProgram(statement4);
+        // Ref int v; new(v,20); Ref Ref int a; new(a,v); print(v); print(a) //
+        IStmt statement5 = new CompStmt(new VariablesDeclarationStmt("v", new RefType(new IntIType())),
+                new CompStmt(new HeapAllocationStatement( new ValueExpression(new IntIValue(20)),"v"),
+                        new CompStmt(new VariablesDeclarationStmt("a", new RefType(new RefType(new IntIType()))),
+                                new CompStmt(new HeapAllocationStatement( new VariableExpression("v"),"a"),
+                                        new CompStmt(new PrintStm(new VariableExpression("v")),
+                                                new PrintStm(new VariableExpression("a")))))));
+
+        IRepository repo5 = new Repository("log5.txt");
+        Controller controller5 = new Controller(repo5, true);
+        controller5.addProgram(statement5);
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new RunExampleCommand("1",statement1.toString() , controller1));
         menu.addCommand(new RunExampleCommand("2",statement2.toString() , controller2));
         menu.addCommand(new RunExampleCommand("3",statement3.toString() , controller3));
         menu.addCommand(new RunExampleCommand("4",statement4.toString() , controller4));
-        menu.addCommand(new ExitCommand("5" , "Exit"));
+        menu.addCommand(new RunExampleCommand("5",statement5.toString() , controller5));
+
+        menu.addCommand(new ExitCommand("6" , "Exit"));
 
         menu.show();
 

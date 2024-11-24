@@ -2,6 +2,7 @@ package model.expressions;
 import exceptions.ADTException;
 import exceptions.ExpressionException;
 import model.adt.IMyDictionary;
+import model.adt.IMyHeap;
 import model.types.BoolIType;
 import model.values.BoolValue;
 import model.values.IValue;
@@ -19,10 +20,10 @@ public class LogicalExpression implements IExp{
     }
 
     @Override
-    public IValue eval(IMyDictionary<String, IValue> symTable) throws ADTException, ExpressionException
+    public IValue eval(IMyDictionary<String, IValue> symTable, IMyHeap heap) throws ADTException, ExpressionException
     {
-       IValue evaluatedExpressionLeft = left.eval(symTable);
-       IValue evaluatedExpressionRight = right.eval(symTable);
+       IValue evaluatedExpressionLeft = left.eval(symTable,heap);
+       IValue evaluatedExpressionRight = right.eval(symTable,heap);
        if(!evaluatedExpressionLeft.getType().equals(new BoolIType()))
        {
            throw new ExpressionException("Left expression is not of type BoolType");

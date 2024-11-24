@@ -23,7 +23,7 @@ public class CloseReadFileStatement implements IStmt
     public PrgState execute(PrgState prgState)
     {
         var table = prgState.getSymTable();
-        IValue value = expression.eval(table);
+        IValue value = expression.eval(table, prgState.getHeap());
 
         if(!value.getType().equals(new StringType()))
             throw new StatementException("It is not a String type");
