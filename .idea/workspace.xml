@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="started unsafeGarbageCollector">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the function setContent to the heap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyDictionary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,7 @@
       <workItem from="1732200034116" duration="1207000" />
       <workItem from="1732374105203" duration="9135000" />
       <workItem from="1732388137896" duration="2113000" />
-      <workItem from="1732445808767" duration="2937000" />
+      <workItem from="1732445808767" duration="3779000" />
     </task>
     <task id="LOCAL-00001" summary="added the project">
       <option name="closed" value="true" />
@@ -521,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732386339308</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="added the function setContent to the heap">
+      <option name="closed" value="true" />
+      <created>1732452345395</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1732452345395</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +546,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the file Repository class" />
     <MESSAGE value="added a new exception and the logPrgStateExec function" />
     <MESSAGE value="deleted TextRepository and added the function in the Repo.Added a new function in Dictonary to get the keys and added the ReadFileStatement" />
     <MESSAGE value="fixed ReadFileStatement" />
@@ -564,6 +570,7 @@
     <MESSAGE value="finished HeapWriteStatement" />
     <MESSAGE value="finished WhileStatement" />
     <MESSAGE value="started unsafeGarbageCollector" />
-    <option name="LAST_COMMIT_MESSAGE" value="started unsafeGarbageCollector" />
+    <MESSAGE value="added the function setContent to the heap" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the function setContent to the heap" />
   </component>
 </project>

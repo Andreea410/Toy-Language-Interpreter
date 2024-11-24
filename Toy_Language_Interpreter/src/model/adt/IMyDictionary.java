@@ -12,4 +12,5 @@ public interface IMyDictionary<K,V>
     boolean contains(K key);
     Set<K> getKeys();
     IMyDictionary<K,V> copy();
+    Map<K,V> getContent();
 }

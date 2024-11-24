@@ -5,6 +5,7 @@ import exceptions.EmptyStackException;
 import model.adt.IMyHeap;
 import model.adt.IMyList;
 import model.adt.IMyStack;
+import model.adt.MyList;
 import model.statements.IStmt;
 import model.states.PrgState;
 import model.values.IValue;
@@ -47,7 +48,9 @@ public class Controller
         while (!currentProgramState.getExeStack().isEmpty()) {
                 executeOneStep(currentProgramState);
                 repository.logPrgStateExec();
-                currentProgramState.getHeap().setC
+                IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
+                Map<Integer, IValue> newHeapContent = unsafeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
+                currentProgramState.getHeap().setContent(newHeapContent);
         }
     }
 
@@ -72,14 +75,16 @@ public class Controller
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    private List<Integer> getAddrFromSymTable(Collection<IValue> symTableValues)
-    {
-        return symTableValues.stream().filter(v-> v instanceof RefValue).map(v->
-        {
-            RefValue v1 = (RefValue) v;
-            return v1.getAddress();
-        }).collect(Collectors.toList());
+    private IMyList<Integer> getAddrFromSymTable(Collection<IValue> symTableValues) {
+        IMyList<Integer> addressList = new MyList<>();
+        for (IValue value : symTableValues) {
+            if (value instanceof RefValue) {
+                addressList.add(((RefValue) value).getAddress());
+            }
+        }
+        return addressList;
     }
+
 
 
 }

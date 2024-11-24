@@ -78,4 +78,8 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
         return newDictionary;
     }
 
+    public Map<K,V> getContent()
+    {
+        return this.map;
+    }
 }
