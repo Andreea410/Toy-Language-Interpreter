@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="fixed the controller">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the heap in every eval function">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/HeapReadExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ArithmeticalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ArithmeticalExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/LogicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/LogicalExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/RelationalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/RelationalExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ValueExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ValueExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/AssignStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/AssignStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/CloseReadFileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/CloseReadFileStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapAllocationStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapAllocationStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/OpenReadFileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/OpenReadFileStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,15 +149,8 @@
       <workItem from="1732200034116" duration="1207000" />
       <workItem from="1732374105203" duration="9135000" />
       <workItem from="1732388137896" duration="2113000" />
-      <workItem from="1732445808767" duration="4630000" />
-    </task>
-    <task id="LOCAL-00001" summary="added the project">
-      <option name="closed" value="true" />
-      <created>1728985792694</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1728985792694</updated>
+      <workItem from="1732445808767" duration="4886000" />
+      <workItem from="1732459871597" duration="365000" />
     </task>
     <task id="LOCAL-00002" summary="added some hierarchies of classes">
       <option name="closed" value="true" />
@@ -544,7 +528,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732453449262</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="added the heap in every eval function">
+      <option name="closed" value="true" />
+      <created>1732454346854</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1732454346854</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added the heap in every eval function">
+      <option name="closed" value="true" />
+      <created>1732454370383</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1732454370383</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +562,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleted TextRepository and added the function in the Repo.Added a new function in Dictonary to get the keys and added the ReadFileStatement" />
     <MESSAGE value="fixed ReadFileStatement" />
     <MESSAGE value="implement deepCopy for expressions" />
     <MESSAGE value="implement deepCopy for statements" />
@@ -587,6 +586,7 @@
     <MESSAGE value="started unsafeGarbageCollector" />
     <MESSAGE value="added the function setContent to the heap" />
     <MESSAGE value="fixed the controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the controller" />
+    <MESSAGE value="added the heap in every eval function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the heap in every eval function" />
   </component>
 </project>

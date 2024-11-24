@@ -76,13 +76,17 @@ public class Interpreter
         IRepository repo4 = new Repository("log4.txt");
         Controller controller4 = new Controller(repo4,true);
         controller4.addProgram(statement4);
-        // Ref int v; new(v,20); Ref Ref int a; new(a,v); print(v); print(a) //
+        /* Ref int v; new(v,20); Ref Ref int a; new(a,v); new(v,30); print(rH(rH(a))) */
         IStmt statement5 = new CompStmt(new VariablesDeclarationStmt("v", new RefType(new IntIType())),
-                new CompStmt(new HeapAllocationStatement( new ValueExpression(new IntIValue(20)),"v"),
+                new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(20)),"v"),
                         new CompStmt(new VariablesDeclarationStmt("a", new RefType(new RefType(new IntIType()))),
                                 new CompStmt(new HeapAllocationStatement( new VariableExpression("v"),"a"),
-                                        new CompStmt(new PrintStm(new VariableExpression("v")),
-                                                new PrintStm(new VariableExpression("a")))))));
+                                        new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(30)),"v"),
+                                                new PrintStm(new He(new HeapReadExpression(new VariableExpression("a")))))))));
+
+        IRepository repo10 = new Repository("log10.txt");
+        Controller controller10 = new Controller(repo10, true);
+        controller10.addProgram(ex10);
 
         IRepository repo5 = new Repository("log5.txt");
         Controller controller5 = new Controller(repo5, true);
