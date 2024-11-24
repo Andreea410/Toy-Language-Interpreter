@@ -73,4 +73,10 @@ public class ArithmeticalExpression implements IExp {
         return new ArithmeticalExpression(this.left.deepCopy() , this.operator,this.right.deepCopy());
     }
 
+    @Override
+    public String toString()
+    {
+        return this.left + " "+ operator.toString() +" "+ this.right;
+    }
+
 }

@@ -39,4 +39,9 @@ public class WhileStatement implements IStmt{
     public IStmt deepCopy() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return String.format("While(%s) {%s}", expression, statement);
+    }
 }

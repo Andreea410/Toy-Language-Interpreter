@@ -73,18 +73,67 @@ public class Interpreter
         IRepository repo4 = new Repository("log4.txt");
         Controller controller4 = new Controller(repo4,true);
         controller4.addProgram(statement4);
-        /* Ref int v; new(v,20); Ref Ref int a; new(a,v); new(v,30); print(rH(rH(a))) */
+
+        /* Ref int v; new(v,20); Ref Ref int a; new(a,v); print(v); print(a) */
         IStmt statement5 = new CompStmt(new VariablesDeclarationStmt("v", new RefType(new IntIType())),
+                new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(20)),"v"),
+                        new CompStmt(new VariablesDeclarationStmt("a", new RefType(new RefType(new IntIType()))),
+                                new CompStmt(new HeapAllocationStatement(new VariableExpression("v"),"a"),
+                                        new CompStmt(new PrintStm(new VariableExpression("v")), new PrintStm(new VariableExpression("a")))))));
+
+        IRepository repo5 = new Repository("log5.txt");
+        Controller controller5 = new Controller(repo5, true);
+        controller5.addProgram(statement5);
+
+        /* Ref int v; new(v,20); Ref Ref int a; new(a,v); print(rH(v)); print(rH(rH(a))+5) */
+        IStmt statement6= new CompStmt(new VariablesDeclarationStmt("v", new RefType(new IntIType())),
+                new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(20)),"v"),
+                        new CompStmt(new VariablesDeclarationStmt("a", new RefType(new RefType(new IntIType()))),
+                                new CompStmt(new HeapAllocationStatement(new VariableExpression("v"),"a"),
+                                        new CompStmt(new PrintStm(new HeapReadExpression(new VariableExpression("v"))),
+                                                new PrintStm(new ArithmeticalExpression(new HeapReadExpression(new HeapReadExpression(new VariableExpression("a"))),
+                                                        ArithmeticalOperator.ADD,new ValueExpression(new IntIValue(5)) )))))));
+
+        IRepository repo6 = new Repository("log6.txt");
+        Controller controller6 = new Controller(repo6, true);
+        controller6.addProgram(statement6);
+
+        /* Ref int v; new(v,20); print(rH(v)); wH(v,30); print(rH(v)+5); */
+        IStmt statement7= new CompStmt(new VariablesDeclarationStmt("v", new RefType(new IntIType())),
+                new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(20)),"v"),
+                        new CompStmt( new PrintStm(new HeapReadExpression(new VariableExpression("v"))),
+                                new CompStmt(new HeapWriteStatement(new ValueExpression(new IntIValue(30)),"v"),
+                                        new PrintStm(new ArithmeticalExpression( new HeapReadExpression(new VariableExpression("v")), ArithmeticalOperator.ADD,new ValueExpression(new IntIValue(5))))))));
+
+        IRepository repo7 = new Repository("log7.txt");
+        Controller controller7 = new Controller(repo7, true);
+        controller7.addProgram(statement7);
+
+        /* Ref int v; new(v,20); Ref Ref int a; new(a,v); new(v,30); print(rH(rH(a))) */
+        IStmt statement8 = new CompStmt(new VariablesDeclarationStmt("v", new RefType(new IntIType())),
                 new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(20)),"v"),
                         new CompStmt(new VariablesDeclarationStmt("a", new RefType(new RefType(new IntIType()))),
                                 new CompStmt(new HeapAllocationStatement( new VariableExpression("v"),"a"),
                                         new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(30)),"v"),
                                                 new PrintStm(new HeapReadExpression(new HeapReadExpression(new VariableExpression("a")))))))));
 
-        IRepository repo5 = new Repository("log5.txt");
-        Controller controller5 = new Controller(repo5, true);
-        controller5.addProgram(statement5);
+        IRepository repo8 = new Repository("log8.txt");
+        Controller controller8 = new Controller(repo8, true);
+        controller8.addProgram(statement8);
 
+        //int v; v=4; (while (v>0) print(v);v=v-1);print(v)
+        IStmt statement9 = new CompStmt(new VariablesDeclarationStmt("v", new IntIType()),
+                new CompStmt(new AssignStmt("v", new ValueExpression(new IntIValue(4))),
+                        new CompStmt(new WhileStatement(new RelationalExpression(new VariableExpression("v"),">",
+                                new ValueExpression(new IntIValue(0))),
+                                new CompStmt(new PrintStm(new VariableExpression("v")),
+                                        new AssignStmt("v", new ArithmeticalExpression(new VariableExpression("v"),
+                                                ArithmeticalOperator.SUBTRACT, new ValueExpression(new IntIValue(1)))))),
+                        new PrintStm(new VariableExpression("v")))));
+
+        IRepository repo9 = new Repository("log9.txt");
+        Controller controller9 = new Controller(repo9, true);
+        controller9.addProgram(statement9);
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new RunExampleCommand("1",statement1.toString() , controller1));
@@ -92,8 +141,11 @@ public class Interpreter
         menu.addCommand(new RunExampleCommand("3",statement3.toString() , controller3));
         menu.addCommand(new RunExampleCommand("4",statement4.toString() , controller4));
         menu.addCommand(new RunExampleCommand("5",statement5.toString() , controller5));
-
-        menu.addCommand(new ExitCommand("6" , "Exit"));
+        menu.addCommand(new RunExampleCommand("6",statement6.toString() , controller6));
+        menu.addCommand(new RunExampleCommand("7",statement7.toString() , controller7));
+        menu.addCommand(new RunExampleCommand("8",statement8.toString() , controller8));
+        menu.addCommand(new RunExampleCommand("9",statement9.toString() , controller9));
+        menu.addCommand(new ExitCommand("10" , "Exit"));
 
         menu.show();
 

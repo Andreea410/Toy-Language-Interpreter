@@ -62,4 +62,10 @@ public class ReadFileStatement implements IStmt
     public IStmt deepCopy() {
         return new ReadFileStatement(this.expression.deepCopy() , this.variableName );
     }
+
+    @Override
+    public String toString() {
+        return String.format("ReadFile(%s)", expression);
+    }
+
 }

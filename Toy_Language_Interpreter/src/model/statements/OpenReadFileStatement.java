@@ -53,5 +53,10 @@ public class OpenReadFileStatement implements IStmt {
         return new OpenReadFileStatement(expression);
     }
 
+    @Override
+    public String toString() {
+        return String.format("OpenReadFile(%s)", expression);
+    }
+
 
 }
