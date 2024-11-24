@@ -30,3 +30,35 @@ My list contains
 FILE_TABLE
 
 
+EXE_STACK
+My stack contains : (Ref(int) v;(model.statements.HeapAllocationStatement@41cf53f9;(Ref(Ref(int)) a;(model.statements.HeapAllocationStatement@5a10411;(model.statements.HeapAllocationStatement@2ef1e4fa;print(model.expressions.HeapReadExpression@306a30c7))))))
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.HeapAllocationStatement@41cf53f9;(Ref(Ref(int)) a;(model.statements.HeapAllocationStatement@5a10411;(model.statements.HeapAllocationStatement@2ef1e4fa;print(model.expressions.HeapReadExpression@306a30c7)))))
+Ref(int) v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.HeapAllocationStatement@41cf53f9;(Ref(Ref(int)) a;(model.statements.HeapAllocationStatement@5a10411;(model.statements.HeapAllocationStatement@2ef1e4fa;print(model.expressions.HeapReadExpression@306a30c7)))))
+Ref(int) v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+

@@ -2,10 +2,7 @@ package view;
 
 import controller.Controller;
 import exceptions.EmptyStackException;
-import model.expressions.ArithmeticalExpression;
-import model.expressions.ArithmeticalOperator;
-import model.expressions.ValueExpression;
-import model.expressions.VariableExpression;
+import model.expressions.*;
 import model.statements.*;
 import model.types.BoolIType;
 import model.types.IntIType;
@@ -82,15 +79,12 @@ public class Interpreter
                         new CompStmt(new VariablesDeclarationStmt("a", new RefType(new RefType(new IntIType()))),
                                 new CompStmt(new HeapAllocationStatement( new VariableExpression("v"),"a"),
                                         new CompStmt(new HeapAllocationStatement(new ValueExpression(new IntIValue(30)),"v"),
-                                                new PrintStm(new He(new HeapReadExpression(new VariableExpression("a")))))))));
-
-        IRepository repo10 = new Repository("log10.txt");
-        Controller controller10 = new Controller(repo10, true);
-        controller10.addProgram(ex10);
+                                                new PrintStm(new HeapReadExpression(new HeapReadExpression(new VariableExpression("a")))))))));
 
         IRepository repo5 = new Repository("log5.txt");
         Controller controller5 = new Controller(repo5, true);
         controller5.addProgram(statement5);
+
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new RunExampleCommand("1",statement1.toString() , controller1));
