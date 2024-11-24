@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyHeap implements IMyHeap{
-    private final Map<Integer,IValue> map;
+    private Map<Integer,IValue> map;
     private Integer firstFree;
 
     public MyHeap(Map<Integer,IValue> map)
@@ -49,11 +49,30 @@ public class MyHeap implements IMyHeap{
     }
     @Override
     public Map<Integer, IValue> getMap() {
-        return map;
+        return this.map;
     }
 
     @Override
     public boolean containsKey(Integer key) {
         return map.containsKey(key);
+    }
+
+    public Integer getKey(IValue value)
+    {
+        for (Integer key: this.map.keySet())
+        {
+            if (map.get(key)==value)
+                return key;
+        }
+        return null;
+
+    }
+
+    @Override
+    public void setContent(Map<Integer,IValue> newMap)
+    {
+        this.map.clear();
+        for(Integer i : newMap.keySet())
+            this.map.put(i, newMap.get(i));
     }
 }

@@ -10,4 +10,5 @@ public interface IMyHeap
     public Integer add(IValue value);
     Map<Integer , IValue> getMap();
     public boolean containsKey(Integer key);
+    public void setContent(Map<Integer,IValue> newMap);
 }
