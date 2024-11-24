@@ -46,11 +46,12 @@ public class Controller
         repository.logPrgStateExec();
 
         while (!currentProgramState.getExeStack().isEmpty()) {
-                executeOneStep(currentProgramState);
-                repository.logPrgStateExec();
-                IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
-                Map<Integer, IValue> newHeapContent = unsafeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
-                currentProgramState.getHeap().setContent(newHeapContent);
+            IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
+            Map<Integer, IValue> newHeapContent = unsafeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
+            currentProgramState.getHeap().setContent(newHeapContent);
+            executeOneStep(currentProgramState);
+            repository.logPrgStateExec();
+
         }
     }
 
@@ -70,9 +71,40 @@ public class Controller
 
     private Map<Integer, IValue> unsafeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap)
     {
-        return heap.getMap().entrySet().stream()
-                .filter(e -> symTableAddr.getList().contains(e.getKey()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        IMyList<Integer> addresses = new MyList<>(symTableAddr.getList());
+        boolean newAddressesFound;
+        do {
+            newAddressesFound = false;
+            IMyList<Integer> newAddresses = getAddrFromSymTable(getReferencedValues(addresses,heap));
+
+            for(Integer address: newAddresses.getList())
+                if(!addresses.getList().contains(address))
+                {
+                    addresses.add(address);
+                    newAddressesFound = true;
+                }
+        }while (newAddressesFound);
+
+        Map<Integer, IValue> result = new HashMap<>();
+        for (Map.Entry<Integer, IValue> entry : heap.getMap().entrySet()) {
+            if (addresses.getList().contains(entry.getKey())) {
+                result.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return result;
+    }
+
+
+
+    private List<IValue> getReferencedValues(IMyList<Integer> addresses, IMyHeap heap) {
+        List<IValue> referencedValues = new ArrayList<>();
+        for (Integer address : addresses.getList()) {
+            IValue value = heap.getValue(address);
+            if (value != null) {
+                referencedValues.add(value);
+            }
+        }
+        return referencedValues;
     }
 
     private IMyList<Integer> getAddrFromSymTable(Collection<IValue> symTableValues) {

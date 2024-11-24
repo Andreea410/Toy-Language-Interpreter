@@ -39,6 +39,7 @@ public class PrgState {
         this.symTable = new MyDictionary<>();
         this.output = new MyList<>();
         this.fileTable = new MyDictionary<>();
+        this.heap = new MyHeap();
         exeStack.push(statement);
     }
 

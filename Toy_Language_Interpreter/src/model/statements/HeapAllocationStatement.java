@@ -30,12 +30,12 @@ public class HeapAllocationStatement implements IStmt
         if(!prgState.getSymTable().contains(var))
             throw new StatementException("Variable was not found");
 
-        IValue variableValue = prgState.getSymTable().getValue(var);
         if (prgState.getSymTable().getValue(var) instanceof RefType)
             throw new StatementException("Variables must be RefType");
 
         IValue value = expression.eval(prgState.getSymTable(), prgState.getHeap());
-        if(!variableValue.getType().equals(value.getType()))
+        IType locationType = ((RefValue)prgState.getSymTable().getValue(var)).getLocationType();
+        if(!locationType.equals(value.getType()))
             throw new StatementException("Wrong type for expression");
 
         int address = prgState.getHeap().add(value);

@@ -12,6 +12,11 @@ public class MyList<T> implements IMyList<T>
         this.list = new LinkedList<>();
     }
 
+    public MyList(List<T> newList)
+    {
+        this.list = newList;
+    }
+
     @Override
     public List<T> getAll() {
         return list;
