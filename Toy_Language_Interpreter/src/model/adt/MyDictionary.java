@@ -82,4 +82,10 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
     {
         return this.map;
     }
+
+    @Override
+    public IMyDictionary<K, V> deepCopy() {
+        return new IMyDictionary<K, V>()
+
+    }
 }

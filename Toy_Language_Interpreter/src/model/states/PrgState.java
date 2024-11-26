@@ -7,9 +7,12 @@ import model.values.StringValue;
 import java.io.BufferedReader;
 
 import java.nio.Buffer;
+import java.util.Map;
 
 
 public class PrgState {
+    private final int id;
+    private static int lastIndex;
     protected IMyStack<IStmt> exeStack;
     protected IMyDictionary<String , IValue> symTable;
     protected IMyList<String> output;
@@ -19,6 +22,12 @@ public class PrgState {
 
     public IMyStack<IStmt> getExeStack() {
         return exeStack;
+    }
+
+    private synchronized int getNewId()
+    {
+        lastIndex++;
+        return lastIndex;
     }
 
     public void setExeStack(IMyStack<IStmt> exeStack) {
@@ -41,9 +50,10 @@ public class PrgState {
         this.fileTable = new MyDictionary<>();
         this.heap = new MyHeap();
         exeStack.push(statement);
+        this.id = getNewId();
     }
 
-    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , MyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap)
+    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , MyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap,int id)
     {
         this.exeStack = e;
         this.symTable = dictionary;
@@ -51,6 +61,7 @@ public class PrgState {
         this.fileTable = fileTable;
         this.heap = heap;
         exeStack.push(InitialStatement);
+        this.id = id;
     }
 
     public IMyDictionary<StringValue,BufferedReader> getFileTable()
@@ -86,14 +97,35 @@ public class PrgState {
         this.heap = heap;
     }
 
+    public String HeapToString()
+    {
+        StringBuilder answer = new StringBuilder("");
+            for(Integer key: heap.getMap().keySet()){
+                answer.append(key).append("(").append(heap.getValue(key).getType().toString())
+                        .append(")").append(":-> ").
+                        append(heap.getValue(key).toString()).append("\n");
+            }
+        return answer.toString();
+    }
+
     @Override
     public String toString() {
-        return String.format("EXE_STACK\n%s\nSYM_TABLE\n%s\nOUT\n%s\nFILE_TABLE\n%s\n", exeStack.toString(), symTableToString(), output.toString(), fileTableToString());
+        return String.format("EXE_STACK\n%s\nSYM_TABLE\n%s\nOUT\n%s\nFILE_TABLE\n%s\nHEAP\n%S\n", exeStack.toString(), symTableToString(), output.toString(), fileTableToString(),HeapToString());
     }
 
     public IMyList<String> getOutput()
     {
         return this.output;
+    }
+
+    public boolean isComplete()
+    {
+        return this.exeStack.isEmpty();
+    }
+
+    public boolean executeOneStep()
+    {
+
     }
 
 

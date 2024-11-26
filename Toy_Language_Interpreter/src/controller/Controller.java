@@ -14,17 +14,23 @@ import repository.IRepository;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 public class Controller
 {
     private final IRepository repository;
     private boolean displayFlag;
+    private final ExecutorService executor;
 
-    public Controller(IRepository repo , boolean flag)
+    public Controller(IRepository repo , boolean flag,ExecutorService executor)
     {
         displayFlag =flag;
         this.repository = repo;
+        this.executor = executor;
     }
 
     public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
@@ -53,6 +59,25 @@ public class Controller
             repository.logPrgStateExec();
 
         }
+    }
+
+    public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
+
+        prgStates.forEach(prgState -> repository.logPrgStateExec());
+         List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> (Callable<PrgState>)(() -> {return p.oneStep();})).toList();
+
+         List<PrgState> newPrgStates = executor.invokeAll(callList).stream().map(future->{
+             try
+             {
+                 future.get();
+             } catch (InterruptedException | ExecutionException e) {
+                 throw new ControllerException(e.getMessage());
+             }
+         }).filter(Objects::nonNull).toList();
+         prgStates.addAll(newPrgStates);
+         repository.setPrgList(prgStates);
+         prgStates.forEach(prg);
+
     }
 
     public void displayCurrentState(PrgState prgState) {
@@ -115,6 +140,11 @@ public class Controller
             }
         }
         return addressList;
+    }
+
+    private List<PrgState> removeCompletedPrgStates(List<PrgState> prgStates)
+    {
+        return prgStates.stream().filter(PrgState::isComplete).collect(Collectors.toList());
     }
 
 

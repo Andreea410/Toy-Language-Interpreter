@@ -41,6 +41,6 @@ public class HeapWriteStatement implements IStmt{
 
     @Override
     public String toString() {
-        return String.format("WriteHeap(%s, %s)", variable, expression);
+        return String.format("WriteHeap( %s, %s)", variable, expression);
     }
 }

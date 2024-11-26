@@ -13,4 +13,5 @@ public interface IMyDictionary<K,V>
     Set<K> getKeys();
     IMyDictionary<K,V> copy();
     Map<K,V> getContent();
+    IMyDictionary<K,V> deepCopy();
 }

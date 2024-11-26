@@ -55,4 +55,14 @@ public class Repository implements IRepository
         }
     }
 
+    @Override
+    public List<PrgState> getPrgStatesList() {
+        return this.programs;
+    }
+
+    @Override
+    public void setPrgList(List<PrgState> programStates) {
+        this.programs = programStates;
+    }
+
 }

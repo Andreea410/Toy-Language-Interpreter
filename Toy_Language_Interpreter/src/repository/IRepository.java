@@ -11,5 +11,7 @@ public interface IRepository
     PrgState getCurrentProgram();
     void addProgram(PrgState program);
     public void logPrgStateExec() throws RepoException;
+    List<PrgState> getPrgStatesList();
+    void setPrgList(List<PrgState> programStates);
 
 }
