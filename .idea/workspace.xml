@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="seminar 9">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the new functions in the Repository">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ForkStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ForkStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,15 +156,7 @@
       <workItem from="1732529760705" duration="1823000" />
       <workItem from="1732536222705" duration="2610000" />
       <workItem from="1732638099149" duration="4101000" />
-      <workItem from="1732694799138" duration="770000" />
-    </task>
-    <task id="LOCAL-00008" summary="added the full model.Need to fix some functionalities">
-      <option name="closed" value="true" />
-      <created>1729767792900</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1729767792900</updated>
+      <workItem from="1732694799138" duration="2101000" />
     </task>
     <task id="LOCAL-00009" summary="fixed MyDictionary functions and implemented the remove">
       <option name="closed" value="true" />
@@ -549,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732642111964</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="added the new functions in the Repository">
+      <option name="closed" value="true" />
+      <created>1732696475486</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1732696475486</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added copy function for dictionary" />
     <MESSAGE value="implemented RelationalExpression" />
     <MESSAGE value="added try and catch in the ReadFileStatement" />
     <MESSAGE value="almost implemented the OpenReadFileStatement , need to fix smth in the ProgramState" />
@@ -592,6 +592,7 @@
     <MESSAGE value="Fixed the execute function from the HeapAllocationStatement" />
     <MESSAGE value="finished A4" />
     <MESSAGE value="seminar 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="seminar 9" />
+    <MESSAGE value="added the new functions in the Repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the new functions in the Repository" />
   </component>
 </project>

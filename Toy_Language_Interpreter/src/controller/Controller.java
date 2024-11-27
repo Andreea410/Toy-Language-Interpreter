@@ -63,26 +63,24 @@ public class Controller
 
     public void allStep()
     {
-
+        PrgState programState = repository.ge
     }
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
-
-        prgStates.forEach(prgState -> repository.logPrgStateExec());
-         List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> (Callable<PrgState>)(() -> {return p.oneStep();})).toList();
+        prgStates.forEach(repository::logPrgStateExec);
+        List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> (Callable<PrgState>)(() -> {return p.oneStep();})).toList();
 
          List<PrgState> newPrgStates = executor.invokeAll(callList).stream().map(future->{
              try
              {
                  future.get();
              } catch (InterruptedException | ExecutionException e) {
-                 throw new ControllerException(e.getMessage());
+                 return null;
              }
          }).filter(Objects::nonNull).toList();
          prgStates.addAll(newPrgStates);
+         prgStates.forEach(repository::logPrgStateExec);
          repository.setPrgList(prgStates);
-         prgStates.forEach(prg);
-
     }
 
     public void displayCurrentState(PrgState prgState) {
@@ -149,7 +147,7 @@ public class Controller
 
     private List<PrgState> removeCompletedPrgStates(List<PrgState> prgStates)
     {
-        return prgStates.stream().filter(PrgState::isComplete).collect(Collectors.toList());
+        return prgStates.stream().filter(PrgState::isNotComplete).collect(Collectors.toList());
     }
 
 

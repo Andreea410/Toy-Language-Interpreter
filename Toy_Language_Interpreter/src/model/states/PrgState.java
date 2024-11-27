@@ -1,4 +1,7 @@
 package model.states;
+import exceptions.ADTException;
+import exceptions.EmptyStackException;
+import exceptions.StatementException;
 import model.adt.*;
 import model.statements.IStmt;
 import model.values.IValue;
@@ -6,6 +9,7 @@ import model.values.StringValue;
 
 import java.io.BufferedReader;
 
+import java.io.IOException;
 import java.nio.Buffer;
 import java.util.Map;
 
@@ -17,7 +21,7 @@ public class PrgState {
     protected IMyDictionary<String , IValue> symTable;
     protected IMyList<String> output;
     protected IStmt originalProgram;
-    private IMyDictionary<StringValue, BufferedReader> fileTable;
+    private final IMyDictionary<StringValue, BufferedReader> fileTable;
     private IMyHeap heap;
 
     public IMyStack<IStmt> getExeStack() {
@@ -53,7 +57,7 @@ public class PrgState {
         this.id = getNewId();
     }
 
-    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , MyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap,int id)
+    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , IMyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap,int id)
     {
         this.exeStack = e;
         this.symTable = dictionary;
@@ -118,14 +122,22 @@ public class PrgState {
         return this.output;
     }
 
-    public boolean isComplete()
+    public boolean isNotComplete()
     {
-        return this.exeStack.isEmpty();
+        return ! this.exeStack.isEmpty();
     }
 
-    public boolean executeOneStep()
+    public boolean executeOneStep() throws ADTException
     {
-
+        try{
+            IStmt currentStatement = exeStack.pop();
+            currentStatement.execute(this);
+        }
+        catch(EmptyStackException | StatementException | IOException |ADTException e)
+        {
+            return false;
+        }
+        return false;
     }
 
 
