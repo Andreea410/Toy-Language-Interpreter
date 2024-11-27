@@ -29,34 +29,6 @@ public class Controller
         this.repository = repo;
     }
 
-    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
-        IMyStack<IStmt> executionStack = prgState.getExeStack();
-        if(executionStack.isEmpty())
-            throw new EmptyStackException("The execution stack is empty");
-
-        IStmt currentStatement = executionStack.pop();
-        currentStatement.execute(prgState);
-        if (displayFlag)
-            displayCurrentState(prgState);
-        repository.logPrgStateExec(prgState);
-        return prgState;
-    }
-
-    public void executeAllSteps() throws StatementException, ExpressionException, ADTException, IOException, EmptyStackException {
-        PrgState currentProgramState = repository.getCurrentProgram();
-        displayCurrentState(currentProgramState);
-        repository.logPrgStateExec(currentProgramState);
-
-        while (!currentProgramState.getExeStack().isEmpty()) {
-            IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
-            Map<Integer, IValue> newHeapContent = safeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
-            currentProgramState.getHeap().setContent(newHeapContent);
-            executeOneStep(currentProgramState);
-            repository.logPrgStateExec(currentProgramState);
-
-        }
-    }
-
     public void allStep() throws InterruptedException
     {
         executor = Executors.newFixedThreadPool(2);
@@ -72,7 +44,7 @@ public class Controller
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
         prgStates.forEach(repository::logPrgStateExec);
-        List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> (Callable<PrgState>)(() -> {return p.oneStep();})).toList();
+        List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> (Callable<PrgState>) (p.executeOneStep())).collect(Collectors.toList());
 
          List<PrgState> newPrgStates = executor.invokeAll(callList).stream().map(future->{
              try
@@ -126,8 +98,6 @@ public class Controller
         return result;
     }
 
-
-
     private List<IValue> getReferencedValues(IMyList<Integer> addresses, IMyHeap heap) {
         List<IValue> referencedValues = new ArrayList<>();
         for (Integer address : addresses.getList()) {
@@ -153,6 +123,34 @@ public class Controller
     {
         return prgStates.stream().filter(PrgState::isNotComplete).collect(Collectors.toList());
     }
+
+    //    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
+//        IMyStack<IStmt> executionStack = prgState.getExeStack();
+//        if(executionStack.isEmpty())
+//            throw new EmptyStackException("The execution stack is empty");
+//
+//        IStmt currentStatement = executionStack.pop();
+//        currentStatement.execute(prgState);
+//        if (displayFlag)
+//            displayCurrentState(prgState);
+//        repository.logPrgStateExec(prgState);
+//        return prgState;
+//    }
+
+//    public void executeAllSteps() throws StatementException, ExpressionException, ADTException, IOException, EmptyStackException {
+//        PrgState currentProgramState = repository.getCurrentProgram();
+//        displayCurrentState(currentProgramState);
+//        repository.logPrgStateExec(currentProgramState);
+//
+//        while (!currentProgramState.getExeStack().isEmpty()) {
+//            IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
+//            Map<Integer, IValue> newHeapContent = safeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
+//            currentProgramState.getHeap().setContent(newHeapContent);
+//            executeOneStep(currentProgramState);
+//            repository.logPrgStateExec(currentProgramState);
+//
+//        }
+//    }
 
 
 

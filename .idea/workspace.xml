@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="removed the ExecutorService from Controller constructor" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added a new exception which send to the textMenu a new exception and signals that an error has occured">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,23 +157,7 @@
       <workItem from="1732638099149" duration="4101000" />
       <workItem from="1732694799138" duration="3198000" />
       <workItem from="1732699962001" duration="322000" />
-      <workItem from="1732728082734" duration="1581000" />
-    </task>
-    <task id="LOCAL-00013" summary="fixed some details and implemented new functions">
-      <option name="closed" value="true" />
-      <created>1729781621636</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1729781621636</updated>
-    </task>
-    <task id="LOCAL-00014" summary="added the ExeStack">
-      <option name="closed" value="true" />
-      <created>1729782958286</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1729782958286</updated>
+      <workItem from="1732728082734" duration="2980000" />
     </task>
     <task id="LOCAL-00015" summary="added the repo">
       <option name="closed" value="true" />
@@ -547,7 +535,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732729567865</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="fixed the command such that it will call the function allStep instead of executeAllSteps">
+      <option name="closed" value="true" />
+      <created>1732729833690</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1732729833690</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added a new exception which send to the textMenu a new exception and signals that an error has occured">
+      <option name="closed" value="true" />
+      <created>1732730300332</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1732730300332</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,8 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented the CloseReadFileStatement" />
-    <MESSAGE value="moved the commands" />
     <MESSAGE value="added try and catch in the text menu" />
     <MESSAGE value="added Interpreter" />
     <MESSAGE value="finished A3" />
@@ -590,6 +592,8 @@
     <MESSAGE value="added some new functions" />
     <MESSAGE value="changed the function AllStep to throw the exception so I can catch it in Interpreter" />
     <MESSAGE value="removed the ExecutorService from Controller constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the ExecutorService from Controller constructor" />
+    <MESSAGE value="fixed the command such that it will call the function allStep instead of executeAllSteps" />
+    <MESSAGE value="added a new exception which send to the textMenu a new exception and signals that an error has occured" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a new exception which send to the textMenu a new exception and signals that an error has occured" />
   </component>
 </project>

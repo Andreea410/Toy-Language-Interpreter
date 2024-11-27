@@ -33,27 +33,26 @@ public class TextMenu {
         }
     }
 
-    public void show() throws EmptyStackException, IOException {
+    public void show(){
         Scanner sc = new Scanner(System.in);
         while(true)
         {
             printMenu();
             System.out.println("Option is: ");
-         try {
-             String line = sc.nextLine();
-             Command cm = this.map.get(line);
-             if (cm == null) {
-                 System.out.println("Invalid command");
-                 continue;
-             }
-             cm.execute();
-         }
-         catch (CommandException | NoSuchElementException | IllegalStateException e)
-         {
-             System.out.println(e.getMessage());
-         }
+            try {
+                String line = sc.nextLine();
+                Command cm = this.map.get(line);
+                if (cm == null) {
+                    System.out.println("Invalid command");
+                    continue;
+                }
+                cm.execute();
+            }
+            catch (CommandException | NoSuchElementException | IllegalStateException e)
+            {
+                System.out.println(e.getMessage());
+            }
         }
-
     }
 
 

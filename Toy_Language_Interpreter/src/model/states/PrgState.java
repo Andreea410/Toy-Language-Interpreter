@@ -127,17 +127,14 @@ public class PrgState {
         return ! this.exeStack.isEmpty();
     }
 
-    public boolean executeOneStep() throws ADTException
+    public PrgState executeOneStep() throws EmptyStackException
     {
-        try{
-            IStmt currentStatement = exeStack.pop();
-            currentStatement.execute(this);
-        }
-        catch(EmptyStackException | StatementException | IOException |ADTException e)
-        {
-            return false;
-        }
-        return false;
+        if(exeStack.isEmpty())
+            throw new EmptyStackException("Execution Stack Error: Execution stack is empty");
+
+        IStmt currentStatement = exeStack.pop();
+        return currentStatement.execute(this);
+
     }
 
 
