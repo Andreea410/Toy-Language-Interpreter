@@ -15,7 +15,7 @@ public abstract class Command
         this.description = description;
     }
 
-    public abstract void execute() throws EmptyStackException, IOException;
+    public abstract void execute();
 
     public String getDescription() {
         return description;

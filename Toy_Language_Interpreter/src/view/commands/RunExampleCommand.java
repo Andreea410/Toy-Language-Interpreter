@@ -16,7 +16,13 @@ public class RunExampleCommand extends Command {
     }
 
     @Override
-    public void execute() throws EmptyStackException, IOException {
-        controller.executeAllSteps();
+    public void execute() {
+        try {
+            controller.allStep();
+        }
+        catch (InterruptedException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 }
