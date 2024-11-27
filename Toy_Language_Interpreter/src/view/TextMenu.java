@@ -1,11 +1,13 @@
 package view;
 
+import exceptions.CommandException;
 import exceptions.EmptyStackException;
 import view.commands.Command;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class TextMenu {
@@ -46,9 +48,9 @@ public class TextMenu {
              }
              cm.execute();
          }
-         catch (EmptyStackException | IOException e)
+         catch (CommandException | NoSuchElementException | IllegalStateException e)
          {
-             System.out.println(e.toString());
+             System.out.println(e.getMessage());
          }
         }
 

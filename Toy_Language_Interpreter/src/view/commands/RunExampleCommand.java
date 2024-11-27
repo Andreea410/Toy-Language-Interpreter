@@ -1,6 +1,7 @@
 package view.commands;
 
 import controller.Controller;
+import exceptions.CommandException;
 import exceptions.EmptyStackException;
 
 import java.io.IOException;
@@ -16,13 +17,13 @@ public class RunExampleCommand extends Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws CommandException {
         try {
             controller.allStep();
         }
         catch (InterruptedException e)
         {
-            System.out.println(e.getMessage());
+            throw new CommandException(e.getMessage());
         }
     }
 }
