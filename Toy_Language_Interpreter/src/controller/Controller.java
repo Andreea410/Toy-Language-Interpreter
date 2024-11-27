@@ -20,14 +20,13 @@ import java.util.stream.Collectors;
 public class Controller
 {
     private final IRepository repository;
-    private boolean displayFlag;
+    private final boolean displayFlag;
     private ExecutorService executor;
 
-    public Controller(IRepository repo , boolean flag,ExecutorService executor)
+    public Controller(IRepository repo , boolean flag)
     {
         displayFlag =flag;
         this.repository = repo;
-        this.executor = executor;
     }
 
     public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
