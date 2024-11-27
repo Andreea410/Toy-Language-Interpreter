@@ -103,7 +103,7 @@ public class PrgState {
 
     public String HeapToString()
     {
-        StringBuilder answer = new StringBuilder("");
+        StringBuilder answer = new StringBuilder();
             for(Integer key: heap.getMap().keySet()){
                 answer.append(key).append("(").append(heap.getValue(key).getType().toString())
                         .append(")").append(":-> ").

@@ -58,20 +58,14 @@ public class Controller
         }
     }
 
-    public void allStep()
+    public void allStep() throws InterruptedException
     {
         executor = Executors.newFixedThreadPool(2);
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
         while(!programsList.isEmpty())
         {
-            try {
-                OneStepForAllPrg(programsList);
-                programsList = removeCompletedPrgStates(repository.getPrgStatesList());
-            }
-            catch (ControllerException | InterruptedException e)
-            {
-
-            }
+            OneStepForAllPrg(programsList);
+            programsList = removeCompletedPrgStates(repository.getPrgStatesList());
         }
         executor.shutdownNow();
         repository.setPrgList(programsList);

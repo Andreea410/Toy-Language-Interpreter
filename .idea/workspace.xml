@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the oneStepForAllPrg in the controller and fixed the fork statement">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added some new functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,15 +155,9 @@
       <workItem from="1732529760705" duration="1823000" />
       <workItem from="1732536222705" duration="2610000" />
       <workItem from="1732638099149" duration="4101000" />
-      <workItem from="1732694799138" duration="2829000" />
-    </task>
-    <task id="LOCAL-00010" summary="added two more methods in MyIStack and implemented them in MyStack">
-      <option name="closed" value="true" />
-      <created>1729768970269</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1729768970269</updated>
+      <workItem from="1732694799138" duration="3198000" />
+      <workItem from="1732699962001" duration="322000" />
+      <workItem from="1732728082734" duration="1238000" />
     </task>
     <task id="LOCAL-00011" summary="added the ArithmeticalOperator and LogicalOperator">
       <option name="closed" value="true" />
@@ -548,7 +543,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732698291360</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="added some new functions">
+      <option name="closed" value="true" />
+      <created>1732699096792</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1732699096792</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added try and catch in the ReadFileStatement" />
     <MESSAGE value="almost implemented the OpenReadFileStatement , need to fix smth in the ProgramState" />
     <MESSAGE value="implemented the OpenReadFileStatement" />
     <MESSAGE value="implemented the CloseReadFileStatement" />
@@ -591,6 +593,7 @@
     <MESSAGE value="seminar 9" />
     <MESSAGE value="added the new functions in the Repository" />
     <MESSAGE value="implemented the oneStepForAllPrg in the controller and fixed the fork statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented the oneStepForAllPrg in the controller and fixed the fork statement" />
+    <MESSAGE value="added some new functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some new functions" />
   </component>
 </project>
