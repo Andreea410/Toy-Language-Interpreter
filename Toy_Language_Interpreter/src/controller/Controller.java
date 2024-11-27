@@ -14,17 +14,14 @@ import repository.IRepository;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class Controller
 {
     private final IRepository repository;
     private boolean displayFlag;
-    private final ExecutorService executor;
+    private ExecutorService executor;
 
     public Controller(IRepository repo , boolean flag,ExecutorService executor)
     {
@@ -53,7 +50,7 @@ public class Controller
 
         while (!currentProgramState.getExeStack().isEmpty()) {
             IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
-            Map<Integer, IValue> newHeapContent = unsafeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
+            Map<Integer, IValue> newHeapContent = safeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
             currentProgramState.getHeap().setContent(newHeapContent);
             executeOneStep(currentProgramState);
             repository.logPrgStateExec(currentProgramState);
@@ -63,7 +60,21 @@ public class Controller
 
     public void allStep()
     {
-        PrgState programState = repository.ge
+        executor = Executors.newFixedThreadPool(2);
+        List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
+        while(!programsList.isEmpty())
+        {
+            try {
+                OneStepForAllPrg(programsList);
+                programsList = removeCompletedPrgStates(repository.getPrgStatesList());
+            }
+            catch (ControllerException | InterruptedException e)
+            {
+
+            }
+        }
+        executor.shutdownNow();
+        repository.setPrgList(programsList);
     }
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
@@ -73,9 +84,9 @@ public class Controller
          List<PrgState> newPrgStates = executor.invokeAll(callList).stream().map(future->{
              try
              {
-                 future.get();
+                return future.get();
              } catch (InterruptedException | ExecutionException e) {
-                 return null;
+                 throw new ControllerException("Controller Exception");
              }
          }).filter(Objects::nonNull).toList();
          prgStates.addAll(newPrgStates);
@@ -97,7 +108,7 @@ public class Controller
         return  this.repository;
     }
 
-    private Map<Integer, IValue> unsafeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap)
+    private Map<Integer, IValue> safeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap)
     {
         IMyList<Integer> addresses = new MyList<>(symTableAddr.getList());
         boolean newAddressesFound;
