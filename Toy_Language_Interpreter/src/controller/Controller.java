@@ -42,23 +42,28 @@ public class Controller
         currentStatement.execute(prgState);
         if (displayFlag)
             displayCurrentState(prgState);
-        repository.logPrgStateExec();
+        repository.logPrgStateExec(prgState);
         return prgState;
     }
 
     public void executeAllSteps() throws StatementException, ExpressionException, ADTException, IOException, EmptyStackException {
         PrgState currentProgramState = repository.getCurrentProgram();
         displayCurrentState(currentProgramState);
-        repository.logPrgStateExec();
+        repository.logPrgStateExec(currentProgramState);
 
         while (!currentProgramState.getExeStack().isEmpty()) {
             IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
             Map<Integer, IValue> newHeapContent = unsafeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
             currentProgramState.getHeap().setContent(newHeapContent);
             executeOneStep(currentProgramState);
-            repository.logPrgStateExec();
+            repository.logPrgStateExec(currentProgramState);
 
         }
+    }
+
+    public void allStep()
+    {
+
     }
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {

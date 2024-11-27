@@ -8,9 +8,8 @@ import java.util.List;
 public interface IRepository
 {
     List<PrgState> getStates();
-    PrgState getCurrentProgram();
     void addProgram(PrgState program);
-    public void logPrgStateExec() throws RepoException;
+    public void logPrgStateExec(PrgState prgState) throws RepoException;
     List<PrgState> getPrgStatesList();
     void setPrgList(List<PrgState> programStates);
 
