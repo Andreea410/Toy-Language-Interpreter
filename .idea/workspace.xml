@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added a new exception which send to the textMenu a new exception and signals that an error has occured">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="changed the function OneStep to return the ProgramStates instead of boolean">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,15 +155,7 @@
       <workItem from="1732638099149" duration="4101000" />
       <workItem from="1732694799138" duration="3198000" />
       <workItem from="1732699962001" duration="322000" />
-      <workItem from="1732728082734" duration="2980000" />
-    </task>
-    <task id="LOCAL-00015" summary="added the repo">
-      <option name="closed" value="true" />
-      <created>1730060523233</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1730060523233</updated>
+      <workItem from="1732728082734" duration="3846000" />
     </task>
     <task id="LOCAL-00016" summary="added the controller">
       <option name="closed" value="true" />
@@ -551,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732730300332</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="changed the function OneStep to return the ProgramStates instead of boolean">
+      <option name="closed" value="true" />
+      <created>1732731656927</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1732731656927</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added try and catch in the text menu" />
     <MESSAGE value="added Interpreter" />
     <MESSAGE value="finished A3" />
     <MESSAGE value="finished A3 with some modifications" />
@@ -594,6 +591,7 @@
     <MESSAGE value="removed the ExecutorService from Controller constructor" />
     <MESSAGE value="fixed the command such that it will call the function allStep instead of executeAllSteps" />
     <MESSAGE value="added a new exception which send to the textMenu a new exception and signals that an error has occured" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a new exception which send to the textMenu a new exception and signals that an error has occured" />
+    <MESSAGE value="changed the function OneStep to return the ProgramStates instead of boolean" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the function OneStep to return the ProgramStates instead of boolean" />
   </component>
 </project>

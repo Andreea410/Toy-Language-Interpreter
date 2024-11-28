@@ -127,8 +127,7 @@ public class PrgState {
         return ! this.exeStack.isEmpty();
     }
 
-    public PrgState executeOneStep() throws EmptyStackException
-    {
+    public PrgState executeOneStep() throws EmptyStackException, IOException {
         if(exeStack.isEmpty())
             throw new EmptyStackException("Execution Stack Error: Execution stack is empty");
 

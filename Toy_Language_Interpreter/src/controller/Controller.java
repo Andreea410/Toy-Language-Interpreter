@@ -4,7 +4,6 @@ import exceptions.*;
 import exceptions.EmptyStackException;
 import model.adt.IMyHeap;
 import model.adt.IMyList;
-import model.adt.IMyStack;
 import model.adt.MyList;
 import model.statements.IStmt;
 import model.states.PrgState;
@@ -29,7 +28,7 @@ public class Controller
         this.repository = repo;
     }
 
-    public void allStep() throws InterruptedException
+    public void allStep() throws InterruptedException , ControllerException
     {
         executor = Executors.newFixedThreadPool(2);
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
@@ -44,7 +43,13 @@ public class Controller
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
         prgStates.forEach(repository::logPrgStateExec);
-        List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> (Callable<PrgState>) (p.executeOneStep())).collect(Collectors.toList());
+        List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> {
+            try {
+                return (Callable<PrgState>) (p.executeOneStep());
+            } catch (EmptyStackException | IOException e) {
+                throw new ControllerException(e.getMessage());
+            }
+        }).collect(Collectors.toList());
 
          List<PrgState> newPrgStates = executor.invokeAll(callList).stream().map(future->{
              try
