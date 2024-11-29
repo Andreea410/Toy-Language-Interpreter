@@ -1,510 +1,80 @@
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 2
-
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int v;(v = 2;print(v)))
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-int v
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-v = 2
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 2
-
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int v;(v = 2;print(v)))
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-int v
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-v = 2
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 2
-
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int v;(v = 2;print(v)))
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-int v
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-v = 2
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 2
-
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int v;(v = 2;print(v)))
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-int v
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-int v
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int v;(v = 2;print(v)))
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int v;(v = 2;print(v)))
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-int v
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-int v
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (v = 2;print(v))
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-v = 2
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-v = 2
-
-SYM_TABLE
-v -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(v)
-
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 2
-
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-v -> 2
-
-OUT
-My list contains 2
-
-FILE_TABLE
-
-
 ID = 1
-Execution Stack = My stack contains : (int v;(v = 2;print(v)))
-
-Symbols Table = My dictionary contains 
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {print(v) | v = 2| }
+Symbols Table = {v-> 0}
+Output List = {}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : (v = 2;print(v))
-int v
-
-Symbols Table = My dictionary contains 
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {print(v) | v = 2| }
+Symbols Table = {v-> 0}
+Output List = {}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : (v = 2;print(v))
-int v
-
-Symbols Table = My dictionary contains 
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {print(v) | v = 2| }
+Symbols Table = {v-> 0}
+Output List = {}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : (v = 2;print(v))
-int v
-
-Symbols Table = My dictionary contains 
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {print(v) | v = 2| }
+Symbols Table = {v-> 0}
+Output List = {}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : (v = 2;print(v))
-int v
-
-Symbols Table = My dictionary contains 
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {}
+Symbols Table = {v-> 2}
+Output List = {2}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {}
+Symbols Table = {v-> 2}
+Output List = {2}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {}
+Symbols Table = {v-> 2}
+Output List = {2}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {}
+Symbols Table = {v-> 2}
+Output List = {2}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {}
+Symbols Table = {v-> 2}
+Output List = {2}
+File Table = {}
+Heap = 
 ====================>
 
 ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
-====================>
-
-ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
-====================>
-
-ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
-====================>
-
-ID = 1
-Execution Stack = My stack contains : print(v)
-v = 2
-
-Symbols Table = My dictionary contains v-> 0
-
-Output List = My list contains 
-File Table = My dictionary contains 
-Heap = model.adt.MyHeap@b1a58a3
+Execution Stack = {}
+Symbols Table = {v-> 2}
+Output List = {2}
+File Table = {}
+Heap = 
 ====================>
 

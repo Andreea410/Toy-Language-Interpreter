@@ -33,7 +33,7 @@ public class MyList<T> implements IMyList<T>
         for(T element : this.list)
             str.append(element.toString()).append("|");
         if(!this.list.isEmpty())
-            str.setLength(str.length()-3);
+            str.setLength(str.length()-1);
         str.append("}");
         return str.toString();
     }

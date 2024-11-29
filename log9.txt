@@ -1,127 +1,351 @@
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 9
-Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)} | (print(v);v = v SUBTRACT 1)| }
+Execution Stack = {While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
 Symbols Table = {v-> 3}
-Output List = {4|4}
+Output List = {4|4|4}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {}
+Symbols Table = {v-> 0}
+Output List = {4|4|4|3|2|1}
 File Table = {}
 Heap = 
 ====================>

@@ -65,17 +65,18 @@ public class Controller
                 map((PrgState p)->(Callable<PrgState>)(p::executeOneStep)).toList();
         List<PrgState> newPrgList;
         try{
-            newPrgList = executor.invokeAll(callableList).stream().map(future->
-            {
-                try{
-                    return future.get();
-                }
-                catch (ExecutionException | InterruptedException e)
-                {
-                    System.out.println("Error");
-                    return null;
-                }
-            }).filter(Objects::nonNull).toList();
+            newPrgList = executor.invokeAll(callableList).stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        } catch (ExecutionException | InterruptedException e) {
+                            System.out.println("Error executing thread: " + e.getMessage());
+                            return null;
+                        }
+                    })
+                    .filter(Objects::nonNull)
+                    .toList();
+
         }
         catch (InterruptedException e)
         {

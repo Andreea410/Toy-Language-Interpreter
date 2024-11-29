@@ -29,7 +29,7 @@ public class WhileStatement implements IStmt{
         BoolValue boolValue = (BoolValue) value;
         if(boolValue.getVal())
         {
-            prgState.getExeStack().push(this);
+            prgState.getExeStack().push(new WhileStatement(this.expression,this.statement));
             prgState.getExeStack().push(statement);
         }
         return prgState;

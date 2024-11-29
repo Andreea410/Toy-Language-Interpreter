@@ -53,9 +53,9 @@ public class MyStack<T> implements IMyStack<T>{
     {
         StringBuilder str = new StringBuilder("{");
         for(T element: this.stack)
-            str.append(element.toString()).append(" | ");
+            str.append(element.toString()).append("|");
         if(!this.stack.isEmpty())
-            str.deleteCharAt(str.length()-3);
+            str.deleteCharAt(str.length()-1);
         str.append("}");
         return str.toString();
     }
