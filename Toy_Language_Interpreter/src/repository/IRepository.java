@@ -12,5 +12,7 @@ public interface IRepository
     public void logPrgStateExec(PrgState prgState) throws RepoException;
     List<PrgState> getPrgStatesList();
     void setPrgList(List<PrgState> programStates);
+    void clearLogFile(PrgState prgState) throws RepoException;
+
 
 }

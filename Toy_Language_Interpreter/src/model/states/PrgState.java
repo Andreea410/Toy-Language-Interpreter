@@ -124,7 +124,7 @@ public class PrgState {
 
     public boolean isNotComplete()
     {
-        return ! this.exeStack.isEmpty();
+        return !this.exeStack.isEmpty();
     }
 
     public PrgState executeOneStep() throws EmptyStackException, IOException {

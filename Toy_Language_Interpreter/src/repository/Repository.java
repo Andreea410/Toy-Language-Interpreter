@@ -48,6 +48,17 @@ public class Repository implements IRepository
     }
 
     @Override
+    public void clearLogFile(PrgState prgState) throws RepoException {
+        try {
+            PrintWriter clearWriter = new PrintWriter(new FileWriter(filename));
+            clearWriter.close();
+        } catch (IOException e) {
+            throw new RepoException("File doesn't exist");
+        }
+    }
+
+
+    @Override
     public List<PrgState> getPrgStatesList() {
         return this.programs;
     }

@@ -37,6 +37,7 @@ public class Controller
         {
             conservativeGarbageCollector(programsList);
             OneStepForAllPrg(programsList);
+
             programsList = removeCompletedPrgStates(repository.getPrgStatesList());
         }
         executor.shutdownNow();
@@ -44,33 +45,53 @@ public class Controller
     }
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
-        prgStates.forEach(repository::logPrgStateExec);
-        prgStates.forEach(this::displayCurrentState);
+        List<PrgState> nonCompletedPrgStates = prgStates.stream()
+                .filter(PrgState::isNotComplete)
+                .collect(Collectors.toList());
 
-        List<Callable<PrgState>> callList = prgStates.stream()
-                .map(p -> (Callable<PrgState>) (() -> {
+        if (nonCompletedPrgStates.isEmpty()) {
+            System.out.println("All program states have completed execution.");
+            repository.setPrgList(nonCompletedPrgStates);
+            return;
+        }
+
+        nonCompletedPrgStates.forEach(repository::clearLogFile);
+        nonCompletedPrgStates.forEach(repository::logPrgStateExec);
+        nonCompletedPrgStates.forEach(this::displayCurrentState);
+
+
+        List<Callable<PrgState>> callList = nonCompletedPrgStates.stream()
+                .map(prg -> (Callable<PrgState>) (() -> {
                     try {
-                        return p.executeOneStep();
-                    } catch (EmptyStackException | IOException e) {
-                        throw new ControllerException(e.getMessage());
+                        return prg.executeOneStep();
+                    } catch (EmptyStackException e) {
+                        throw new ControllerException("Execution Stack Error: Execution stack is empty");
                     }
                 }))
                 .collect(Collectors.toList());
 
 
-         List<PrgState> newPrgStates = executor.invokeAll(callList).stream().map(future->{
-             try
-             {
-                return future.get();
-             } catch (InterruptedException | ExecutionException e) {
-                 System.out.println(e.getMessage());
-             }
-             return null;
-         }).filter(Objects::nonNull).toList();
-         prgStates.addAll(newPrgStates);
-         prgStates.forEach(repository::logPrgStateExec);
-         repository.setPrgList(prgStates);
+        List<PrgState> newPrgStates = executor.invokeAll(callList).stream()
+                .map(future -> {
+                    try {
+                        return future.get();
+                    } catch (InterruptedException | ExecutionException e) {
+                        System.out.println(e.getMessage());
+                        return null;
+                    }
+                })
+                .filter(Objects::nonNull)
+                .toList();
+
+
+        synchronized (prgStates) {
+            prgStates.addAll(newPrgStates);
+        }
+        prgStates.forEach(repository::logPrgStateExec);
+        repository.setPrgList(prgStates);
+
     }
+
 
     public void displayCurrentState(PrgState prgState) {
         System.out.println(prgState.toString() + "\n");
@@ -109,18 +130,17 @@ public class Controller
 
 
     private void conservativeGarbageCollector(List<PrgState> programStates) {
-        // Collect all addresses from symbol tables in all program states
         List<Integer> symTableAddresses = programStates.stream()
-                .map(p -> getAddrFromSymTable(p.getSymTable().getContent().values())) // Get addresses from the symbol table
-                .map(IMyList::getList) // Extract the list of addresses
-                .flatMap(Collection::stream) // Flatten the stream of lists into a single stream
-                .distinct() // Avoid duplicate addresses
-                .collect(Collectors.toList()); // Collect the addresses into a single list
+                .map(p -> getAddrFromSymTable(p.getSymTable().getContent().values()))
+                .map(IMyList::getList)
+                .flatMap(Collection::stream)
+                .distinct()
+                .collect(Collectors.toList());
 
-        // For each program state, filter the heap and keep only referenced addresses
+
         programStates.forEach(p -> {
             Map<Integer, IValue> newHeapContent = safeGarbageCollector(new MyList<>(symTableAddresses), p.getHeap());
-            p.getHeap().setContent(newHeapContent); // Update the heap with filtered content
+            p.getHeap().setContent(newHeapContent);
         });
     }
 

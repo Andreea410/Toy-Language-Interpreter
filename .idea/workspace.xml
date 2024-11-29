@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="trying to fix an error">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the ConvservativeGarbageCollector">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/toy",
+    "last_opened_file_path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -157,14 +163,7 @@
       <workItem from="1732699962001" duration="322000" />
       <workItem from="1732728082734" duration="3846000" />
       <workItem from="1732820231688" duration="7638000" />
-    </task>
-    <task id="LOCAL-00019" summary="added all the functionalities">
-      <option name="closed" value="true" />
-      <created>1730124315386</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1730124315386</updated>
+      <workItem from="1732894252144" duration="1874000" />
     </task>
     <task id="LOCAL-00020" summary="added the file Repository class">
       <option name="closed" value="true" />
@@ -550,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732889197201</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="implemented the ConvservativeGarbageCollector">
+      <option name="closed" value="true" />
+      <created>1732894573890</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1732894573892</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +575,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seminar 8" />
     <MESSAGE value="added the heap statements.They need some modifications" />
     <MESSAGE value="finished HeapWriteStatement" />
     <MESSAGE value="finished WhileStatement" />
@@ -593,6 +599,7 @@
     <MESSAGE value="fixed the error in the controller" />
     <MESSAGE value="updated the function deepCopy from my dictionary" />
     <MESSAGE value="trying to fix an error" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix an error" />
+    <MESSAGE value="implemented the ConvservativeGarbageCollector" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented the ConvservativeGarbageCollector" />
   </component>
 </project>
