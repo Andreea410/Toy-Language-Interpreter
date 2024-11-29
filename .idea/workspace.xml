@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the ConvservativeGarbageCollector">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="trying to find we the stack gets empty and the execution doesn t stop.Meanwhile cleared the file before writting in it">
+      <change afterPath="$PROJECT_DIR$/log6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/exceptions/CommandException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/exceptions/ControllerException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/expressions/HeapReadExpression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/ForkStatement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,15 +168,7 @@
       <workItem from="1732699962001" duration="322000" />
       <workItem from="1732728082734" duration="3846000" />
       <workItem from="1732820231688" duration="7638000" />
-      <workItem from="1732894252144" duration="1874000" />
-    </task>
-    <task id="LOCAL-00020" summary="added the file Repository class">
-      <option name="closed" value="true" />
-      <created>1730128517868</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1730128517868</updated>
+      <workItem from="1732894252144" duration="3398000" />
     </task>
     <task id="LOCAL-00021" summary="added a new exception and the logPrgStateExec function">
       <option name="closed" value="true" />
@@ -557,7 +554,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732894573892</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="trying to find we the stack gets empty and the execution doesn t stop.Meanwhile cleared the file before writting in it">
+      <option name="closed" value="true" />
+      <created>1732896231439</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1732896231439</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the heap statements.They need some modifications" />
     <MESSAGE value="finished HeapWriteStatement" />
     <MESSAGE value="finished WhileStatement" />
     <MESSAGE value="started unsafeGarbageCollector" />
@@ -600,6 +604,7 @@
     <MESSAGE value="updated the function deepCopy from my dictionary" />
     <MESSAGE value="trying to fix an error" />
     <MESSAGE value="implemented the ConvservativeGarbageCollector" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented the ConvservativeGarbageCollector" />
+    <MESSAGE value="trying to find we the stack gets empty and the execution doesn t stop.Meanwhile cleared the file before writting in it" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to find we the stack gets empty and the execution doesn t stop.Meanwhile cleared the file before writting in it" />
   </component>
 </project>

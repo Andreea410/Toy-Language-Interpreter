@@ -1,0 +1,1328 @@
+EXE_STACK
+My stack contains : (int v;(v = 4;(model.statements.WhileStatement@3d646c37;print(v))))
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(model.statements.WhileStatement@3d646c37;print(v)))
+int v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(model.statements.WhileStatement@3d646c37;print(v)))
+int v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(model.statements.WhileStatement@3d646c37;print(v)))
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(model.statements.WhileStatement@3d646c37;print(v)))
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.WhileStatement@3d646c37;print(v))
+v = 4
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.WhileStatement@3d646c37;print(v))
+v = 4
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.WhileStatement@3d646c37;print(v))
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (model.statements.WhileStatement@3d646c37;print(v))
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+model.statements.WhileStatement@3d646c37
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : 
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+0
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : 
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+0
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (int v;(v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))))
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))
+int v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))
+int v
+
+SYM_TABLE
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))
+v = 4
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))
+v = 4
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : (While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 4
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 3
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 2
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+(print(v);v = v SUBTRACT 1)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+print(v)
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+v = v SUBTRACT 1
+
+SYM_TABLE
+v -> 1
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+While(v > 0) {(print(v);v = v SUBTRACT 1)}
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : print(v)
+
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : 
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+0
+
+FILE_TABLE
+
+
+EXE_STACK
+My stack contains : 
+SYM_TABLE
+v -> 0
+
+OUT
+My list contains 4
+3
+2
+1
+0
+
+FILE_TABLE
+
+

@@ -29,69 +29,70 @@ public class Controller
         this.repository = repo;
     }
 
-    public void allStep() throws InterruptedException , ControllerException
+    public void allStep() throws InterruptedException
     {
         executor = Executors.newFixedThreadPool(2);
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
-        while(!programsList.isEmpty())
+        try {
+            while (!programsList.isEmpty()) {
+                conservativeGarbageCollector(programsList);
+                OneStepForAllPrg(programsList);
+                programsList.forEach(System.out::println);
+                programsList = removeCompletedPrgStates(repository.getPrgStatesList());
+            }
+        }
+        catch (ControllerException e)
         {
-            conservativeGarbageCollector(programsList);
-            OneStepForAllPrg(programsList);
-
-            programsList = removeCompletedPrgStates(repository.getPrgStatesList());
+            System.out.println("Program finished successfully!");
         }
         executor.shutdownNow();
         repository.setPrgList(programsList);
     }
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
-        List<PrgState> nonCompletedPrgStates = prgStates.stream()
-                .filter(PrgState::isNotComplete)
-                .collect(Collectors.toList());
 
-        if (nonCompletedPrgStates.isEmpty()) {
-            System.out.println("All program states have completed execution.");
-            repository.setPrgList(nonCompletedPrgStates);
-            return;
+        prgStates.forEach(prgState -> {
+            try {
+                repository.logPrgStateExec(prgState);
+            } catch (RepoException e) {
+                throw new RepoException(e.getMessage());
+            }
+        });
+
+        List<Callable<PrgState>> callableList = prgStates.stream().
+                map((PrgState p)->(Callable<PrgState>)(p::executeOneStep)).toList();
+        List<PrgState> newPrgList;
+        try{
+            newPrgList = executor.invokeAll(callableList).stream().map(future->
+            {
+                try{
+                    return future.get();
+                }
+                catch (ExecutionException | InterruptedException e)
+                {
+                    throw new ControllerException(e.getMessage());
+                }
+            }).filter(Objects::nonNull).toList();
+        }
+        catch (InterruptedException e)
+        {
+            throw new ControllerException(e.getMessage());
         }
 
-        nonCompletedPrgStates.forEach(repository::clearLogFile);
-        nonCompletedPrgStates.forEach(repository::logPrgStateExec);
-        nonCompletedPrgStates.forEach(this::displayCurrentState);
+        prgStates.addAll(newPrgList);
+        prgStates.forEach(prgState -> {
+            try{
+                repository.logPrgStateExec(prgState);
+            }
+            catch (RepoException e)
+            {
+                throw new ControllerException("An error occurred executing one step: "+ e);
+            }
+        });
 
-
-        List<Callable<PrgState>> callList = nonCompletedPrgStates.stream()
-                .map(prg -> (Callable<PrgState>) (() -> {
-                    try {
-                        return prg.executeOneStep();
-                    } catch (EmptyStackException e) {
-                        throw new ControllerException("Execution Stack Error: Execution stack is empty");
-                    }
-                }))
-                .collect(Collectors.toList());
-
-
-        List<PrgState> newPrgStates = executor.invokeAll(callList).stream()
-                .map(future -> {
-                    try {
-                        return future.get();
-                    } catch (InterruptedException | ExecutionException e) {
-                        System.out.println(e.getMessage());
-                        return null;
-                    }
-                })
-                .filter(Objects::nonNull)
-                .toList();
-
-
-        synchronized (prgStates) {
-            prgStates.addAll(newPrgStates);
-        }
-        prgStates.forEach(repository::logPrgStateExec);
         repository.setPrgList(prgStates);
 
     }
-
 
     public void displayCurrentState(PrgState prgState) {
         System.out.println(prgState.toString() + "\n");
