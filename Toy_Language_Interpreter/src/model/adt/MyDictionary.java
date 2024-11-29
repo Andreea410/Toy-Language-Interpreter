@@ -85,7 +85,10 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
 
     @Override
     public IMyDictionary<K, V> deepCopy() {
-        return new IMyDictionary<K, V>()
+        IMyDictionary<K,V> newDictionary = new MyDictionary<K,V>();
+        for(K key : this.getKeys())
+            newDictionary.insert(key , getValue(key));
+        return  newDictionary;
 
     }
 }

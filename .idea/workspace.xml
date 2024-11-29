@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="changed the function OneStep to return the ProgramStates instead of boolean">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="fixed the error in the controller" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,14 +154,7 @@
       <workItem from="1732694799138" duration="3198000" />
       <workItem from="1732699962001" duration="322000" />
       <workItem from="1732728082734" duration="3846000" />
-    </task>
-    <task id="LOCAL-00016" summary="added the controller">
-      <option name="closed" value="true" />
-      <created>1730062195772</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1730062195772</updated>
+      <workItem from="1732820231688" duration="2598000" />
     </task>
     <task id="LOCAL-00017" summary=".">
       <option name="closed" value="true" />
@@ -549,7 +540,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732731656927</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="fixed the error in the controller">
+      <option name="closed" value="true" />
+      <created>1732823408993</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1732823408993</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +566,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added Interpreter" />
     <MESSAGE value="finished A3" />
     <MESSAGE value="finished A3 with some modifications" />
     <MESSAGE value="seminar 8" />
@@ -592,6 +590,7 @@
     <MESSAGE value="fixed the command such that it will call the function allStep instead of executeAllSteps" />
     <MESSAGE value="added a new exception which send to the textMenu a new exception and signals that an error has occured" />
     <MESSAGE value="changed the function OneStep to return the ProgramStates instead of boolean" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the function OneStep to return the ProgramStates instead of boolean" />
+    <MESSAGE value="fixed the error in the controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the error in the controller" />
   </component>
 </project>
