@@ -1,7 +1,6 @@
 package repository;
 
 import exceptions.RepoException;
-import model.statements.PrintStm;
 import model.states.PrgState;
 
 import java.io.BufferedWriter;
@@ -65,6 +64,7 @@ public class Repository implements IRepository
 
     @Override
     public void setPrgList(List<PrgState> programStates) {
+        this.programs.clear();
         this.programs = programStates;
     }
 

@@ -17,7 +17,7 @@ public class ForkStatement implements IStmt
 
     @Override
     public PrgState execute(PrgState prgState) throws StatementException, ADTException, IOException {
-        return new PrgState(prgState.getExeStack(), prgState.getSymTable(), prgState.getOutput(),this.statement,prgState.getFileTable(),prgState.getHeap(),0);
+        return new PrgState(prgState.getExeStack(), prgState.getSymTable(), prgState.getOutput(),this.statement,prgState.getFileTable(),prgState.getHeap());
     }
 
     @Override

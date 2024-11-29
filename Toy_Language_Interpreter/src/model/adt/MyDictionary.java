@@ -53,12 +53,16 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
     @Override
     public String toString()
     {
-        StringBuilder str = new StringBuilder();
+        StringBuilder str = new StringBuilder("{");
         for(K key : this.map.keySet())
         {
-            str.append(key).append("-> ").append(this.map.get(key)).append("\n");
+            str.append(key).append("-> ").append(this.map.get(key)).append(" | ");
         }
-        return "My dictionary contains " + str;
+        if (!map.isEmpty()) {
+            str.setLength(str.length() - 3);
+        }
+        str.append("}");
+        return str.toString();
     }
 
     @Override

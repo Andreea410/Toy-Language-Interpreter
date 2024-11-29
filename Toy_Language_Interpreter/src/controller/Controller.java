@@ -21,7 +21,7 @@ public class Controller
 {
     private final IRepository repository;
     private final boolean displayFlag;
-    private ExecutorService executor;
+    ExecutorService executor;
 
     public Controller(IRepository repo , boolean flag)
     {
@@ -33,9 +33,11 @@ public class Controller
     {
         executor = Executors.newFixedThreadPool(2);
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
+        programsList.forEach(System.out::println);
         try {
             while (!programsList.isEmpty()) {
                 conservativeGarbageCollector(programsList);
+                programsList.forEach(repository::clearLogFile);
                 OneStepForAllPrg(programsList);
                 programsList.forEach(System.out::println);
                 programsList = removeCompletedPrgStates(repository.getPrgStatesList());
@@ -70,7 +72,8 @@ public class Controller
                 }
                 catch (ExecutionException | InterruptedException e)
                 {
-                    throw new ControllerException(e.getMessage());
+                    System.out.println("Error");
+                    return null;
                 }
             }).filter(Objects::nonNull).toList();
         }
@@ -92,10 +95,6 @@ public class Controller
 
         repository.setPrgList(prgStates);
 
-    }
-
-    public void displayCurrentState(PrgState prgState) {
-        System.out.println(prgState.toString() + "\n");
     }
 
     public void addProgram(IStmt statement)
@@ -132,12 +131,8 @@ public class Controller
 
     private void conservativeGarbageCollector(List<PrgState> programStates) {
         List<Integer> symTableAddresses = programStates.stream()
-                .map(p -> getAddrFromSymTable(p.getSymTable().getContent().values()))
-                .map(IMyList::getList)
-                .flatMap(Collection::stream)
-                .distinct()
+                .flatMap(p -> getAddrFromSymTable(p.getSymTable().getContent().values()).getList().stream())
                 .collect(Collectors.toList());
-
 
         programStates.forEach(p -> {
             Map<Integer, IValue> newHeapContent = safeGarbageCollector(new MyList<>(symTableAddresses), p.getHeap());
@@ -169,7 +164,7 @@ public class Controller
 
     private List<PrgState> removeCompletedPrgStates(List<PrgState> prgStates)
     {
-        return prgStates.stream().filter(PrgState::isNotComplete).collect(Collectors.toList());
+        return prgStates.stream().filter(PrgState::isNotCompleted).collect(Collectors.toList());
     }
 
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MyList<T> implements IMyList<T>
 {
-    private final List<T> list;
+    private List<T> list;
 
     public MyList()
     {
@@ -17,10 +17,6 @@ public class MyList<T> implements IMyList<T>
         this.list = newList;
     }
 
-    @Override
-    public List<T> getAll() {
-        return list;
-    }
 
     @Override
     public void add(T element)
@@ -33,10 +29,13 @@ public class MyList<T> implements IMyList<T>
     @Override
     public String toString()
     {
-        StringBuilder str = new StringBuilder();
+        StringBuilder str = new StringBuilder("{");
         for(T element : this.list)
-            str.append(element.toString()).append("\n");
-        return "My list contains " + str;
+            str.append(element.toString()).append("|");
+        if(!this.list.isEmpty())
+            str.setLength(str.length()-3);
+        str.append("}");
+        return str.toString();
     }
 
     @Override

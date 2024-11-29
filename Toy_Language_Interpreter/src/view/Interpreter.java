@@ -1,7 +1,6 @@
 package view;
 
 import controller.Controller;
-import exceptions.EmptyStackException;
 import model.expressions.*;
 import model.statements.*;
 import model.types.BoolIType;
@@ -16,11 +15,9 @@ import repository.Repository;
 import view.commands.ExitCommand;
 import view.commands.RunExampleCommand;
 
-import java.io.IOException;
-
 public class Interpreter
 {
-    public static void main(String[] args) throws EmptyStackException, IOException {
+    public static void main(String[] args){
         //int v; v=2; Print(v)
         IStmt statement1 = new CompStmt(new VariablesDeclarationStmt("v", new IntIType()),
                 new CompStmt(new AssignStmt("v", new ValueExpression(new IntIValue(2))),

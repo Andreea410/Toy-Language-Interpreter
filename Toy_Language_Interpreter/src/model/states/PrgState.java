@@ -1,20 +1,16 @@
 package model.states;
-import exceptions.ADTException;
 import exceptions.EmptyStackException;
-import exceptions.StatementException;
 import model.adt.*;
 import model.statements.IStmt;
 import model.values.IValue;
 import model.values.StringValue;
-
 import java.io.BufferedReader;
-
 import java.io.IOException;
-import java.nio.Buffer;
-import java.util.Map;
+
 
 
 public class PrgState {
+    //PROGRAM STATE STRUCTURE
     private final int id;
     private static int lastIndex;
     protected IMyStack<IStmt> exeStack;
@@ -24,28 +20,8 @@ public class PrgState {
     private final IMyDictionary<StringValue, BufferedReader> fileTable;
     private IMyHeap heap;
 
-    public IMyStack<IStmt> getExeStack() {
-        return exeStack;
-    }
 
-    private synchronized int getNewId()
-    {
-        lastIndex++;
-        return lastIndex;
-    }
-
-    public void setExeStack(IMyStack<IStmt> exeStack) {
-        this.exeStack = exeStack;
-    }
-
-    public IMyDictionary<String, IValue> getSymTable() {
-        return symTable;
-    }
-
-    public void setSymTable(IMyDictionary<String, IValue> symTable) {
-        this.symTable = symTable;
-    }
-
+    //CONSTRUCTOR
     public PrgState(IStmt statement)
     {
         this.exeStack = new MyStack<>();
@@ -57,7 +33,8 @@ public class PrgState {
         this.id = getNewId();
     }
 
-    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , IMyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap,int id)
+    //CONSTRUCTOR
+    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , IMyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap)
     {
         this.exeStack = e;
         this.symTable = dictionary;
@@ -65,7 +42,7 @@ public class PrgState {
         this.fileTable = fileTable;
         this.heap = heap;
         exeStack.push(InitialStatement);
-        this.id = id;
+        this.id = getNewId();
     }
 
     public IMyDictionary<StringValue,BufferedReader> getFileTable()
@@ -114,7 +91,37 @@ public class PrgState {
 
     @Override
     public String toString() {
-        return String.format("EXE_STACK\n%s\nSYM_TABLE\n%s\nOUT\n%s\nFILE_TABLE\n%s\nHEAP\n%S\n", exeStack.toString(), symTableToString(), output.toString(), fileTableToString(),HeapToString());
+
+        StringBuilder state = new StringBuilder();
+
+        state.append("ID = ");
+        state.append(this.id);
+        state.append("\n");
+
+        state.append("Execution Stack = ");
+        state.append(exeStack.toString());
+        state.append("\n");
+
+        state.append("Symbols Table = ");
+        state.append(symTable.toString());
+        state.append("\n");
+
+        state.append("Output List = ");
+        state.append(output.toString());
+        state.append("\n");
+
+        state.append("File Table = ");
+        state.append(fileTable.toString());
+        state.append("\n");
+
+        state.append("Heap = ");
+        state.append(HeapToString());
+        state.append("\n");
+
+        state.append("====================>");
+        state.append("\n");
+
+        return state.toString();
     }
 
     public IMyList<String> getOutput()
@@ -122,7 +129,7 @@ public class PrgState {
         return this.output;
     }
 
-    public boolean isNotComplete()
+    public boolean isNotCompleted()
     {
         return !this.exeStack.isEmpty();
     }
@@ -134,5 +141,26 @@ public class PrgState {
         IStmt currentStatement = exeStack.pop();
         return currentStatement.execute(this);
 
+    }
+
+    public IMyStack<IStmt> getExeStack() {
+        return exeStack;
+    }
+
+    private synchronized int getNewId()
+    {
+        lastIndex++;
+        return lastIndex;
+    }
+    public void setExeStack(IMyStack<IStmt> exeStack) {
+        this.exeStack = exeStack;
+    }
+
+    public IMyDictionary<String, IValue> getSymTable() {
+        return symTable;
+    }
+
+    public void setSymTable(IMyDictionary<String, IValue> symTable) {
+        this.symTable = symTable;
     }
 }

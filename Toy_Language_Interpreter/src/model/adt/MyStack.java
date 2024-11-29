@@ -51,9 +51,12 @@ public class MyStack<T> implements IMyStack<T>{
     @Override
     public String toString()
     {
-        StringBuilder str = new StringBuilder();
+        StringBuilder str = new StringBuilder("{");
         for(T element: this.stack)
-            str.append(element.toString()).append("\n");
-        return "My stack contains : " + str;
+            str.append(element.toString()).append(" | ");
+        if(!this.stack.isEmpty())
+            str.deleteCharAt(str.length()-3);
+        str.append("}");
+        return str.toString();
     }
 }
