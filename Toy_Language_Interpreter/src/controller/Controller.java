@@ -16,6 +16,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
+
 public class Controller
 {
     private final IRepository repository;
@@ -34,6 +35,7 @@ public class Controller
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
         while(!programsList.isEmpty())
         {
+            conservativeGarbageCollector(programsList);
             OneStepForAllPrg(programsList);
             programsList = removeCompletedPrgStates(repository.getPrgStatesList());
         }
@@ -79,10 +81,6 @@ public class Controller
         this.repository.addProgram(new PrgState(statement));
     }
 
-    public IRepository getRepository()
-    {
-        return  this.repository;
-    }
 
     private Map<Integer, IValue> safeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap)
     {
@@ -108,6 +106,24 @@ public class Controller
         }
         return result;
     }
+
+
+    private void conservativeGarbageCollector(List<PrgState> programStates) {
+        // Collect all addresses from symbol tables in all program states
+        List<Integer> symTableAddresses = programStates.stream()
+                .map(p -> getAddrFromSymTable(p.getSymTable().getContent().values())) // Get addresses from the symbol table
+                .map(IMyList::getList) // Extract the list of addresses
+                .flatMap(Collection::stream) // Flatten the stream of lists into a single stream
+                .distinct() // Avoid duplicate addresses
+                .collect(Collectors.toList()); // Collect the addresses into a single list
+
+        // For each program state, filter the heap and keep only referenced addresses
+        programStates.forEach(p -> {
+            Map<Integer, IValue> newHeapContent = safeGarbageCollector(new MyList<>(symTableAddresses), p.getHeap());
+            p.getHeap().setContent(newHeapContent); // Update the heap with filtered content
+        });
+    }
+
 
     private List<IValue> getReferencedValues(IMyList<Integer> addresses, IMyHeap heap) {
         List<IValue> referencedValues = new ArrayList<>();
@@ -135,7 +151,8 @@ public class Controller
         return prgStates.stream().filter(PrgState::isNotComplete).collect(Collectors.toList());
     }
 
-    //    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
+
+//    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
 //        IMyStack<IStmt> executionStack = prgState.getExeStack();
 //        if(executionStack.isEmpty())
 //            throw new EmptyStackException("The execution stack is empty");
