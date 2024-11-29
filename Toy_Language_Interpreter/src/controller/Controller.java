@@ -43,21 +43,27 @@ public class Controller
 
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
         prgStates.forEach(repository::logPrgStateExec);
-        List<Callable<PrgState>> callList = prgStates.stream().map((PrgState p)-> {
-            try {
-                return (Callable<PrgState>) (p.executeOneStep());
-            } catch (EmptyStackException | IOException e) {
-                throw new ControllerException(e.getMessage());
-            }
-        }).collect(Collectors.toList());
+        prgStates.forEach(this::displayCurrentState);
+
+        List<Callable<PrgState>> callList = prgStates.stream()
+                .map(p -> (Callable<PrgState>) (() -> {
+                    try {
+                        return p.executeOneStep();
+                    } catch (EmptyStackException | IOException e) {
+                        throw new ControllerException(e.getMessage());
+                    }
+                }))
+                .collect(Collectors.toList());
+
 
          List<PrgState> newPrgStates = executor.invokeAll(callList).stream().map(future->{
              try
              {
                 return future.get();
              } catch (InterruptedException | ExecutionException e) {
-                 throw new ControllerException("Controller Exception");
+                 System.out.println(e.getMessage());
              }
+             return null;
          }).filter(Objects::nonNull).toList();
          prgStates.addAll(newPrgStates);
          prgStates.forEach(repository::logPrgStateExec);
