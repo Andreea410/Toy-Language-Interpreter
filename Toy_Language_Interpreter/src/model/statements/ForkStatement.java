@@ -2,6 +2,8 @@ package model.statements;
 
 import exceptions.ADTException;
 import exceptions.StatementException;
+import model.adt.IMyStack;
+import model.adt.MyStack;
 import model.states.PrgState;
 
 import java.io.IOException;
@@ -17,7 +19,9 @@ public class ForkStatement implements IStmt
 
     @Override
     public PrgState execute(PrgState prgState) throws StatementException, ADTException, IOException {
-        return new PrgState(prgState.getExeStack(), prgState.getSymTable(), prgState.getOutput(),this.statement,prgState.getFileTable(),prgState.getHeap());
+        IMyStack<IStmt> newExecutionStack = new MyStack<>();
+        newExecutionStack.push(statement);
+        return new PrgState(newExecutionStack, prgState.getSymTable().deepCopy(), prgState.getOutput(), this.statement, prgState.getFileTable(), prgState.getHeap());
     }
 
     @Override

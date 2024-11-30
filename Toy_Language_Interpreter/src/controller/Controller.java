@@ -45,8 +45,8 @@ public class Controller
             while (!programsList.isEmpty()) {
                 conservativeGarbageCollector(programsList);
                 OneStepForAllPrg(programsList);
-
-                programsList = removeCompletedPrgStates(programsList);
+                programsList.forEach(System.out::println);
+                programsList = removeCompletedPrgStates(repository.getPrgStatesList());
             }
         } catch (ControllerException e) {
             System.out.println("Program finished successfully!");
@@ -57,8 +57,8 @@ public class Controller
     }
 
 
-    public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
-        prgStates = removeCompletedPrgStates(prgStates);
+    public void OneStepForAllPrg(List<PrgState> prgStatess) throws ControllerException, InterruptedException {
+        List<PrgState> prgStates = removeCompletedPrgStates(prgStatess);
 
         if (prgStates.isEmpty()) {
             throw new ControllerException("No more programs to execute. Execution is complete.");
@@ -82,9 +82,7 @@ public class Controller
             newPrgList = executor.invokeAll(callableList).stream()
                     .map(future -> {
                         try {
-                            PrgState result = future.get();
-                            System.out.println("Processed PrgState: " + result);
-                            return result;
+                            return future.get();
                         } catch (ExecutionException | InterruptedException e) {
                             System.out.println("Error executing thread: " + e.getMessage());
                             return null;
@@ -97,7 +95,12 @@ public class Controller
             throw new ControllerException(e.getMessage());
         }
 
-        prgStates.addAll(newPrgList);
+        for (PrgState newState : newPrgList) {
+            if (!prgStates.contains(newState)) {
+                prgStates.add(newState);
+            }
+        }
+
 
         prgStates.forEach(prgState -> {
             try {

@@ -1,4 +1,5 @@
 package model.adt;
+import exceptions.ADTException;
 import exceptions.KeyNotFoundException;
 
 import java.util.Map;
@@ -48,6 +49,13 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
                 throw new KeyNotFoundException("The key doesn t exist");
             this.map.remove(key);
         }
+    }
+
+    public void update(K key , V value)
+    {
+        if(!contains(key))
+            throw new ADTException("ADT Exception: The key was not found");
+        map.replace(key , getValue(key),value);
     }
 
     @Override

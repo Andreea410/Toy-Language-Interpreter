@@ -1,238 +1,216 @@
-------EXE_STACK------
-My stack contains : 
-------SYM_TABLE------
-a -> 17
-b -> 18
-
-------OUT------
-My list contains 18
-
-------FILE_TABLE------
-
-
-EXE_STACK
-My stack contains : (int a;(int b;(a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b)))))
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int b;(a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))))
-int a
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int b;(a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))))
-int a
-
-SYM_TABLE
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int b;(a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))))
-
-SYM_TABLE
-a -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (int b;(a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))))
-
-SYM_TABLE
-a -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b)))
-int b
-
-SYM_TABLE
-a -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b)))
-int b
-
-SYM_TABLE
-a -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b)))
-
-SYM_TABLE
-a -> 0
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (a = model.expressions.ArithmeticalExpression@685f4c2e;(b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b)))
-
-SYM_TABLE
-a -> 0
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))
-a = model.expressions.ArithmeticalExpression@685f4c2e
-
-SYM_TABLE
-a -> 0
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))
-a = model.expressions.ArithmeticalExpression@685f4c2e
-
-SYM_TABLE
-a -> 0
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))
-
-SYM_TABLE
-a -> 17
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : (b = model.expressions.ArithmeticalExpression@7daf6ecc;print(b))
-
-SYM_TABLE
-a -> 17
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(b)
-b = model.expressions.ArithmeticalExpression@7daf6ecc
-
-SYM_TABLE
-a -> 17
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(b)
-b = model.expressions.ArithmeticalExpression@7daf6ecc
-
-SYM_TABLE
-a -> 17
-b -> 0
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(b)
-
-SYM_TABLE
-a -> 17
-b -> 18
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : print(b)
-
-SYM_TABLE
-a -> 17
-b -> 18
-
-OUT
-My list contains 
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-a -> 17
-b -> 18
-
-OUT
-My list contains 18
-
-FILE_TABLE
-
-
-EXE_STACK
-My stack contains : 
-SYM_TABLE
-a -> 17
-b -> 18
-
-OUT
-My list contains 18
-
-FILE_TABLE
-
+ID = 2
+Execution Stack = {(int a;(int b;(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b)))))}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(int b;(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b))))|int a}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(int b;(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b))))|int a}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(int b;(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b))))|int a}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(int b;(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b))))}
+Symbols Table = {a-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(int b;(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b))))}
+Symbols Table = {a-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(int b;(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b))))}
+Symbols Table = {a-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b)))|int b}
+Symbols Table = {a-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b)))|int b}
+Symbols Table = {a-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b)))|int b}
+Symbols Table = {a-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b)))}
+Symbols Table = {a-> 0 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b)))}
+Symbols Table = {a-> 0 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(a = 2 ADD 3 MULTIPLY 5;(b = a ADD 1;print(b)))}
+Symbols Table = {a-> 0 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(b = a ADD 1;print(b))|a = 2 ADD 3 MULTIPLY 5}
+Symbols Table = {a-> 0 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(b = a ADD 1;print(b))|a = 2 ADD 3 MULTIPLY 5}
+Symbols Table = {a-> 0 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(b = a ADD 1;print(b))|a = 2 ADD 3 MULTIPLY 5}
+Symbols Table = {a-> 0 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(b = a ADD 1;print(b))}
+Symbols Table = {a-> 17 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(b = a ADD 1;print(b))}
+Symbols Table = {a-> 17 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {(b = a ADD 1;print(b))}
+Symbols Table = {a-> 17 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {print(b)|b = a ADD 1}
+Symbols Table = {a-> 17 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {print(b)|b = a ADD 1}
+Symbols Table = {a-> 17 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {print(b)|b = a ADD 1}
+Symbols Table = {a-> 17 | b-> 0}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {print(b)}
+Symbols Table = {a-> 17 | b-> 18}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {print(b)}
+Symbols Table = {a-> 17 | b-> 18}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {print(b)}
+Symbols Table = {a-> 17 | b-> 18}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {}
+Symbols Table = {a-> 17 | b-> 18}
+Output List = {18}
+File Table = {}
+Heap = 
+====================>
+
+ID = 2
+Execution Stack = {}
+Symbols Table = {a-> 17 | b-> 18}
+Output List = {18}
+File Table = {}
+Heap = 
+====================>
 

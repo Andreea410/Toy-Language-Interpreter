@@ -14,4 +14,5 @@ public interface IMyDictionary<K,V>
     IMyDictionary<K,V> copy();
     Map<K,V> getContent();
     IMyDictionary<K,V> deepCopy();
+    public void update(K key , V value);
 }

@@ -132,19 +132,36 @@ public class Interpreter
         Controller controller9 = new Controller(repo9, true);
         controller9.addProgram(statement9);
 
+        // int v; Ref int a; v=10; new(a,22); fork(wH(a,30); v=32; print(v); print(rH(a))); print(v); print(rH(a))
+        IStmt statement10 = new CompStmt(new VariablesDeclarationStmt("v", new IntIType()),
+                new CompStmt(new VariablesDeclarationStmt("a", new RefType(new IntIType())),
+                        new CompStmt(new AssignStmt("v", new ValueExpression(new IntIValue(10))),
+                                new CompStmt(new HeapAllocationStatement( new ValueExpression(new IntIValue(22)),"a"),
+                                        new CompStmt(new ForkStatement(new CompStmt(new HeapWriteStatement(new ValueExpression(new IntIValue(30)),"a"),
+                                                new CompStmt(new AssignStmt("v", new ValueExpression(new IntIValue(32))),
+                                                        new CompStmt(new PrintStm(new VariableExpression("v")), new PrintStm(new HeapReadExpression(new VariableExpression("a"))))))),
+                                                new CompStmt(new PrintStm(new VariableExpression("v")), new PrintStm(new HeapReadExpression(new VariableExpression("a")))))))));
+
+
+        IRepository repo10 = new Repository("log10.txt");
+        Controller controller10 = new Controller(repo10, true);
+        controller10.addProgram(statement10);
+
         TextMenu menu = new TextMenu();
-        menu.addCommand(new RunExampleCommand("1",statement1.toString() , controller1));
-        menu.addCommand(new RunExampleCommand("2",statement2.toString() , controller2));
-        menu.addCommand(new RunExampleCommand("3",statement3.toString() , controller3));
-        menu.addCommand(new RunExampleCommand("4",statement4.toString() , controller4));
-        menu.addCommand(new RunExampleCommand("5",statement5.toString() , controller5));
-        menu.addCommand(new RunExampleCommand("6",statement6.toString() , controller6));
-        menu.addCommand(new RunExampleCommand("7",statement7.toString() , controller7));
-        menu.addCommand(new RunExampleCommand("8",statement8.toString() , controller8));
-        menu.addCommand(new RunExampleCommand("9",statement9.toString() , controller9));
-        menu.addCommand(new ExitCommand("10" , "Exit"));
+        menu.addCommand(new RunExampleCommand("1", statement1.toString(), controller1));
+        menu.addCommand(new RunExampleCommand("2", statement2.toString(), controller2));
+        menu.addCommand(new RunExampleCommand("3", statement3.toString(), controller3));
+        menu.addCommand(new RunExampleCommand("4", statement4.toString(), controller4));
+        menu.addCommand(new RunExampleCommand("5", statement5.toString(), controller5));
+        menu.addCommand(new RunExampleCommand("6", statement6.toString(), controller6));
+        menu.addCommand(new RunExampleCommand("7", statement7.toString(), controller7));
+        menu.addCommand(new RunExampleCommand("8", statement8.toString(), controller8));
+        menu.addCommand(new RunExampleCommand("9", statement9.toString(), controller9));
+        menu.addCommand(new RunExampleCommand("10", statement10.toString(), controller10));
+        menu.addCommand(new ExitCommand("0", "Exit"));
 
         menu.show();
+
 
     }
 
