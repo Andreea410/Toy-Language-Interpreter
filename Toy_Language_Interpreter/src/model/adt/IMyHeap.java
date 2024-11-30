@@ -4,11 +4,9 @@ import java.util.Map;
 
 public interface IMyHeap
 {
-    Integer getFirstFree();
-    public void update(Integer position , IValue value);
-    public IValue getValue(Integer key);
-    public Integer add(IValue value);
+    void update(Integer position , IValue value);
+    IValue getValue(Integer key);
+    Integer add(IValue value);
     Map<Integer , IValue> getMap();
-    public boolean containsKey(Integer key);
-    public void setContent(Map<Integer,IValue> newMap);
+    void setContent(Map<Integer,IValue> newMap);
 }

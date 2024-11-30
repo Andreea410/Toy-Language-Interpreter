@@ -30,7 +30,7 @@ public class IfStmt implements IStmt{
         IValue value = expression.eval(state.getSymTable(), state.getHeap());
         if(!value.getType().equals(new BoolIType()))
             throw new StatementException("Expression is not boolean");
-        if(!((BoolValue)value).getVal())
+        if(((BoolValue)value).getVal())
             state.getExeStack().push(thenStatement);
         else
             state.getExeStack().push(elseStatement);

@@ -3,7 +3,7 @@
 package model.statements;
 import exceptions.StatementException;
 import model.states.PrgState;
-import model.values.IValue;
+
 
 public class CompStmt implements IStmt{
     private final IStmt statement1;

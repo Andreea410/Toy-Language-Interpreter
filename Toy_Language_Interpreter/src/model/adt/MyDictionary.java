@@ -1,7 +1,5 @@
 package model.adt;
-import exceptions.ADTException;
 import exceptions.KeyNotFoundException;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
@@ -12,7 +10,7 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
 
     public MyDictionary()
     {
-        this.map = new HashMap<K,V>();
+        this.map = new HashMap<>();
     }
 
     @Override
@@ -28,7 +26,7 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
     {
         synchronized (map) {
             if (!contains(key))
-                throw new KeyNotFoundException("The key doesn t exist");
+                throw new KeyNotFoundException("The key does not exist");
             return this.map.get(key);
         }
     }
@@ -46,17 +44,11 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
     {
         synchronized (map) {
             if (!contains(key))
-                throw new KeyNotFoundException("The key doesn t exist");
+                throw new KeyNotFoundException("The key does not exist");
             this.map.remove(key);
         }
     }
 
-    public void update(K key , V value)
-    {
-        if(!contains(key))
-            throw new ADTException("ADT Exception: The key was not found");
-        map.replace(key , getValue(key),value);
-    }
 
     @Override
     public String toString()
@@ -81,15 +73,6 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
         }
     }
 
-    @Override
-    public IMyDictionary<K,V> copy()
-    {
-        IMyDictionary<K,V> newDictionary = new MyDictionary<>();
-        for(K key : getKeys())
-            newDictionary.insert(key , getValue(key));
-        return newDictionary;
-    }
-
     public Map<K,V> getContent()
     {
         return this.map;
@@ -97,7 +80,7 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
 
     @Override
     public IMyDictionary<K, V> deepCopy() {
-        IMyDictionary<K,V> newDictionary = new MyDictionary<K,V>();
+        IMyDictionary<K,V> newDictionary = new MyDictionary<>();
         for(K key : this.getKeys())
             newDictionary.insert(key , getValue(key));
         return  newDictionary;

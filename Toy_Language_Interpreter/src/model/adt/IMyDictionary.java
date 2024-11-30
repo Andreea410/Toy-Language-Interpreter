@@ -1,7 +1,6 @@
 package model.adt;
 import exceptions.KeyNotFoundException;
 import java.util.Map;
-import java.util.HashMap;
 import java.util.Set;
 
 public interface IMyDictionary<K,V>
@@ -11,8 +10,7 @@ public interface IMyDictionary<K,V>
     void remove(K key) throws KeyNotFoundException;
     boolean contains(K key);
     Set<K> getKeys();
-    IMyDictionary<K,V> copy();
     Map<K,V> getContent();
     IMyDictionary<K,V> deepCopy();
-    public void update(K key , V value);
+
 }

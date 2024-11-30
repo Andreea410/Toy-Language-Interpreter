@@ -36,23 +36,15 @@ public class RelationalExpression implements IExp{
         int intValue1 = ((IntIValue) value1).getVal();
         int intValue2 = ((IntIValue) value2).getVal();
 
-        switch (operator)
-        {
-            case ">":
-                return new BoolValue(intValue1 > intValue2);
-            case "<":
-                return new BoolValue(intValue1 < intValue2);
-            case ">=":
-                return new BoolValue(intValue1 >= intValue2);
-            case "<=":
-                return new BoolValue(intValue1 <= intValue2);
-            case "==":
-                return new BoolValue(intValue1 == intValue2);
-            case "!=":
-                return new BoolValue(intValue1 != intValue2);
-            default:
-                throw new ExpressionException("Unknown operator");
-        }
+        return switch (operator) {
+            case ">" -> new BoolValue(intValue1 > intValue2);
+            case "<" -> new BoolValue(intValue1 < intValue2);
+            case ">=" -> new BoolValue(intValue1 >= intValue2);
+            case "<=" -> new BoolValue(intValue1 <= intValue2);
+            case "==" -> new BoolValue(intValue1 == intValue2);
+            case "!=" -> new BoolValue(intValue1 != intValue2);
+            default -> throw new ExpressionException("Unknown operator");
+        };
 
     }
 

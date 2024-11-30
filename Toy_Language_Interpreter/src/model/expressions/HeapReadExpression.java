@@ -19,9 +19,8 @@ public class HeapReadExpression implements IExp
     @Override
     public IValue eval(IMyDictionary<String, IValue> symtbl, IMyHeap heap) throws ADTException, ExpressionException {
         IValue value = expression.eval(symtbl, heap);
-        if(!(value instanceof RefValue))
+        if(!(value instanceof RefValue refValue))
             throw new ExpressionException("Heap Error: value is not of type RefValue");
-        RefValue refValue = (RefValue) value;
         return heap.getValue(refValue.getAddress());
     }
 

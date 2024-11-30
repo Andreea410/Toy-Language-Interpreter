@@ -2,7 +2,6 @@ package model.statements;
 
 import exceptions.ADTException;
 import exceptions.StatementException;
-import model.adt.IMyDictionary;
 import model.expressions.IExp;
 import model.states.PrgState;
 import model.types.StringType;

@@ -1,6 +1,6 @@
 package controller;
-
-import exceptions.*;
+import exceptions.ControllerException;
+import exceptions.RepoException;
 import model.adt.IMyHeap;
 import model.adt.IMyList;
 import model.adt.MyList;
@@ -9,8 +9,6 @@ import model.states.PrgState;
 import model.values.IValue;
 import model.values.RefValue;
 import repository.IRepository;
-
-import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
@@ -19,12 +17,10 @@ import java.util.stream.Collectors;
 public class Controller
 {
     private final IRepository repository;
-    private final boolean displayFlag;
     ExecutorService executor;
 
-    public Controller(IRepository repo , boolean flag)
+    public Controller(IRepository repo)
     {
-        displayFlag =flag;
         this.repository = repo;
     }
 
@@ -56,7 +52,7 @@ public class Controller
     }
 
 
-    public void OneStepForAllPrg(List<PrgState> prgStatess) throws ControllerException, InterruptedException {
+    public void OneStepForAllPrg(List<PrgState> prgStatess) throws ControllerException {
         List<PrgState> prgStates = removeCompletedPrgStates(prgStatess);
 
         if (prgStates.isEmpty()) {
@@ -76,7 +72,7 @@ public class Controller
                 .map((PrgState p) -> (Callable<PrgState>) (p::executeOneStep))
                 .toList();
 
-        List<PrgState> newPrgList = new LinkedList<>();
+        List<PrgState> newPrgList;
         try {
             newPrgList = executor.invokeAll(callableList).stream()
                     .map(future -> {
@@ -120,7 +116,7 @@ public class Controller
 
 
     private Map<Integer, IValue> safeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap) {
-        synchronized (heap) {
+        synchronized ( heap) {
             IMyList<Integer> addresses = new MyList<>(symTableAddr.getList());
             boolean newAddressesFound;
             do {

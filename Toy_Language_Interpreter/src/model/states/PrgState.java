@@ -29,6 +29,7 @@ public class PrgState {
         this.output = new MyList<>();
         this.fileTable = new MyDictionary<>();
         this.heap = new MyHeap();
+        this.originalProgram = statement.deepCopy();
         exeStack.push(statement);
         this.id = getNewId();
     }
@@ -41,6 +42,7 @@ public class PrgState {
         this.output = list;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.originalProgram = InitialStatement.deepCopy();
         exeStack.push(InitialStatement);
         this.id = getNewId();
     }
@@ -48,24 +50,6 @@ public class PrgState {
     public IMyDictionary<StringValue,BufferedReader> getFileTable()
     {
         return this.fileTable;
-    }
-
-    public String fileTableToString()
-    {
-        StringBuilder text = new StringBuilder();
-        for(StringValue key : this.fileTable.getKeys())
-            text.append(key).append("\n");
-        return text.toString();
-    }
-
-    public String symTableToString() {
-        StringBuilder symbolTableStringBuilder = new StringBuilder();
-
-        for (String key : symTable.getKeys()) {
-            symbolTableStringBuilder.append(String.format("%s -> %s\n", key, symTable.getValue(key).toString()));
-        }
-
-        return symbolTableStringBuilder.toString();
     }
 
     public IMyHeap getHeap()
@@ -92,36 +76,26 @@ public class PrgState {
     @Override
     public String toString() {
 
-        StringBuilder state = new StringBuilder();
-
-        state.append("ID = ");
-        state.append(this.id);
-        state.append("\n");
-
-        state.append("Execution Stack = ");
-        state.append(exeStack.toString());
-        state.append("\n");
-
-        state.append("Symbols Table = ");
-        state.append(symTable.toString());
-        state.append("\n");
-
-        state.append("Output List = ");
-        state.append(output.toString());
-        state.append("\n");
-
-        state.append("File Table = ");
-        state.append(fileTable.toString());
-        state.append("\n");
-
-        state.append("Heap = ");
-        state.append(HeapToString());
-        state.append("\n");
-
-        state.append("====================>");
-        state.append("\n");
-
-        return state.toString();
+        return "ID = " +
+                this.id +
+                "\n" +
+                "Execution Stack = " +
+                exeStack.toString() +
+                "\n" +
+                "SymTable = " +
+                symTable.toString() +
+                "\n" +
+                "Output List = " +
+                output.toString() +
+                "\n" +
+                "File Table = " +
+                fileTable.toString() +
+                "\n" +
+                "Heap = " +
+                HeapToString() +
+                "\n" +
+                "====================>" +
+                "\n";
     }
 
     public IMyList<String> getOutput()
@@ -152,15 +126,10 @@ public class PrgState {
         lastIndex++;
         return lastIndex;
     }
-    public void setExeStack(IMyStack<IStmt> exeStack) {
-        this.exeStack = exeStack;
-    }
+
 
     public IMyDictionary<String, IValue> getSymTable() {
         return symTable;
     }
 
-    public void setSymTable(IMyDictionary<String, IValue> symTable) {
-        this.symTable = symTable;
-    }
 }

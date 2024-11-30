@@ -23,10 +23,9 @@ public class HeapWriteStatement implements IStmt{
     public PrgState execute(PrgState prgState) throws StatementException, ADTException, IOException {
         if(!prgState.getSymTable().contains(variable))
             throw new StatementException(String.format("Heap error : %s is not defined.",variable));
-        if(!(prgState.getSymTable().getValue(variable) instanceof RefValue))
+        if(!(prgState.getSymTable().getValue(variable) instanceof RefValue referenceValue))
             throw new StatementException(String.format("Heap error: %s is not of type Reference",variable));
 
-        RefValue referenceValue = (RefValue) prgState.getSymTable().getValue(variable);
         IValue evaluated = expression.eval(prgState.getSymTable(), prgState.getHeap());
         if(!evaluated.getType().equals(referenceValue.getLocationType()))
             throw new StatementException(String.format("Heap Error: %s is not of type %s.",evaluated,referenceValue.getLocationType()));

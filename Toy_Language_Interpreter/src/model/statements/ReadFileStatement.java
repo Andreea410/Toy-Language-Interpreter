@@ -53,7 +53,7 @@ public class ReadFileStatement implements IStmt
         }
         catch (IOException e)
         {
-            throw new StatementException("Could not read the file: " + e.toString());
+            throw new StatementException("Could not read the file: " + e);
         }
 
     }

@@ -9,7 +9,5 @@ public interface IMyStack<T>
 {
     T pop() throws EmptyStackException;
     void push(T v);
-    int getSize() ;
-    Stack<T> getStack();
     boolean isEmpty();
 }

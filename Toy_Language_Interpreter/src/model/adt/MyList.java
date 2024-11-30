@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MyList<T> implements IMyList<T>
 {
-    private List<T> list;
+    private final List<T> list;
 
     public MyList()
     {

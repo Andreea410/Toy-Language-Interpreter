@@ -1,6 +1,6 @@
 ID = 5
 Execution Stack = {(Ref(int) v;((v 20);(Ref(Ref(int)) a;((a v);(print(v);print(a))))))}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -8,7 +8,7 @@ Heap =
 
 ID = 5
 Execution Stack = {((v 20);(Ref(Ref(int)) a;((a v);(print(v);print(a)))))|Ref(int) v}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -16,15 +16,7 @@ Heap =
 
 ID = 5
 Execution Stack = {((v 20);(Ref(Ref(int)) a;((a v);(print(v);print(a)))))|Ref(int) v}
-Symbols Table = {}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 5
-Execution Stack = {((v 20);(Ref(Ref(int)) a;((a v);(print(v);print(a)))))|Ref(int) v}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -32,7 +24,7 @@ Heap =
 
 ID = 5
 Execution Stack = {((v 20);(Ref(Ref(int)) a;((a v);(print(v);print(a)))))}
-Symbols Table = {v-> (0 int)}
+SymTable = {v-> (0 int)}
 Output List = {}
 File Table = {}
 Heap = 
@@ -40,15 +32,7 @@ Heap =
 
 ID = 5
 Execution Stack = {((v 20);(Ref(Ref(int)) a;((a v);(print(v);print(a)))))}
-Symbols Table = {v-> (0 int)}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 5
-Execution Stack = {((v 20);(Ref(Ref(int)) a;((a v);(print(v);print(a)))))}
-Symbols Table = {v-> (0 int)}
+SymTable = {v-> (0 int)}
 Output List = {}
 File Table = {}
 Heap = 
@@ -56,7 +40,7 @@ Heap =
 
 ID = 5
 Execution Stack = {(Ref(Ref(int)) a;((a v);(print(v);print(a))))|(v 20)}
-Symbols Table = {v-> (0 int)}
+SymTable = {v-> (0 int)}
 Output List = {}
 File Table = {}
 Heap = 
@@ -64,15 +48,7 @@ Heap =
 
 ID = 5
 Execution Stack = {(Ref(Ref(int)) a;((a v);(print(v);print(a))))|(v 20)}
-Symbols Table = {v-> (0 int)}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 5
-Execution Stack = {(Ref(Ref(int)) a;((a v);(print(v);print(a))))|(v 20)}
-Symbols Table = {v-> (0 int)}
+SymTable = {v-> (0 int)}
 Output List = {}
 File Table = {}
 Heap = 
@@ -80,7 +56,7 @@ Heap =
 
 ID = 5
 Execution Stack = {(Ref(Ref(int)) a;((a v);(print(v);print(a))))}
-Symbols Table = {v-> (1 int)}
+SymTable = {v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -89,16 +65,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {(Ref(Ref(int)) a;((a v);(print(v);print(a))))}
-Symbols Table = {v-> (1 int)}
-Output List = {}
-File Table = {}
-Heap = 1(int):-> 20
-
-====================>
-
-ID = 5
-Execution Stack = {(Ref(Ref(int)) a;((a v);(print(v);print(a))))}
-Symbols Table = {v-> (1 int)}
+SymTable = {v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -107,7 +74,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {((a v);(print(v);print(a)))|Ref(Ref(int)) a}
-Symbols Table = {v-> (1 int)}
+SymTable = {v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -116,16 +83,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {((a v);(print(v);print(a)))|Ref(Ref(int)) a}
-Symbols Table = {v-> (1 int)}
-Output List = {}
-File Table = {}
-Heap = 1(int):-> 20
-
-====================>
-
-ID = 5
-Execution Stack = {((a v);(print(v);print(a)))|Ref(Ref(int)) a}
-Symbols Table = {v-> (1 int)}
+SymTable = {v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -134,7 +92,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {((a v);(print(v);print(a)))}
-Symbols Table = {a-> (0 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (0 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -143,16 +101,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {((a v);(print(v);print(a)))}
-Symbols Table = {a-> (0 Ref(int)) | v-> (1 int)}
-Output List = {}
-File Table = {}
-Heap = 1(int):-> 20
-
-====================>
-
-ID = 5
-Execution Stack = {((a v);(print(v);print(a)))}
-Symbols Table = {a-> (0 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (0 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -161,7 +110,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {(print(v);print(a))|(a v)}
-Symbols Table = {a-> (0 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (0 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -170,16 +119,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {(print(v);print(a))|(a v)}
-Symbols Table = {a-> (0 Ref(int)) | v-> (1 int)}
-Output List = {}
-File Table = {}
-Heap = 1(int):-> 20
-
-====================>
-
-ID = 5
-Execution Stack = {(print(v);print(a))|(a v)}
-Symbols Table = {a-> (0 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (0 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -188,7 +128,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {(print(v);print(a))}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (2 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -198,17 +138,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {(print(v);print(a))}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
-Output List = {}
-File Table = {}
-Heap = 1(int):-> 20
-2(Ref(int)):-> (1 int)
-
-====================>
-
-ID = 5
-Execution Stack = {(print(v);print(a))}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (2 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -218,7 +148,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {print(a)|print(v)}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (2 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -228,17 +158,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {print(a)|print(v)}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
-Output List = {}
-File Table = {}
-Heap = 1(int):-> 20
-2(Ref(int)):-> (1 int)
-
-====================>
-
-ID = 5
-Execution Stack = {print(a)|print(v)}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (2 Ref(int)) | v-> (1 int)}
 Output List = {}
 File Table = {}
 Heap = 1(int):-> 20
@@ -248,7 +168,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {print(a)}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (2 Ref(int)) | v-> (1 int)}
 Output List = {(1 int)}
 File Table = {}
 Heap = 1(int):-> 20
@@ -258,17 +178,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {print(a)}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
-Output List = {(1 int)}
-File Table = {}
-Heap = 1(int):-> 20
-2(Ref(int)):-> (1 int)
-
-====================>
-
-ID = 5
-Execution Stack = {print(a)}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (2 Ref(int)) | v-> (1 int)}
 Output List = {(1 int)}
 File Table = {}
 Heap = 1(int):-> 20
@@ -278,17 +188,7 @@ Heap = 1(int):-> 20
 
 ID = 5
 Execution Stack = {}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
-Output List = {(1 int)|(2 Ref(int))}
-File Table = {}
-Heap = 1(int):-> 20
-2(Ref(int)):-> (1 int)
-
-====================>
-
-ID = 5
-Execution Stack = {}
-Symbols Table = {a-> (2 Ref(int)) | v-> (1 int)}
+SymTable = {a-> (2 Ref(int)) | v-> (1 int)}
 Output List = {(1 int)|(2 Ref(int))}
 File Table = {}
 Heap = 1(int):-> 20

@@ -1,13 +1,11 @@
 package view.commands;
 
 import exceptions.CommandException;
-import exceptions.EmptyStackException;
 
-import java.io.IOException;
 
 public abstract class Command
 {
-    private String key;
+    private final String key;
     public String description;
 
     public Command(String key , String description)

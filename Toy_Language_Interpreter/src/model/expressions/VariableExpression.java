@@ -8,7 +8,7 @@ import model.values.IValue;
 
 public class VariableExpression implements IExp {
 
-    private String variable;
+    private final String variable;
 
     public VariableExpression(String variable) {
         this.variable = variable;

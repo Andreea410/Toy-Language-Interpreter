@@ -1,6 +1,6 @@
 ID = 1
 Execution Stack = {(int v;(v = 2;print(v)))}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -8,7 +8,7 @@ Heap =
 
 ID = 1
 Execution Stack = {(v = 2;print(v))|int v}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -16,15 +16,7 @@ Heap =
 
 ID = 1
 Execution Stack = {(v = 2;print(v))|int v}
-Symbols Table = {}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 1
-Execution Stack = {(v = 2;print(v))|int v}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -32,7 +24,7 @@ Heap =
 
 ID = 1
 Execution Stack = {(v = 2;print(v))}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -40,15 +32,7 @@ Heap =
 
 ID = 1
 Execution Stack = {(v = 2;print(v))}
-Symbols Table = {v-> 0}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 1
-Execution Stack = {(v = 2;print(v))}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -56,7 +40,7 @@ Heap =
 
 ID = 1
 Execution Stack = {print(v)|v = 2}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -64,15 +48,7 @@ Heap =
 
 ID = 1
 Execution Stack = {print(v)|v = 2}
-Symbols Table = {v-> 0}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 1
-Execution Stack = {print(v)|v = 2}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -80,7 +56,7 @@ Heap =
 
 ID = 1
 Execution Stack = {print(v)}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {}
 File Table = {}
 Heap = 
@@ -88,15 +64,7 @@ Heap =
 
 ID = 1
 Execution Stack = {print(v)}
-Symbols Table = {v-> 2}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 1
-Execution Stack = {print(v)}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {}
 File Table = {}
 Heap = 
@@ -104,15 +72,7 @@ Heap =
 
 ID = 1
 Execution Stack = {}
-Symbols Table = {v-> 2}
-Output List = {2}
-File Table = {}
-Heap = 
-====================>
-
-ID = 1
-Execution Stack = {}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {2}
 File Table = {}
 Heap = 

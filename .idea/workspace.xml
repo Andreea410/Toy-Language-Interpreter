@@ -4,11 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="found another error,trying to fix it">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="syncronized the heap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ArithmeticalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/ArithmeticalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/HeapReadExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/HeapReadExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/LogicalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/LogicalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/RelationalExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/RelationalExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/VariableExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/expressions/VariableExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/CompStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/CompStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ForkStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ForkStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapWriteStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/HeapWriteStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/IfStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/OpenReadFileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/OpenReadFileStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ReadFileStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/states/PrgState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/BoolValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/values/BoolValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/TextMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/commands/RunExampleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/commands/RunExampleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log8.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyDictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/ForkStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/ForkStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/IfStmt.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/IfStmt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/states/PrgState.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/states/PrgState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/values/BoolValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/values/BoolValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/Interpreter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,27 +89,27 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Interpreter.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/toy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Interpreter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/toy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\model" />
@@ -162,15 +202,8 @@
       <workItem from="1732728082734" duration="3846000" />
       <workItem from="1732820231688" duration="7638000" />
       <workItem from="1732894252144" duration="10349000" />
-      <workItem from="1732960491729" duration="11435000" />
-    </task>
-    <task id="LOCAL-00026" summary="implement deepCopy for statements">
-      <option name="closed" value="true" />
-      <created>1730647190526</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1730647190526</updated>
+      <workItem from="1732960491729" duration="13679000" />
+      <workItem from="1732998492719" duration="852000" />
     </task>
     <task id="LOCAL-00027" summary="syncronized ADTs">
       <option name="closed" value="true" />
@@ -556,7 +589,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732993585742</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="syncronized the heap">
+      <option name="closed" value="true" />
+      <created>1732996365909</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1732996365909</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +615,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the heap in every eval function" />
     <MESSAGE value="added HeapReadExpression" />
     <MESSAGE value="added the new statement in the menu" />
     <MESSAGE value="added function toString for the new statements and expressions" />
@@ -599,18 +639,10 @@
     <MESSAGE value="A5" />
     <MESSAGE value="finished A5" />
     <MESSAGE value="found another error,trying to fix it" />
-    <option name="LAST_COMMIT_MESSAGE" value="found another error,trying to fix it" />
+    <MESSAGE value="syncronized the heap" />
+    <option name="LAST_COMMIT_MESSAGE" value="syncronized the heap" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Toy_Language_Interpreter/src/view/commands/RunExampleCommand.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="repository.Repository" memberName="programs" />

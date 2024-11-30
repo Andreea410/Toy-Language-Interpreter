@@ -20,7 +20,6 @@ public class ForkStatement implements IStmt
     @Override
     public PrgState execute(PrgState prgState) throws StatementException, ADTException, IOException {
         IMyStack<IStmt> newExecutionStack = new MyStack<>();
-        newExecutionStack.push(statement);
         return new PrgState(newExecutionStack, prgState.getSymTable().deepCopy(), prgState.getOutput(), this.statement, prgState.getFileTable(), prgState.getHeap());
     }
 

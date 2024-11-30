@@ -4,7 +4,7 @@ import model.types.IType;
 
 public class BoolValue implements IValue
 {
-    boolean val;
+    Boolean val;
 
     public BoolValue(boolean v)
     {
@@ -14,7 +14,7 @@ public class BoolValue implements IValue
     @Override
     public String toString()
     {
-        return "bool";
+        return val.toString();
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BoolValue implements IValue
     @Override
     public boolean equals(IValue other)
     {
-        return other instanceof BoolValue && ((BoolValue)other).val == this.val;
+        return (other instanceof BoolValue) && ((BoolValue)other).val == this.val;
     }
 
 

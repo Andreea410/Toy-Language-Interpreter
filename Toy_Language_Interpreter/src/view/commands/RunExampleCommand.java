@@ -2,9 +2,6 @@ package view.commands;
 
 import controller.Controller;
 import exceptions.CommandException;
-import exceptions.EmptyStackException;
-
-import java.io.IOException;
 
 public class RunExampleCommand extends Command {
 

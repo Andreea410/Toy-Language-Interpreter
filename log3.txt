@@ -1,115 +1,79 @@
 ID = 3
-Execution Stack = {(bool a;(int v;(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(bool a;(int v;(a = true;(if(a){v = 2}else{v = 3}
 ;print(v)))))}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(int v;(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(int v;(a = true;(if(a){v = 2}else{v = 3}
 ;print(v))))|bool a}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(int v;(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(int v;(a = true;(if(a){v = 2}else{v = 3}
 ;print(v))))|bool a}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(int v;(a = bool;(if(a){v = 2}else{v = 3}
-;print(v))))|bool a}
-Symbols Table = {}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {(int v;(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(int v;(a = true;(if(a){v = 2}else{v = 3}
 ;print(v))))}
-Symbols Table = {a-> bool}
+SymTable = {a-> false}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(int v;(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(int v;(a = true;(if(a){v = 2}else{v = 3}
 ;print(v))))}
-Symbols Table = {a-> bool}
+SymTable = {a-> false}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(int v;(a = bool;(if(a){v = 2}else{v = 3}
-;print(v))))}
-Symbols Table = {a-> bool}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(a = true;(if(a){v = 2}else{v = 3}
 ;print(v)))|int v}
-Symbols Table = {a-> bool}
+SymTable = {a-> false}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(a = true;(if(a){v = 2}else{v = 3}
 ;print(v)))|int v}
-Symbols Table = {a-> bool}
+SymTable = {a-> false}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(a = bool;(if(a){v = 2}else{v = 3}
-;print(v)))|int v}
-Symbols Table = {a-> bool}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(a = true;(if(a){v = 2}else{v = 3}
 ;print(v)))}
-Symbols Table = {a-> bool | v-> 0}
+SymTable = {a-> false | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {(a = bool;(if(a){v = 2}else{v = 3}
+Execution Stack = {(a = true;(if(a){v = 2}else{v = 3}
 ;print(v)))}
-Symbols Table = {a-> bool | v-> 0}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {(a = bool;(if(a){v = 2}else{v = 3}
-;print(v)))}
-Symbols Table = {a-> bool | v-> 0}
+SymTable = {a-> false | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -117,8 +81,8 @@ Heap =
 
 ID = 3
 Execution Stack = {(if(a){v = 2}else{v = 3}
-;print(v))|a = bool}
-Symbols Table = {a-> bool | v-> 0}
+;print(v))|a = true}
+SymTable = {a-> false | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -126,17 +90,8 @@ Heap =
 
 ID = 3
 Execution Stack = {(if(a){v = 2}else{v = 3}
-;print(v))|a = bool}
-Symbols Table = {a-> bool | v-> 0}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {(if(a){v = 2}else{v = 3}
-;print(v))|a = bool}
-Symbols Table = {a-> bool | v-> 0}
+;print(v))|a = true}
+SymTable = {a-> false | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -145,7 +100,7 @@ Heap =
 ID = 3
 Execution Stack = {(if(a){v = 2}else{v = 3}
 ;print(v))}
-Symbols Table = {a-> bool | v-> 0}
+SymTable = {a-> true | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -154,16 +109,7 @@ Heap =
 ID = 3
 Execution Stack = {(if(a){v = 2}else{v = 3}
 ;print(v))}
-Symbols Table = {a-> bool | v-> 0}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {(if(a){v = 2}else{v = 3}
-;print(v))}
-Symbols Table = {a-> bool | v-> 0}
+SymTable = {a-> true | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -172,7 +118,7 @@ Heap =
 ID = 3
 Execution Stack = {print(v)|if(a){v = 2}else{v = 3}
 }
-Symbols Table = {a-> bool | v-> 0}
+SymTable = {a-> true | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -181,40 +127,23 @@ Heap =
 ID = 3
 Execution Stack = {print(v)|if(a){v = 2}else{v = 3}
 }
-Symbols Table = {a-> bool | v-> 0}
+SymTable = {a-> true | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {print(v)|if(a){v = 2}else{v = 3}
-}
-Symbols Table = {a-> bool | v-> 0}
+Execution Stack = {print(v)|v = 2}
+SymTable = {a-> true | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 3
-Execution Stack = {print(v)|v = 3}
-Symbols Table = {a-> bool | v-> 0}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {print(v)|v = 3}
-Symbols Table = {a-> bool | v-> 0}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {print(v)|v = 3}
-Symbols Table = {a-> bool | v-> 0}
+Execution Stack = {print(v)|v = 2}
+SymTable = {a-> true | v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -222,7 +151,7 @@ Heap =
 
 ID = 3
 Execution Stack = {print(v)}
-Symbols Table = {a-> bool | v-> 3}
+SymTable = {a-> true | v-> 2}
 Output List = {}
 File Table = {}
 Heap = 
@@ -230,15 +159,7 @@ Heap =
 
 ID = 3
 Execution Stack = {print(v)}
-Symbols Table = {a-> bool | v-> 3}
-Output List = {}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {print(v)}
-Symbols Table = {a-> bool | v-> 3}
+SymTable = {a-> true | v-> 2}
 Output List = {}
 File Table = {}
 Heap = 
@@ -246,16 +167,8 @@ Heap =
 
 ID = 3
 Execution Stack = {}
-Symbols Table = {a-> bool | v-> 3}
-Output List = {3}
-File Table = {}
-Heap = 
-====================>
-
-ID = 3
-Execution Stack = {}
-Symbols Table = {a-> bool | v-> 3}
-Output List = {3}
+SymTable = {a-> true | v-> 2}
+Output List = {2}
 File Table = {}
 Heap = 
 ====================>

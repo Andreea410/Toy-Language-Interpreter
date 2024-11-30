@@ -1,6 +1,6 @@
 ID = 9
 Execution Stack = {(int v;(v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))))}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -8,7 +8,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))|int v}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -16,7 +16,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))|int v}
-Symbols Table = {}
+SymTable = {}
 Output List = {}
 File Table = {}
 Heap = 
@@ -24,7 +24,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -32,7 +32,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(v = 4;(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v)))}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -40,7 +40,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))|v = 4}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -48,7 +48,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))|v = 4}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {}
 File Table = {}
 Heap = 
@@ -56,7 +56,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -64,7 +64,7 @@ Heap =
 
 ID = 9
 Execution Stack = {(While(v > 0) {(print(v);v = v SUBTRACT 1)};print(v))}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -72,7 +72,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -80,7 +80,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -88,7 +88,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -96,7 +96,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -104,7 +104,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -112,7 +112,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {}
 File Table = {}
 Heap = 
@@ -120,7 +120,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -128,7 +128,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 4}
+SymTable = {v-> 4}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -136,7 +136,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -144,7 +144,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -152,7 +152,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -160,7 +160,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -168,7 +168,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -176,7 +176,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4}
 File Table = {}
 Heap = 
@@ -184,7 +184,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -192,7 +192,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 3}
+SymTable = {v-> 3}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -200,7 +200,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -208,7 +208,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -216,7 +216,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -224,7 +224,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -232,7 +232,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -240,7 +240,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3}
 File Table = {}
 Heap = 
@@ -248,7 +248,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -256,7 +256,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 2}
+SymTable = {v-> 2}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -264,7 +264,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -272,7 +272,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -280,7 +280,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -288,7 +288,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|(print(v);v = v SUBTRACT 1)}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -296,7 +296,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -304,7 +304,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1|print(v)}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2}
 File Table = {}
 Heap = 
@@ -312,7 +312,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2|1}
 File Table = {}
 Heap = 
@@ -320,7 +320,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}|v = v SUBTRACT 1}
-Symbols Table = {v-> 1}
+SymTable = {v-> 1}
 Output List = {4|3|2|1}
 File Table = {}
 Heap = 
@@ -328,7 +328,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {4|3|2|1}
 File Table = {}
 Heap = 
@@ -336,15 +336,7 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)|While(v > 0) {(print(v);v = v SUBTRACT 1)}}
-Symbols Table = {v-> 0}
-Output List = {4|3|2|1}
-File Table = {}
-Heap = 
-====================>
-
-ID = 9
-Execution Stack = {print(v)}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {4|3|2|1}
 File Table = {}
 Heap = 
@@ -352,7 +344,15 @@ Heap =
 
 ID = 9
 Execution Stack = {print(v)}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
+Output List = {4|3|2|1}
+File Table = {}
+Heap = 
+====================>
+
+ID = 9
+Execution Stack = {print(v)}
+SymTable = {v-> 0}
 Output List = {4|3|2|1}
 File Table = {}
 Heap = 
@@ -360,7 +360,7 @@ Heap =
 
 ID = 9
 Execution Stack = {}
-Symbols Table = {v-> 0}
+SymTable = {v-> 0}
 Output List = {4|3|2|1|0}
 File Table = {}
 Heap = 
