@@ -1,5 +1,37 @@
 ID = 1
-Execution Stack = {print(v) | v = 2| }
+Execution Stack = {(int v;(v = 2;print(v)))}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 1
+Execution Stack = {(v = 2;print(v))|int v}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 1
+Execution Stack = {(v = 2;print(v))|int v}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 1
+Execution Stack = {(v = 2;print(v))|int v}
+Symbols Table = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 1
+Execution Stack = {(v = 2;print(v))}
 Symbols Table = {v-> 0}
 Output List = {}
 File Table = {}
@@ -7,7 +39,7 @@ Heap =
 ====================>
 
 ID = 1
-Execution Stack = {print(v) | v = 2| }
+Execution Stack = {(v = 2;print(v))}
 Symbols Table = {v-> 0}
 Output List = {}
 File Table = {}
@@ -15,7 +47,7 @@ Heap =
 ====================>
 
 ID = 1
-Execution Stack = {print(v) | v = 2| }
+Execution Stack = {(v = 2;print(v))}
 Symbols Table = {v-> 0}
 Output List = {}
 File Table = {}
@@ -23,7 +55,7 @@ Heap =
 ====================>
 
 ID = 1
-Execution Stack = {print(v) | v = 2| }
+Execution Stack = {print(v)|v = 2}
 Symbols Table = {v-> 0}
 Output List = {}
 File Table = {}
@@ -31,33 +63,41 @@ Heap =
 ====================>
 
 ID = 1
-Execution Stack = {}
-Symbols Table = {v-> 2}
-Output List = {2}
+Execution Stack = {print(v)|v = 2}
+Symbols Table = {v-> 0}
+Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 1
-Execution Stack = {}
-Symbols Table = {v-> 2}
-Output List = {2}
+Execution Stack = {print(v)|v = 2}
+Symbols Table = {v-> 0}
+Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 1
-Execution Stack = {}
+Execution Stack = {print(v)}
 Symbols Table = {v-> 2}
-Output List = {2}
+Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
 ID = 1
-Execution Stack = {}
+Execution Stack = {print(v)}
 Symbols Table = {v-> 2}
-Output List = {2}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
+ID = 1
+Execution Stack = {print(v)}
+Symbols Table = {v-> 2}
+Output List = {}
 File Table = {}
 Heap = 
 ====================>

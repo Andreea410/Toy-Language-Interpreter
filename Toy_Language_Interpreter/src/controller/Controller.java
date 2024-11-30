@@ -29,29 +29,40 @@ public class Controller
         this.repository = repo;
     }
 
-    public void allStep() throws InterruptedException
-    {
+    public void allStep() throws InterruptedException {
         executor = Executors.newFixedThreadPool(2);
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
-        programsList.forEach(System.out::println);
+
+        if (programsList.isEmpty()) {
+            System.out.println("No programs to execute.");
+            executor.shutdownNow();
+            return;
+        }
+
+        programsList.forEach(repository::clearLogFile);
+
         try {
             while (!programsList.isEmpty()) {
                 conservativeGarbageCollector(programsList);
-                programsList.forEach(repository::clearLogFile);
                 OneStepForAllPrg(programsList);
-                programsList.forEach(System.out::println);
-                programsList = removeCompletedPrgStates(repository.getPrgStatesList());
+
+                programsList = removeCompletedPrgStates(programsList);
             }
-        }
-        catch (ControllerException e)
-        {
+        } catch (ControllerException e) {
             System.out.println("Program finished successfully!");
         }
+
         executor.shutdownNow();
         repository.setPrgList(programsList);
     }
 
+
     public void OneStepForAllPrg(List<PrgState> prgStates) throws ControllerException, InterruptedException {
+        prgStates = removeCompletedPrgStates(prgStates);
+
+        if (prgStates.isEmpty()) {
+            throw new ControllerException("No more programs to execute. Execution is complete.");
+        }
 
         prgStates.forEach(prgState -> {
             try {
@@ -61,14 +72,19 @@ public class Controller
             }
         });
 
-        List<Callable<PrgState>> callableList = prgStates.stream().
-                map((PrgState p)->(Callable<PrgState>)(p::executeOneStep)).toList();
-        List<PrgState> newPrgList;
-        try{
+        List<Callable<PrgState>> callableList = prgStates.stream()
+                .filter(p -> !p.getExeStack().isEmpty())
+                .map((PrgState p) -> (Callable<PrgState>) (p::executeOneStep))
+                .toList();
+
+        List<PrgState> newPrgList = new LinkedList<>();
+        try {
             newPrgList = executor.invokeAll(callableList).stream()
                     .map(future -> {
                         try {
-                            return future.get();
+                            PrgState result = future.get();
+                            System.out.println("Processed PrgState: " + result);
+                            return result;
                         } catch (ExecutionException | InterruptedException e) {
                             System.out.println("Error executing thread: " + e.getMessage());
                             return null;
@@ -77,26 +93,23 @@ public class Controller
                     .filter(Objects::nonNull)
                     .toList();
 
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             throw new ControllerException(e.getMessage());
         }
 
         prgStates.addAll(newPrgList);
+
         prgStates.forEach(prgState -> {
-            try{
+            try {
                 repository.logPrgStateExec(prgState);
-            }
-            catch (RepoException e)
-            {
-                throw new ControllerException("An error occurred executing one step: "+ e);
+            } catch (RepoException e) {
+                throw new ControllerException("An error occurred executing one step: " + e);
             }
         });
 
         repository.setPrgList(prgStates);
-
     }
+
 
     public void addProgram(IStmt statement)
     {
@@ -163,10 +176,12 @@ public class Controller
         return addressList;
     }
 
-    private List<PrgState> removeCompletedPrgStates(List<PrgState> prgStates)
-    {
-        return prgStates.stream().filter(PrgState::isNotCompleted).collect(Collectors.toList());
+    private List<PrgState> removeCompletedPrgStates(List<PrgState> prgStates) {
+        return prgStates.stream()
+                .filter(PrgState::isNotCompleted)
+                .collect(Collectors.toList());
     }
+
 
 
 //    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
