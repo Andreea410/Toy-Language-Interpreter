@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="finished A5">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="found another error,trying to fix it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ForkStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/statements/ForkStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log7.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/ForkStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/statements/ForkStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/Interpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/Interpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyDictionary.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Interpreter.executor": "Debug",
+    "Application.Interpreter.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -172,15 +162,7 @@
       <workItem from="1732728082734" duration="3846000" />
       <workItem from="1732820231688" duration="7638000" />
       <workItem from="1732894252144" duration="10349000" />
-      <workItem from="1732960491729" duration="7853000" />
-    </task>
-    <task id="LOCAL-00025" summary="implement deepCopy for expressions">
-      <option name="closed" value="true" />
-      <created>1730646697053</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1730646697053</updated>
+      <workItem from="1732960491729" duration="11435000" />
     </task>
     <task id="LOCAL-00026" summary="implement deepCopy for statements">
       <option name="closed" value="true" />
@@ -566,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732961792536</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="found another error,trying to fix it">
+      <option name="closed" value="true" />
+      <created>1732993585742</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1732993585742</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed the controller" />
     <MESSAGE value="added the heap in every eval function" />
     <MESSAGE value="added HeapReadExpression" />
     <MESSAGE value="added the new statement in the menu" />
@@ -609,7 +598,8 @@
     <MESSAGE value="almost finished A5" />
     <MESSAGE value="A5" />
     <MESSAGE value="finished A5" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished A5" />
+    <MESSAGE value="found another error,trying to fix it" />
+    <option name="LAST_COMMIT_MESSAGE" value="found another error,trying to fix it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

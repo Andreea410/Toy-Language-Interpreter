@@ -1,7 +1,6 @@
 package controller;
 
 import exceptions.*;
-import exceptions.EmptyStackException;
 import model.adt.IMyHeap;
 import model.adt.IMyList;
 import model.adt.MyList;
@@ -120,30 +119,32 @@ public class Controller
     }
 
 
-    private Map<Integer, IValue> safeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap)
-    {
-        IMyList<Integer> addresses = new MyList<>(symTableAddr.getList());
-        boolean newAddressesFound;
-        do {
-            newAddressesFound = false;
-            IMyList<Integer> newAddresses = getAddrFromSymTable(getReferencedValues(addresses,heap));
+    private Map<Integer, IValue> safeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap) {
+        synchronized (heap) {
+            IMyList<Integer> addresses = new MyList<>(symTableAddr.getList());
+            boolean newAddressesFound;
+            do {
+                newAddressesFound = false;
+                IMyList<Integer> newAddresses = getAddrFromSymTable(getReferencedValues(addresses, heap));
 
-            for(Integer address: newAddresses.getList())
-                if(!addresses.getList().contains(address))
-                {
-                    addresses.add(address);
-                    newAddressesFound = true;
+                for (Integer address : newAddresses.getList()) {
+                    if (!addresses.getList().contains(address)) {
+                        addresses.add(address);
+                        newAddressesFound = true;
+                    }
                 }
-        }while (newAddressesFound);
+            } while (newAddressesFound);
 
-        Map<Integer, IValue> result = new HashMap<>();
-        for (Map.Entry<Integer, IValue> entry : heap.getMap().entrySet()) {
-            if (addresses.getList().contains(entry.getKey())) {
-                result.put(entry.getKey(), entry.getValue());
+            Map<Integer, IValue> result = new HashMap<>();
+            for (Map.Entry<Integer, IValue> entry : heap.getMap().entrySet()) {
+                if (addresses.getList().contains(entry.getKey())) {
+                    result.put(entry.getKey(), entry.getValue());
+                }
             }
+            return result;
         }
-        return result;
     }
+
 
 
     private void conservativeGarbageCollector(List<PrgState> programStates) {
