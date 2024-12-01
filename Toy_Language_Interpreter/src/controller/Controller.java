@@ -1,11 +1,9 @@
 package controller;
-import exceptions.ControllerException;
-import exceptions.RepoException;
-import model.adt.IMyHeap;
-import model.adt.IMyList;
-import model.adt.MyList;
+import exceptions.*;
+import model.adt.*;
 import model.statements.IStmt;
 import model.states.PrgState;
+import model.types.IType;
 import model.values.IValue;
 import model.values.RefValue;
 import repository.IRepository;
@@ -25,6 +23,13 @@ public class Controller
     }
 
     public void allStep() throws InterruptedException {
+        for (PrgState state: repository.getPrgStatesList()) {
+            IMyDictionary<String, IType> typeTable = new MyDictionary<>();
+
+            if(!state.getExeStack().isEmpty()) {
+                state.getExeStack().peek().typeCheck(typeTable);
+            }
+        }
         executor = Executors.newFixedThreadPool(2);
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
 
@@ -114,7 +119,6 @@ public class Controller
         this.repository.addProgram(new PrgState(statement));
     }
 
-
     private Map<Integer, IValue> safeGarbageCollector(IMyList<Integer> symTableAddr, IMyHeap heap) {
         synchronized ( heap) {
             IMyList<Integer> addresses = new MyList<>(symTableAddr.getList());
@@ -181,37 +185,5 @@ public class Controller
                 .filter(PrgState::isNotCompleted)
                 .collect(Collectors.toList());
     }
-
-
-
-//    public PrgState executeOneStep(PrgState prgState) throws EmptyStackException, StatementException, ADTException, IOException {
-//        IMyStack<IStmt> executionStack = prgState.getExeStack();
-//        if(executionStack.isEmpty())
-//            throw new EmptyStackException("The execution stack is empty");
-//
-//        IStmt currentStatement = executionStack.pop();
-//        currentStatement.execute(prgState);
-//        if (displayFlag)
-//            displayCurrentState(prgState);
-//        repository.logPrgStateExec(prgState);
-//        return prgState;
-//    }
-
-//    public void executeAllSteps() throws StatementException, ExpressionException, ADTException, IOException, EmptyStackException {
-//        PrgState currentProgramState = repository.getCurrentProgram();
-//        displayCurrentState(currentProgramState);
-//        repository.logPrgStateExec(currentProgramState);
-//
-//        while (!currentProgramState.getExeStack().isEmpty()) {
-//            IMyList<Integer> symTableAddresses = getAddrFromSymTable(currentProgramState.getSymTable().getContent().values());
-//            Map<Integer, IValue> newHeapContent = safeGarbageCollector(symTableAddresses, currentProgramState.getHeap());
-//            currentProgramState.getHeap().setContent(newHeapContent);
-//            executeOneStep(currentProgramState);
-//            repository.logPrgStateExec(currentProgramState);
-//
-//        }
-//    }
-
-
 
 }
