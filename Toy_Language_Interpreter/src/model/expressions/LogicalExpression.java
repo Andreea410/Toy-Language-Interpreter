@@ -4,6 +4,7 @@ import exceptions.ExpressionException;
 import model.adt.IMyDictionary;
 import model.adt.IMyHeap;
 import model.types.BoolIType;
+import model.types.IType;
 import model.values.BoolValue;
 import model.values.IValue;
 
@@ -12,10 +13,10 @@ public class LogicalExpression implements IExp{
     private final IExp right;
     private final LogicalOperator operator;
 
-    public LogicalExpression(IExp l, LogicalOperator opeartor, IExp r)
+    public LogicalExpression(IExp l, LogicalOperator operator, IExp r)
     {
         this.left =l;
-        this.operator = opeartor;
+        this.operator = operator;
         this.right = r;
     }
 
@@ -47,6 +48,18 @@ public class LogicalExpression implements IExp{
     @Override
     public IExp deepCopy() {
         return new LogicalExpression(this.left.deepCopy() , this.operator , this.right.deepCopy());
+    }
+
+    @Override
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) {
+        IType type1 , type2;
+        type1 = left.typecheck(typeEnv);
+        type2 = right.typecheck(typeEnv);
+        if(!type1.equals(new BoolIType()))
+            throw new ExpressionException("LOGICAL EXPRESSION EXCEPTION: left expression is not of type BoolType");
+        if(!type2.equals(new BoolIType()))
+            throw new ExpressionException("LOGICAL EXPRESSION EXCEPTION: right expression is not of type BoolType");
+        return new BoolIType();
     }
 
     @Override

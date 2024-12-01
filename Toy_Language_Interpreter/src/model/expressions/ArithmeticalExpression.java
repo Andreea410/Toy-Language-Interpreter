@@ -2,6 +2,7 @@ package model.expressions;
 
 import model.adt.IMyDictionary;
 import model.adt.IMyHeap;
+import model.types.IType;
 import model.types.IntIType;
 import model.values.IValue;
 import model.values.IntIValue;
@@ -51,6 +52,18 @@ public class ArithmeticalExpression implements IExp {
     @Override
     public IExp deepCopy() {
         return new ArithmeticalExpression(this.left.deepCopy() , this.operator,this.right.deepCopy());
+    }
+
+    @Override
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException{
+        IType type1,type2;
+        type1 = left.typecheck(typeEnv);
+        type2 = right.typecheck(typeEnv);
+        if(!type1.equals(new IntIType()))
+            throw new ExpressionException("ARITHMETICAL EXPRESSION EXCEPTION: left expression is not of type int");
+        if(!type2.equals(new IntIType()))
+            throw new ExpressionException("ARITHMETICAL EXPRESSION EXCEPTION: right expression is not of type int");
+        return new IntIType();
     }
 
     @Override

@@ -22,6 +22,11 @@ public class ValueExpression implements IExp{
         return new ValueExpression(this.value);
     }
 
+    @Override
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) {
+        return value.getType();
+    }
+
     public IType getType(IMyDictionary<String, IType> typeTable) {
         return value.getType();
     }
@@ -30,4 +35,6 @@ public class ValueExpression implements IExp{
     public String toString() {
         return String.format("%s", value.toString());
     }
+
+
 }

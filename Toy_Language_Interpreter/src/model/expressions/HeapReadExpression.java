@@ -4,6 +4,8 @@ import exceptions.ADTException;
 import exceptions.ExpressionException;
 import model.adt.IMyDictionary;
 import model.adt.IMyHeap;
+import model.types.IType;
+import model.types.RefType;
 import model.values.IValue;
 import model.values.RefValue;
 
@@ -27,6 +29,14 @@ public class HeapReadExpression implements IExp
     @Override
     public IExp deepCopy() {
         return null;
+    }
+
+    @Override
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException{
+        IType type = expression.typecheck(typeEnv);
+        if(!(type instanceof RefType refType))
+            throw new ExpressionException("HEAP READ EXPRESSION EXCEPTION: expression is not of type RefType");
+        return refType.getInner();
     }
 
     @Override
