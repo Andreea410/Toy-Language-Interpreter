@@ -2,9 +2,12 @@ package model.statements;
 
 import exceptions.ADTException;
 import exceptions.StatementException;
+import model.adt.IMyDictionary;
 import model.expressions.IExp;
 import model.states.PrgState;
+import model.types.IType;
 import model.types.IntIType;
+import model.types.RefType;
 import model.types.StringType;
 import model.values.IntIValue;
 import model.values.StringValue;
@@ -61,6 +64,17 @@ public class ReadFileStatement implements IStmt
     @Override
     public IStmt deepCopy() {
         return new ReadFileStatement(this.expression.deepCopy() , this.variableName );
+    }
+
+    @Override
+    public IMyDictionary<String, IType> typeCheck(IMyDictionary<String, IType> typeEnv) throws StatementException {
+        if(!expression.typecheck(typeEnv).equals(new StringType()))
+            throw new StatementException("READ FILE STATEMENT EXCEPTION: expression is not of stringType");
+
+        if(!typeEnv.getValue(variableName).equals(new IntIType()))
+            throw new StatementException("READ FILE STATEMENT EXCEPTION: value is not of type int");
+
+        return typeEnv;
     }
 
     @Override

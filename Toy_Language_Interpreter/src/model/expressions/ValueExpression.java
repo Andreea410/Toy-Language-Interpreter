@@ -1,5 +1,6 @@
 package model.expressions;
 
+import exceptions.ExpressionException;
 import model.adt.IMyDictionary;
 import model.adt.IMyHeap;
 import model.types.IType;
@@ -23,7 +24,7 @@ public class ValueExpression implements IExp{
     }
 
     @Override
-    public IType typecheck(IMyDictionary<String, IType> typeEnv) {
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException {
         return value.getType();
     }
 

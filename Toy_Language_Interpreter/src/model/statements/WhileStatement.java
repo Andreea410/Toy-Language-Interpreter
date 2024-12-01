@@ -2,9 +2,11 @@ package model.statements;
 
 import exceptions.ADTException;
 import exceptions.StatementException;
+import model.adt.IMyDictionary;
 import model.expressions.IExp;
 import model.states.PrgState;
 import model.types.BoolIType;
+import model.types.IType;
 import model.values.BoolValue;
 import model.values.IValue;
 
@@ -38,6 +40,17 @@ public class WhileStatement implements IStmt{
     @Override
     public IStmt deepCopy() {
         return null;
+    }
+
+    @Override
+    public IMyDictionary<String, IType> typeCheck(IMyDictionary<String, IType> typeEnv) throws StatementException {
+        IType type = expression.typecheck(typeEnv);
+
+        if(!type.equals(new BoolIType()))
+            throw new StatementException("WHILE STATEMENT EXCEPTION: The condition is not of type bool.");
+
+        statement.typeCheck(typeEnv.deepCopy());
+        return typeEnv;
     }
 
     @Override

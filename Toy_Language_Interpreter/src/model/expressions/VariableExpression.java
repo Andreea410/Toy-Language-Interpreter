@@ -26,7 +26,7 @@ public class VariableExpression implements IExp {
     }
 
     @Override
-    public IType typecheck(IMyDictionary<String, IType> typeEnv) {
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException {
         return typeEnv.getValue(variable);
     }
 

@@ -9,5 +9,5 @@ import model.values.IValue;
 public interface IExp {
     IValue eval(IMyDictionary<String, IValue> symtbl, IMyHeap heap) throws ADTException, ExpressionException;
     IExp deepCopy();
-    IType typecheck(IMyDictionary<String,IType> typeEnv) ;
+    IType typecheck(IMyDictionary<String,IType> typeEnv) throws ExpressionException;
 }

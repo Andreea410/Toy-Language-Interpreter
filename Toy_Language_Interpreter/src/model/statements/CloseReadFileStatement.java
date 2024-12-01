@@ -1,8 +1,10 @@
 package model.statements;
 
 import exceptions.StatementException;
+import model.adt.IMyDictionary;
 import model.expressions.IExp;
 import model.states.PrgState;
+import model.types.IType;
 import model.types.StringType;
 import model.values.IValue;
 import model.values.StringValue;
@@ -49,6 +51,13 @@ public class CloseReadFileStatement implements IStmt
     @Override
     public IStmt deepCopy() {
         return new CloseReadFileStatement(this.expression.deepCopy());
+    }
+
+    @Override
+    public IMyDictionary<String, IType> typeCheck(IMyDictionary<String, IType> typeEnv) throws StatementException {
+        if (!expression.typecheck(typeEnv).equals(new StringType()))
+            throw new StatementException("CLOSE READ FILE STATEMENT EXCEPTION: expression is not of type string");
+        return typeEnv;
     }
 
     @Override

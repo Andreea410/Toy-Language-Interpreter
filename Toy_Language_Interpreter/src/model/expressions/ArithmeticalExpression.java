@@ -55,7 +55,7 @@ public class ArithmeticalExpression implements IExp {
     }
 
     @Override
-    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException{
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException {
         IType type1,type2;
         type1 = left.typecheck(typeEnv);
         type2 = right.typecheck(typeEnv);

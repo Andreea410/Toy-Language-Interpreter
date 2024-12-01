@@ -2,7 +2,9 @@
 
 package model.statements;
 import exceptions.StatementException;
+import model.adt.IMyDictionary;
 import model.states.PrgState;
+import model.types.IType;
 
 
 public class CompStmt implements IStmt{
@@ -32,6 +34,11 @@ public class CompStmt implements IStmt{
     @Override
     public IStmt deepCopy() {
         return new CompStmt(this.statement1.deepCopy() , this.statement2.deepCopy());
+    }
+
+    @Override
+    public IMyDictionary<String, IType> typeCheck(IMyDictionary<String, IType> typeEnv) throws StatementException {
+        return statement2.typeCheck(statement1.typeCheck(typeEnv));
     }
 
 

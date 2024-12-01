@@ -51,7 +51,7 @@ public class LogicalExpression implements IExp{
     }
 
     @Override
-    public IType typecheck(IMyDictionary<String, IType> typeEnv) {
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException {
         IType type1 , type2;
         type1 = left.typecheck(typeEnv);
         type2 = right.typecheck(typeEnv);

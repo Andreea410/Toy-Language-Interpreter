@@ -32,7 +32,7 @@ public class HeapReadExpression implements IExp
     }
 
     @Override
-    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException{
+    public IType typecheck(IMyDictionary<String, IType> typeEnv) throws ExpressionException {
         IType type = expression.typecheck(typeEnv);
         if(!(type instanceof RefType refType))
             throw new ExpressionException("HEAP READ EXPRESSION EXCEPTION: expression is not of type RefType");

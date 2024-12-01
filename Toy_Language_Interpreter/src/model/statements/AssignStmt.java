@@ -2,8 +2,10 @@ package model.statements;
 
 import exceptions.ADTException;
 import exceptions.StatementException;
+import model.adt.IMyDictionary;
 import model.expressions.IExp;
 import model.states.PrgState;
+import model.types.IType;
 import model.values.IValue;
 
 public class AssignStmt implements IStmt{
@@ -39,6 +41,15 @@ public class AssignStmt implements IStmt{
     @Override
     public IStmt deepCopy() {
         return new AssignStmt(this.variableName, this.expression.deepCopy());
+    }
+
+    @Override
+    public IMyDictionary<String, IType> typeCheck(IMyDictionary<String, IType> typeEnv) throws StatementException {
+        IType typeVar = typeEnv.getValue(variableName);
+        IType typeExp = expression.typecheck(typeEnv);
+        if(!typeVar.equals(typeExp))
+            throw new StatementException("ASSIGN STATEMENT EXCEPTION: right side and left side have different types");
+        return typeEnv;
     }
 
 
