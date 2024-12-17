@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="finished A6">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/HelloWorldFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" afterDir="false" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added javaFx module-info.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/HelloWorldFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +21,7 @@
         <option value="Interface" />
         <option value="Exception" />
         <option value="Class" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -56,6 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GUI.executor": "Run",
     "Application.HelloWorldFX.executor": "Run",
     "Application.Interpreter.executor": "Run",
     "Application.Main.executor": "Run",
@@ -69,7 +68,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java",
-    "project.structure.last.edited": "Global Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -81,6 +80,8 @@
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src" />
+      <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\view\gui" />
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -181,14 +182,7 @@
       <workItem from="1734361639895" duration="529000" />
       <workItem from="1734379904437" duration="577000" />
       <workItem from="1734464646559" duration="246000" />
-    </task>
-    <task id="LOCAL-00033" summary="almost implemented the OpenReadFileStatement , need to fix smth in the ProgramState">
-      <option name="closed" value="true" />
-      <created>1731169628367</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1731169628367</updated>
+      <workItem from="1734464925452" duration="1632000" />
     </task>
     <task id="LOCAL-00034" summary="implemented the OpenReadFileStatement">
       <option name="closed" value="true" />
@@ -574,7 +568,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733063988648</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="added javaFx module-info.java">
+      <option name="closed" value="true" />
+      <created>1734465219620</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1734465219621</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished A4" />
     <MESSAGE value="seminar 9" />
     <MESSAGE value="added the new functions in the Repository" />
     <MESSAGE value="implemented the oneStepForAllPrg in the controller and fixed the fork statement" />
@@ -617,7 +618,8 @@
     <MESSAGE value="started A6 , implemented the typecheck method for all expressions" />
     <MESSAGE value="implemented the typeCheck method for all statements" />
     <MESSAGE value="finished A6" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished A6" />
+    <MESSAGE value="added javaFx module-info.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javaFx module-info.java" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
