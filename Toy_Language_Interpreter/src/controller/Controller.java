@@ -22,7 +22,7 @@ public class Controller
         this.repository = repo;
     }
 
-    public void allStep() throws InterruptedException {
+    public void allStep() throws InterruptedException{
         for (PrgState state: repository.getPrgStatesList()) {
             IMyDictionary<String, IType> typeTable = new MyDictionary<>();
 
@@ -30,6 +30,7 @@ public class Controller
                 state.getExeStack().peek().typeCheck(typeTable);
             }
         }
+
         executor = Executors.newFixedThreadPool(2);
         List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
 
@@ -144,8 +145,6 @@ public class Controller
             return result;
         }
     }
-
-
 
     private void conservativeGarbageCollector(List<PrgState> programStates) {
         List<Integer> symTableAddresses = programStates.stream()

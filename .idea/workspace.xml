@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the typeCheck method for all statements">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="finished A6">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/HelloWorldFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/IMyStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/model/adt/MyStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,27 +54,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Interpreter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/toy&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloWorldFX.executor": "Run",
+    "Application.Interpreter.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/PROGRAME/Java-FX/javafx-sdk-23.0.1/lib/javafx.web.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\model" />
@@ -168,23 +171,16 @@
       <workItem from="1732960491729" duration="13679000" />
       <workItem from="1732998492719" duration="1475000" />
       <workItem from="1733000085702" duration="290000" />
-      <workItem from="1733053641266" duration="5471000" />
-    </task>
-    <task id="LOCAL-00031" summary="implemented RelationalExpression">
-      <option name="closed" value="true" />
-      <created>1731168515001</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1731168515001</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added try and catch in the ReadFileStatement">
-      <option name="closed" value="true" />
-      <created>1731168822806</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1731168822806</updated>
+      <workItem from="1733053641266" duration="6125000" />
+      <workItem from="1733133918928" duration="8077000" />
+      <workItem from="1733160893445" duration="36000" />
+      <workItem from="1733746457082" duration="3427000" />
+      <workItem from="1734348241578" duration="817000" />
+      <workItem from="1734349585430" duration="387000" />
+      <workItem from="1734350292463" duration="944000" />
+      <workItem from="1734361639895" duration="529000" />
+      <workItem from="1734379904437" duration="577000" />
+      <workItem from="1734464646559" duration="246000" />
     </task>
     <task id="LOCAL-00033" summary="almost implemented the OpenReadFileStatement , need to fix smth in the ProgramState">
       <option name="closed" value="true" />
@@ -562,7 +558,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733061661290</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="finished A6">
+      <option name="closed" value="true" />
+      <created>1733062872209</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1733062872209</updated>
+    </task>
+    <task id="LOCAL-00081" summary="finished A6">
+      <option name="closed" value="true" />
+      <created>1733063988648</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1733063988648</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed the execute function from the HeapAllocationStatement" />
     <MESSAGE value="finished A4" />
     <MESSAGE value="seminar 9" />
     <MESSAGE value="added the new functions in the Repository" />
@@ -605,7 +616,8 @@
     <MESSAGE value="FINISHED A5" />
     <MESSAGE value="started A6 , implemented the typecheck method for all expressions" />
     <MESSAGE value="implemented the typeCheck method for all statements" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented the typeCheck method for all statements" />
+    <MESSAGE value="finished A6" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished A6" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
