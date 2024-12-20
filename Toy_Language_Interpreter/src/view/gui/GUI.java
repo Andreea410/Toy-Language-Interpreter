@@ -1,28 +1,37 @@
 package view.gui;
 
 import javafx.application.Application;
-import javafx.scene.Group;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.scene.paint.Color;
+import view.gui.selectwindow.SelectStatementController;
 
-import java.awt.*;
+import java.io.IOException;
 
 public class GUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
 
-        Group root = new Group();
-        Scene scene = new Scene(root,Color.BLACK);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gui/selectwindow/SelectStatementWindow.fxml"));
+            Parent root = loader.load();
+            Scene selectScene = new Scene(root, 720, 500);
+
+            SelectStatementController controller = loader.getController();
+
+            primaryStage.setTitle("Select Statement");
+            primaryStage.setScene(selectScene);
+            primaryStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void main(String[] args) {
         launch();
     }
-
 }

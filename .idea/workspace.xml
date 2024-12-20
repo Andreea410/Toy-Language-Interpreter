@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added javaFx module-info.java">
-      <change beforePath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" afterDir="false" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="deleted some implementations and started over">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/GUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,9 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "deleting-some-implementations",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/PROGRAME/Java-FX/javafx-sdk-23.0.1/lib/javafx.web.jar",
+    "last_opened_file_path": "E:/PROGRAME/Java-SceneBuilder/SceneBuilder.exe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,7 +76,7 @@
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,6 +85,7 @@
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\view\gui\selectwindow" />
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src" />
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\view\gui" />
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter" />
@@ -183,14 +189,6 @@
       <workItem from="1734379904437" duration="577000" />
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
-    </task>
-    <task id="LOCAL-00034" summary="implemented the OpenReadFileStatement">
-      <option name="closed" value="true" />
-      <created>1731169937546</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1731169937546</updated>
     </task>
     <task id="LOCAL-00035" summary="implemented the CloseReadFileStatement">
       <option name="closed" value="true" />
@@ -576,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734465219621</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="deleted some implementations and started over">
+      <option name="closed" value="true" />
+      <created>1734716506648</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1734716506649</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seminar 9" />
     <MESSAGE value="added the new functions in the Repository" />
     <MESSAGE value="implemented the oneStepForAllPrg in the controller and fixed the fork statement" />
     <MESSAGE value="added some new functions" />
@@ -619,7 +624,8 @@
     <MESSAGE value="implemented the typeCheck method for all statements" />
     <MESSAGE value="finished A6" />
     <MESSAGE value="added javaFx module-info.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javaFx module-info.java" />
+    <MESSAGE value="deleted some implementations and started over" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted some implementations and started over" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -627,5 +633,9 @@
         <PinnedItemInfo parentTag="repository.Repository" memberName="programs" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
