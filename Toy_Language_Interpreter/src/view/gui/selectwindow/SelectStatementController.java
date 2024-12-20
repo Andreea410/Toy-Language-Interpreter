@@ -80,6 +80,7 @@ public class SelectStatementController implements Initializable {
         }
         else {
             int id = statementsListView.getSelectionModel().getSelectedIndex();
+            id = id+1;
             selectedStatement.typeCheck(new MyDictionary<>());
             IRepository repository = new Repository("log" + id + ".txt");
             Controller controller = new Controller(repository);

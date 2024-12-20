@@ -210,7 +210,10 @@ public class ExecuteStatementController {
                     controller.runOneStep();
                     populateTables();
                     populateIdentifiers();
+                    populateNumberProgramStates();
+
                 } else {
+
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Information");
                     alert.setHeaderText("No more programs to run");

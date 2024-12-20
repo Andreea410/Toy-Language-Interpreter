@@ -2,6 +2,7 @@ package controller;
 import exceptions.*;
 import exceptions.EmptyStackException;
 import model.adt.*;
+import model.statements.ForkStatement;
 import model.statements.IStmt;
 import model.states.PrgState;
 import model.types.IType;
@@ -118,17 +119,30 @@ public class Controller
     }
 
     public void runOneStep() throws EmptyStackException, IOException {
-        IMyStack<IStmt> exeStack = repository.getPrgStatesList().get(0).getExeStack();
-        if(exeStack.isEmpty())
-            throw new EmptyStackException("Execution stack is empty.");
-        IStmt currentStatement = exeStack.pop();
-        currentStatement.execute(repository.getPrgStatesList().get(0));
+        this.removeCompletedPrgStates(getProgramStateList());
+        List<Callable<PrgState>> steps = repository.getPrgStatesList().stream()
+                .map((PrgState p) -> (Callable<PrgState>) p::executeOneStep)
+                .collect(Collectors.toList());
 
-        System.out.println(repository.getPrgStatesList().get(0).toString());
-        repository.logPrgStateExec(repository.getPrgStatesList().get(0));
+        this.executor = Executors.newFixedThreadPool(2);
+        List<PrgState> newPrgList;
+        try {
+            newPrgList = executor.invokeAll(steps).stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        } catch (InterruptedException | ExecutionException e) {
+                            System.out.println("Error executing thread: " + e.getMessage());
+                            return null;
+                        }
+                    })
+                    .filter(Objects::nonNull)
+                    .toList();
+        } catch (InterruptedException e) {
+            throw new EmptyStackException(e.getMessage());
+        }
 
     }
-
 
     public void addProgram(IStmt statement)
     {
