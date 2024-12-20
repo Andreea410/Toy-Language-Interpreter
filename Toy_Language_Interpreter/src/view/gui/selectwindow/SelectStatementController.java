@@ -1,12 +1,15 @@
 package view.gui.selectwindow;
 
 import controller.Controller;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import model.adt.MyDictionary;
 import model.expressions.*;
 import model.statements.*;
 import model.states.PrgState;
@@ -19,6 +22,7 @@ import model.values.IntIValue;
 import model.values.StringValue;
 import repository.IRepository;
 import repository.Repository;
+import view.gui.executewindow.ExecuteStatementController;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,12 +32,13 @@ import java.util.ResourceBundle;
 public class SelectStatementController implements Initializable {
 
     //ATTRIBUTES
-    private List<IStmt> statements = new ArrayList<>();
-    String selectedStatement;
+    private ExecuteStatementController executeController;
+    IStmt selectedStatement;
+    List<IStmt> statements = new ArrayList<>();
 
     //FXML ATRIBUTES
     @FXML
-    private ListView<String> statementsListView;
+    private ListView<IStmt> statementsListView;
 
     @FXML
     private Label selectStatementLabel;
@@ -47,7 +52,7 @@ public class SelectStatementController implements Initializable {
         populateStatements();
         for(IStmt statement : statements)
         {
-            statementsListView.getItems().add(statement.toString());
+            statementsListView.getItems().add(statement);
         }
         this.statementsListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             this.selectedStatement = statementsListView.getSelectionModel().getSelectedItem();
@@ -55,10 +60,34 @@ public class SelectStatementController implements Initializable {
         });
     }
 
+    public void setExecuteController(ExecuteStatementController executeController) {
+        this.executeController = executeController;
+    }
+
     @FXML
     private void handleExecuteButtonAction(ActionEvent event) {
         System.out.println("Execute button clicked");
+        IStmt selectedStmt = statementsListView.getSelectionModel().getSelectedItem();
+        int selectedStmtIndex = statementsListView.getSelectionModel().getSelectedIndex();
+        if(selectedStmt == null || selectedStmtIndex == -1) {
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("No statement selected");
+                alert.setContentText("Please select a statement to execute");
+                alert.showAndWait();
+            });
+        }
+        else {
+            int id = statementsListView.getSelectionModel().getSelectedIndex();
+            selectedStatement.typeCheck(new MyDictionary<>());
+            IRepository repository = new Repository("log" + id + ".txt");
+            Controller controller = new Controller(repository);
+            controller.addProgram(selectedStatement);
+            executeController.setController(controller);
+        }
     }
+
 
     private void populateStatements()
     {
@@ -170,6 +199,7 @@ public class SelectStatementController implements Initializable {
 
 
         statements.add(statement10);
+
     }
 
 

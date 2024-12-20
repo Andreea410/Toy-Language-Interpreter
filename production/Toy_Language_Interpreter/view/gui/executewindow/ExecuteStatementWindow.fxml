@@ -46,7 +46,7 @@
             <Font name="Cambria Italic" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="SYMTableView" layoutX="214.0" layoutY="244.0" prefHeight="170.0" prefWidth="206.0">
+      <TableView fx:id="SymTableView" layoutX="214.0" layoutY="244.0" prefHeight="170.0" prefWidth="206.0">
          <columns>
             <TableColumn fx:id="variableNameColumn" prefWidth="100.79998779296875" text="Variable Name" />
             <TableColumn fx:id="valueColumnSymTable" prefWidth="98.4000244140625" text="Value" />

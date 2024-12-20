@@ -53,7 +53,7 @@ public class ExecuteStatementController {
     private Label identifiersLabel;
 
     @FXML
-    private TableView<MyPair<String,IValue>> symTableView;
+    private TableView<MyPair<String,IValue>> SymTableView;
     @FXML
     private TableColumn<MyPair<String,IValue>,String> variableNameColumn;
     @FXML
@@ -142,9 +142,9 @@ public class ExecuteStatementController {
         ArrayList<MyPair<String, IValue>> symTableContent = new ArrayList<>();
         for(String key: symTable.getContent().keySet())
             symTableContent.add(new MyPair<>(key,symTable.getContent().get(key)));
-        symTableView.getItems().clear();
+        SymTableView.getItems().clear();
         for(MyPair<String,IValue> entry: symTableContent)
-            symTableView.getItems().add(entry);
+            SymTableView.getItems().add(entry);
     }
 
     private void populateExecutionStack()

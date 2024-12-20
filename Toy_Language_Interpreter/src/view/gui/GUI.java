@@ -31,6 +31,7 @@ public class GUI extends Application {
             Parent executeroot = executeloader.load();
             Scene executeScene = new Scene(executeroot, 720, 500);
             ExecuteStatementController executeController = executeloader.getController();
+            controller.setExecuteController(executeController);
             Stage executeStage = new Stage();
             executeStage.setTitle("Toy Language Interpreter");
             executeStage.setScene(executeScene);

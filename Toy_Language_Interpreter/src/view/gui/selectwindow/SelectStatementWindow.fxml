@@ -22,7 +22,7 @@
          <ListView fx:id="statementsListView" prefHeight="278.0" prefWidth="582.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
 
          <!-- Button at the bottom -->
-         <Button fx:id="executeButton" maxWidth="200.0" mnemonicParsing="false" text="Execute statement">
+         <Button fx:id="executeButton" maxWidth="200.0" mnemonicParsing="false" text="Execute statement" onAction="#handleExecuteButtonAction">
             <font>
                <Font name="Book Antiqua Bold" size="14.0" />
             </font>
