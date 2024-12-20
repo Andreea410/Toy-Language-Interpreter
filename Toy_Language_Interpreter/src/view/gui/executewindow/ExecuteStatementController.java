@@ -200,8 +200,30 @@ public class ExecuteStatementController {
         numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateList().size()));
     }
 
-    private void runOneStep() {
-
+    private void runOneStep(MouseEvent mouseEvent)
+    {
+        if(controller != null)
+        {
+            try {
+                controller.executeOneStep();
+                populateTables();
+                populateIdentifiers();
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("No more programs to run");
+                alert.setContentText(e.getMessage());
+                alert.showAndWait();
+            }
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("No program loaded");
+            alert.showAndWait();
+        }
     }
 
 
