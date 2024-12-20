@@ -1,5 +1,6 @@
 package controller;
 import exceptions.*;
+import exceptions.EmptyStackException;
 import model.adt.*;
 import model.statements.IStmt;
 import model.states.PrgState;
@@ -7,6 +8,8 @@ import model.types.IType;
 import model.values.IValue;
 import model.values.RefValue;
 import repository.IRepository;
+
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
@@ -114,6 +117,18 @@ public class Controller
         repository.setPrgList(prgStates);
     }
 
+    public void runOneStep() throws EmptyStackException, IOException {
+        IMyStack<IStmt> exeStack = repository.getPrgStatesList().get(0).getExeStack();
+        if(exeStack.isEmpty())
+            throw new EmptyStackException("Execution stack is empty.");
+        IStmt currentStatement = exeStack.pop();
+        currentStatement.execute(repository.getPrgStatesList().get(0));
+
+        System.out.println(repository.getPrgStatesList().get(0).toString());
+        repository.logPrgStateExec(repository.getPrgStatesList().get(0));
+
+    }
+
 
     public void addProgram(IStmt statement)
     {
@@ -187,6 +202,10 @@ public class Controller
 
     public List<PrgState> getProgramStateList() {
         return repository.getPrgStatesList();
+    }
+
+    public void setProgramStateList(List<PrgState> prgStates) {
+        repository.setPrgList(prgStates);
     }
 
 }

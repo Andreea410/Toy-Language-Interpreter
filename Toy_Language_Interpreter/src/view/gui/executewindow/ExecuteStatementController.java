@@ -15,7 +15,6 @@ import model.values.StringValue;
 
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -200,14 +199,18 @@ public class ExecuteStatementController {
         numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateList().size()));
     }
 
-    private void runOneStep(MouseEvent mouseEvent)
+    public void handleRunOneStep()
     {
         if(controller != null)
         {
             try {
-                controller.executeOneStep();
-                populateTables();
-                populateIdentifiers();
+                List<PrgState> programStates = controller.getProgramStateList();
+                if(programStates.size() > 0) {
+                    controller.runOneStep();
+                    populateTables();
+                    controller.setProgramStateList(programStates);
+                    populateIdentifiers();
+                }
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
@@ -226,9 +229,4 @@ public class ExecuteStatementController {
         }
     }
 
-
-    // Event handler for the "Run one step" button
-    private void handleRunOneStepButton(ActionEvent event) {
-        runOneStep();
-    }
 }

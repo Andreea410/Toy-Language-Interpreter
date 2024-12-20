@@ -1,0 +1,8 @@
+ID = 1
+Execution Stack = {(v = 2;print(v))|int v}
+SymTable = {}
+Output List = {}
+File Table = {}
+Heap = 
+====================>
+
