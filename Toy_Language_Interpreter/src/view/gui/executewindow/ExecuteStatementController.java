@@ -9,7 +9,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import model.adt.IMyHeap;
 import model.states.PrgState;
+
+import java.util.Objects;
 
 
 public class ExecuteStatementController {
@@ -78,8 +81,9 @@ public class ExecuteStatementController {
     //Functions to populate the tables
     private void populateHeapTable()
     {
+        PrgState currentProgramState = getCurrentProgramState();
+        IMyHeap heap = Objects.requireNonNull(currentProgramState).getHeap();
         heapTableView.getItems().clear();
-        heapTableView.getItems().addAll(controller.get.getHeap().keySet());
     }
 
     private void runOneStep() {
