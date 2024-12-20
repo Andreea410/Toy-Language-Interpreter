@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="deleted some implementations and started over">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/GUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +20,8 @@
         <option value="Interface" />
         <option value="Exception" />
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -64,7 +59,7 @@
     "Application.Interpreter.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "deleting-some-implementations",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/PROGRAME/Java-SceneBuilder/SceneBuilder.exe",
     "node.js.detected.package.eslint": "true",
@@ -189,14 +184,6 @@
       <workItem from="1734379904437" duration="577000" />
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
-    </task>
-    <task id="LOCAL-00035" summary="implemented the CloseReadFileStatement">
-      <option name="closed" value="true" />
-      <created>1731170722881</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1731170722881</updated>
     </task>
     <task id="LOCAL-00036" summary="moved the commands">
       <option name="closed" value="true" />
@@ -582,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734716506649</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="deleted some implementations and started over">
+      <option name="closed" value="true" />
+      <created>1734722039019</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1734722039019</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the new functions in the Repository" />
     <MESSAGE value="implemented the oneStepForAllPrg in the controller and fixed the fork statement" />
     <MESSAGE value="added some new functions" />
     <MESSAGE value="changed the function AllStep to throw the exception so I can catch it in Interpreter" />
@@ -624,6 +618,7 @@
     <MESSAGE value="implemented the typeCheck method for all statements" />
     <MESSAGE value="finished A6" />
     <MESSAGE value="added javaFx module-info.java" />
+    <MESSAGE value="implemented the select window, need to implement functionalities" />
     <MESSAGE value="deleted some implementations and started over" />
     <option name="LAST_COMMIT_MESSAGE" value="deleted some implementations and started over" />
   </component>
