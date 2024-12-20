@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the ExecuteStatementWindow.fxml">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the ADT MyPair">
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,22 +183,6 @@
       <workItem from="1734379904437" duration="577000" />
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
-    </task>
-    <task id="LOCAL-00038" summary="added Interpreter">
-      <option name="closed" value="true" />
-      <created>1731172630700</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1731172630700</updated>
-    </task>
-    <task id="LOCAL-00039" summary="finished A3">
-      <option name="closed" value="true" />
-      <created>1731176068299</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1731176068299</updated>
     </task>
     <task id="LOCAL-00040" summary="finished A3 with some modifications">
       <option name="closed" value="true" />
@@ -578,7 +560,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734723783215</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="implement the get current program state">
+      <option name="closed" value="true" />
+      <created>1734724377660</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1734724377660</updated>
+    </task>
+    <task id="LOCAL-00088" summary="added the ADT MyPair">
+      <option name="closed" value="true" />
+      <created>1734724523392</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1734724523392</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,8 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added some new functions" />
-    <MESSAGE value="changed the function AllStep to throw the exception so I can catch it in Interpreter" />
     <MESSAGE value="removed the ExecutorService from Controller constructor" />
     <MESSAGE value="fixed the command such that it will call the function allStep instead of executeAllSteps" />
     <MESSAGE value="added a new exception which send to the textMenu a new exception and signals that an error has occured" />
@@ -621,7 +617,9 @@
     <MESSAGE value="implemented the select window, need to implement functionalities" />
     <MESSAGE value="deleted some implementations and started over" />
     <MESSAGE value="implemented the ExecuteStatementWindow.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented the ExecuteStatementWindow.fxml" />
+    <MESSAGE value="implement the get current program state" />
+    <MESSAGE value="added the ADT MyPair" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the ADT MyPair" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

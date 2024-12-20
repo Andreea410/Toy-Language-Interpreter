@@ -10,8 +10,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import model.adt.IMyHeap;
+import model.adt.MyPair;
 import model.states.PrgState;
+import model.values.IValue;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -83,48 +86,67 @@ public class ExecuteStatementController {
     {
         PrgState currentProgramState = getCurrentProgramState();
         IMyHeap heap = Objects.requireNonNull(currentProgramState).getHeap();
+        ArrayList<MyPair<Integer, IValue>> heapContent =new ArrayList<>();
+        for(Integer key: heap.getMap().keySet())
+            heapContent.add(new MyPair<>(key,heap.getMap().get(key)));
         heapTableView.getItems().clear();
+        for(MyPair<Integer,IValue> entry: heapContent)
+        {
+            heapTableView.getItems().add(entry.getFirst().toString());
+            heapTableView.getItems().add(entry.getSecond().toString());
+        }
+    }
+
+    private void populateSymTable()
+    {
+        PrgState currentProgramState = getCurrentProgramState();
+        var symTable = Objects.requireNonNull(currentProgramState).getSymTable();
+        ArrayList<MyPair<String, IValue>> symTableContent = new ArrayList<>();
+        for(String key: symTable.getContent().keySet())
+            symTableContent.add(new MyPair<>(key,symTable.getContent().get(key)));
+        symTableView.getItems().clear();
+        for(MyPair<String,IValue> entry: symTableContent)
+        {
+            symTableView.getItems().add(entry.getFirst());
+            symTableView.getItems().add(entry.getSecond().toString());
+        }
+    }
+
+    private void populateExecutionStack()
+    {
+        PrgState currentProgramState = getCurrentProgramState();
+        var exeStack = Objects.requireNonNull(currentProgramState).getExeStack();
+        ArrayList<String> exeStackContent = new ArrayList<>();
+        for(var stmt: exeStack.getStack())
+            exeStackContent.add(stmt.toString());
+        executionStackListView.getItems().clear();
+        for(String entry: exeStackContent)
+            executionStackListView.getItems().add(entry);
     }
 
     private void runOneStep() {
-        // Get the current program state and run one step of execution
-        // After executing, you may want to update the UI elements to reflect the current state
-        // Example: You would call your interpreter or program state manager here
-
-        // For example:
-        // interpreter.runOneStep();
-
-        // Update UI components after running the step
         updateUI();
     }
 
     private void updateUI() {
-        // Example: Update the UI elements like ListViews, TableViews, etc.
 
-        // Update number of program states
         numberProgramStatesTextField.setText("Updated number");
 
-        // Update heap table
         heapTableView.getItems().clear();
         heapTableView.getItems().add("Updated Heap entry");
 
-        // Update output
         outputListView.getItems().clear();
         outputListView.getItems().add("Output text");
 
-        // Update file table
         fileTableListView.getItems().clear();
         fileTableListView.getItems().add("File Table entry");
 
-        // Update identifiers list
         identifiersListView.getItems().clear();
         identifiersListView.getItems().add("Identifier");
 
-        // Update symbol table
         symTableView.getItems().clear();
         symTableView.getItems().add("Variable Name = Value");
 
-        // Update execution stack
         executionStackListView.getItems().clear();
         executionStackListView.getItems().add("Execution Stack item");
     }
@@ -136,16 +158,14 @@ public class ExecuteStatementController {
         addressColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
         valueColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
 
-        // Initialize symbol table columns
         variableNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
         valueColumnSymTable.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
 
-        // Add event listener for the "Run one step" button
         runOneStepButton.setOnAction(this::handleRunOneStepButton);
     }
 
     // Event handler for the "Run one step" button
     private void handleRunOneStepButton(ActionEvent event) {
-        runOneStep(); // Calls the method to run one step in the program
+        runOneStep();
     }
 }

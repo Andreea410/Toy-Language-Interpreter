@@ -45,6 +45,11 @@ public class MyStack<T> implements IMyStack<T>{
     }
 
     @Override
+    public Stack<T> getStack() {
+        return stack;
+    }
+
+    @Override
     public String toString()
     {
         StringBuilder str = new StringBuilder("{");
