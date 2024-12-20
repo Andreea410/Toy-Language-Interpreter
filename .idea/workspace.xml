@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added javaFx module-info.java">
+      <change beforePath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Toy-Language-Interpreter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/HelloWorldFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/Toy_Language_Interpreter.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
     "Application.Interpreter.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "deleting-some-implementations",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/PROGRAME/Java-FX/javafx-sdk-23.0.1/lib/javafx.web.jar",
     "node.js.detected.package.eslint": "true",
@@ -68,7 +68,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",

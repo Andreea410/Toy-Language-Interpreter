@@ -6,5 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="javafx.web" level="project" />
     <orderEntry type="library" name="javafx.base" level="application" />
+    <orderEntry type="library" exported="" name="javafx-swt1" level="application" />
+    <orderEntry type="library" name="javafx-swt" level="project" />
   </component>
 </module>
