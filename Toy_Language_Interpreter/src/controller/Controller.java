@@ -185,4 +185,8 @@ public class Controller
                 .collect(Collectors.toList());
     }
 
+    public List<PrgState> getProgramStateList() {
+        return repository.getPrgStatesList();
+    }
+
 }

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the ExecuteStatementWindow.fxml" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the ExecuteStatementWindow.fxml">
+      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +21,8 @@
         <option value="Interface" />
         <option value="Exception" />
         <option value="module-info" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -181,14 +185,6 @@
       <workItem from="1734379904437" duration="577000" />
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
-    </task>
-    <task id="LOCAL-00037" summary="added try and catch in the text menu">
-      <option name="closed" value="true" />
-      <created>1731171711640</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1731171711640</updated>
     </task>
     <task id="LOCAL-00038" summary="added Interpreter">
       <option name="closed" value="true" />
@@ -574,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734723613059</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="implemented the ExecuteStatementWindow.fxml">
+      <option name="closed" value="true" />
+      <created>1734723783215</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1734723783215</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
