@@ -1,13 +1,11 @@
 package view.gui.executewindow;
 
 import controller.Controller;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import model.adt.IMyHeap;
 import model.adt.MyPair;
@@ -15,6 +13,7 @@ import model.states.PrgState;
 import model.values.IValue;
 import model.values.StringValue;
 
+import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.util.ArrayList;
@@ -30,12 +29,11 @@ public class ExecuteStatementController {
     private TextField numberProgramStatesTextField;
 
     @FXML
-    private TableView<String> heapTableView;
+    private TableView<MyPair<Integer,IValue>> heapTableView;
     @FXML
-    private TableColumn<String, String> addressColumn;
+    private TableColumn<MyPair<Integer,IValue>,Integer> addressColumn;
     @FXML
-    private TableColumn<String, String> valueColumn;
-
+    private TableColumn<MyPair<Integer,IValue>,IValue> valueColumn;
     @FXML
     private Label heapLabel;
 
@@ -50,16 +48,18 @@ public class ExecuteStatementController {
     private Label fileTableLabel;
 
     @FXML
-    private ListView<String> identifiersListView;
+    private ListView<Integer> identifiersListView;
     @FXML
     private Label identifiersLabel;
 
     @FXML
-    private TableView<String> symTableView;
+    private TableView<MyPair<String,IValue>> symTableView;
     @FXML
-    private TableColumn<String, String> variableNameColumn;
+    private TableColumn<MyPair<String,IValue>,String> variableNameColumn;
     @FXML
-    private TableColumn<String, String> valueColumnSymTable;
+    private TableColumn<MyPair<String,IValue>,IValue> valueColumnSymTable;
+    @FXML
+    private Label symTableLabel;
 
     @FXML
     private ListView<String> executionStackListView;
@@ -69,11 +69,46 @@ public class ExecuteStatementController {
     @FXML
     private Button runOneStepButton;
 
-    public void setController(Controller controller) {
-        this.controller = controller;
+
+    @FXML
+    public void initialize() {
+        identifiersListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+        addressColumn.setCellValueFactory(cellData ->
+                new SimpleIntegerProperty(cellData.getValue().getFirst()).asObject());
+        valueColumn.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>(cellData.getValue().getSecond())
+        );
+
+        variableNameColumn.setCellValueFactory(cellData ->
+                new SimpleStringProperty(cellData.getValue().getFirst()));
+        valueColumnSymTable.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>(cellData.getValue().getSecond())
+        );
     }
 
-    public PrgState getCurrentProgramState() {
+    public void setController(Controller controller) {
+        this.controller = controller;
+        populateTables();
+    }
+
+    private void populateTables() {
+        populateHeapTable();
+        populateSymTable();
+        populateExecutionStack();
+        populateOutput();
+        populateFileTable();
+        populateIdentifiers();
+        populateNumberProgramStates();
+    }
+
+    private void changeProgramState(MouseEvent mouseEvent)
+    {
+        populateExecutionStack();
+        populateSymTable();
+    }
+
+    private PrgState getCurrentProgramState() {
         if(controller.getProgramStateList().size() == 0)
             return null;
         else {
@@ -86,6 +121,8 @@ public class ExecuteStatementController {
     }
 
     //Functions to populate the tables
+
+
     private void populateHeapTable()
     {
         PrgState currentProgramState = getCurrentProgramState();
@@ -95,10 +132,7 @@ public class ExecuteStatementController {
             heapContent.add(new MyPair<>(key,heap.getMap().get(key)));
         heapTableView.getItems().clear();
         for(MyPair<Integer,IValue> entry: heapContent)
-        {
-            heapTableView.getItems().add(entry.getFirst().toString());
-            heapTableView.getItems().add(entry.getSecond().toString());
-        }
+            heapTableView.getItems().add(entry);
     }
 
     private void populateSymTable()
@@ -110,10 +144,7 @@ public class ExecuteStatementController {
             symTableContent.add(new MyPair<>(key,symTable.getContent().get(key)));
         symTableView.getItems().clear();
         for(MyPair<String,IValue> entry: symTableContent)
-        {
-            symTableView.getItems().add(entry.getFirst());
-            symTableView.getItems().add(entry.getSecond().toString());
-        }
+            symTableView.getItems().add(entry);
     }
 
     private void populateExecutionStack()
@@ -161,7 +192,7 @@ public class ExecuteStatementController {
         List<Integer> identifiers = programStates.stream().map(PrgState::getId).toList();
         identifiersListView.getItems().clear();
         for(Integer id: identifiers)
-            identifiersListView.getItems().add(id.toString());
+            identifiersListView.getItems().add(id);
     }
 
     private void populateNumberProgramStates()
@@ -170,37 +201,9 @@ public class ExecuteStatementController {
     }
 
     private void runOneStep() {
-        updateUI();
-    }
-
-    private void updateUI() {
-
-        numberProgramStatesTextField.setText("Updated number");
-
-        heapTableView.getItems().clear();
-        heapTableView.getItems().add("Updated Heap entry");
-
-        outputListView.getItems().clear();
-        outputListView.getItems().add("Output text");
-
-        fileTableListView.getItems().clear();
-        fileTableListView.getItems().add("File Table entry");
-
-        identifiersListView.getItems().clear();
-        identifiersListView.getItems().add("Identifier");
-
-        symTableView.getItems().clear();
-        symTableView.getItems().add("Variable Name = Value");
-
-        executionStackListView.getItems().clear();
-        executionStackListView.getItems().add("Execution Stack item");
-    }
-
-
-    @FXML
-    public void initialize() {
 
     }
+
 
     // Event handler for the "Run one step" button
     private void handleRunOneStepButton(ActionEvent event) {

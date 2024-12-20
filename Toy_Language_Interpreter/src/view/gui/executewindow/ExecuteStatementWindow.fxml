@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="458.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.gui.executewindow.ExecuteStatementWindow">
+<AnchorPane prefHeight="458.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.gui.executewindow.ExecuteStatementController">
    <children>
       <TextField fx:id="numberProgramStatesTextField" layoutX="232.0" prefHeight="26.0" prefWidth="158.0" promptText="Number of program states" text="Number of program states">
          <font>
@@ -18,10 +18,10 @@
          </font>
       </TextField>
       <TableView fx:id="heapTableView" layoutX="214.0" layoutY="52.0" prefHeight="162.0" prefWidth="206.0">
-        <columns>
-          <TableColumn prefWidth="108.0" text="Address" />
-          <TableColumn prefWidth="97.60001220703126" text="Value" />
-        </columns>
+         <columns>
+            <TableColumn fx:id="addressColumn" prefWidth="108.0" text="Address" />
+            <TableColumn fx:id="valueColumn" prefWidth="97.60001220703126" text="Value" />
+         </columns>
       </TableView>
       <Label fx:id="heapLabel" layoutX="270.0" layoutY="28.0" prefHeight="14.0" prefWidth="87.0" text="HeapTable">
          <font>
@@ -47,10 +47,10 @@
          </font>
       </Label>
       <TableView fx:id="SYMTableView" layoutX="214.0" layoutY="244.0" prefHeight="170.0" prefWidth="206.0">
-        <columns>
-          <TableColumn prefWidth="100.79998779296875" text="Variable Name" />
-          <TableColumn prefWidth="98.4000244140625" text="Value" />
-        </columns>
+         <columns>
+            <TableColumn fx:id="variableNameColumn" prefWidth="100.79998779296875" text="Variable Name" />
+            <TableColumn fx:id="valueColumnSymTable" prefWidth="98.4000244140625" text="Value" />
+         </columns>
       </TableView>
       <ListView fx:id="executionStackListView" layoutX="412.0" layoutY="244.0" prefHeight="170.0" prefWidth="190.0" />
       <Label fx:id="executionStackLabel" layoutX="442.0" layoutY="200.0" prefHeight="56.0" prefWidth="182.0" text="Execution Stack">
