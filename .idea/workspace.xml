@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="deleted some implementations and started over">
-      <change afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented the ExecuteStatementWindow.fxml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,14 +181,6 @@
       <workItem from="1734379904437" duration="577000" />
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
-    </task>
-    <task id="LOCAL-00036" summary="moved the commands">
-      <option name="closed" value="true" />
-      <created>1731171428029</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1731171428029</updated>
     </task>
     <task id="LOCAL-00037" summary="added try and catch in the text menu">
       <option name="closed" value="true" />
@@ -577,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734722039019</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="implemented the ExecuteStatementWindow.fxml">
+      <option name="closed" value="true" />
+      <created>1734723613059</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1734723613059</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented the oneStepForAllPrg in the controller and fixed the fork statement" />
     <MESSAGE value="added some new functions" />
     <MESSAGE value="changed the function AllStep to throw the exception so I can catch it in Interpreter" />
     <MESSAGE value="removed the ExecutorService from Controller constructor" />
@@ -620,7 +616,8 @@
     <MESSAGE value="added javaFx module-info.java" />
     <MESSAGE value="implemented the select window, need to implement functionalities" />
     <MESSAGE value="deleted some implementations and started over" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted some implementations and started over" />
+    <MESSAGE value="implemented the ExecuteStatementWindow.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented the ExecuteStatementWindow.fxml" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
