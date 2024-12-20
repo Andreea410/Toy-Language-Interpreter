@@ -13,8 +13,12 @@ import model.adt.IMyHeap;
 import model.adt.MyPair;
 import model.states.PrgState;
 import model.values.IValue;
+import model.values.StringValue;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -124,6 +128,47 @@ public class ExecuteStatementController {
             executionStackListView.getItems().add(entry);
     }
 
+    private void populateOutput()
+    {
+        PrgState currentProgramState = getCurrentProgramState();
+        var output = Objects.requireNonNull(currentProgramState).getOutput();
+        ArrayList<String> outputContent = new ArrayList<>();
+        for(String entry: output.getList())
+            outputContent.add(entry);
+        outputListView.getItems().clear();
+        for(String entry: outputContent)
+            outputListView.getItems().add(entry);
+    }
+
+    private void populateFileTable()
+    {
+        PrgState currentProgramState = getCurrentProgramState();
+        var fileTable = Objects.requireNonNull(currentProgramState).getFileTable();
+        ArrayList<MyPair<StringValue, BufferedReader>> fileTableContent = new ArrayList<>();
+        for(StringValue key: fileTable.getContent().keySet())
+            fileTableContent.add(new MyPair<>(key,fileTable.getContent().get(key)));
+        fileTableListView.getItems().clear();
+        for(MyPair<StringValue,BufferedReader> entry: fileTableContent)
+        {
+            fileTableListView.getItems().add(entry.getFirst().toString());
+            fileTableListView.getItems().add(entry.getSecond().toString());
+        }
+    }
+
+    private void populateIdentifiers()
+    {
+        List<PrgState> programStates = controller.getProgramStateList();
+        List<Integer> identifiers = programStates.stream().map(PrgState::getId).toList();
+        identifiersListView.getItems().clear();
+        for(Integer id: identifiers)
+            identifiersListView.getItems().add(id.toString());
+    }
+
+    private void populateNumberProgramStates()
+    {
+        numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateList().size()));
+    }
+
     private void runOneStep() {
         updateUI();
     }
@@ -155,13 +200,6 @@ public class ExecuteStatementController {
     @FXML
     public void initialize() {
 
-        addressColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        valueColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-
-        variableNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        valueColumnSymTable.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-
-        runOneStepButton.setOnAction(this::handleRunOneStepButton);
     }
 
     // Event handler for the "Run one step" button

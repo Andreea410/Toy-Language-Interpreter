@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="added the ADT MyPair">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implement the getStack function in Stack ADT">
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,14 +183,6 @@
       <workItem from="1734379904437" duration="577000" />
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
-    </task>
-    <task id="LOCAL-00040" summary="finished A3 with some modifications">
-      <option name="closed" value="true" />
-      <created>1731324073213</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1731324073213</updated>
     </task>
     <task id="LOCAL-00041" summary="finished A3 with some modifications">
       <option name="closed" value="true" />
@@ -576,7 +568,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734724523392</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="implement the getStack function in Stack ADT">
+      <option name="closed" value="true" />
+      <created>1734724842291</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1734724842291</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed the ExecutorService from Controller constructor" />
     <MESSAGE value="fixed the command such that it will call the function allStep instead of executeAllSteps" />
     <MESSAGE value="added a new exception which send to the textMenu a new exception and signals that an error has occured" />
     <MESSAGE value="changed the function OneStep to return the ProgramStates instead of boolean" />
@@ -619,7 +618,8 @@
     <MESSAGE value="implemented the ExecuteStatementWindow.fxml" />
     <MESSAGE value="implement the get current program state" />
     <MESSAGE value="added the ADT MyPair" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the ADT MyPair" />
+    <MESSAGE value="implement the getStack function in Stack ADT" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement the getStack function in Stack ADT" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
