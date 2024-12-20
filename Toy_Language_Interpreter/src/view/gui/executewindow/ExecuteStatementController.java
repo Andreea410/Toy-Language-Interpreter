@@ -6,13 +6,13 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.event.ActionEvent;
 import model.adt.IMyHeap;
 import model.adt.MyPair;
 import model.states.PrgState;
 import model.values.IValue;
 import model.values.StringValue;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.util.ArrayList;
@@ -199,7 +199,8 @@ public class ExecuteStatementController {
         numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateList().size()));
     }
 
-    public void handleRunOneStep()
+    @FXML
+    public void handleRunOneStep(javafx.scene.input.MouseEvent mouseEvent)
     {
         if(controller != null)
         {
@@ -208,13 +209,18 @@ public class ExecuteStatementController {
                 if(programStates.size() > 0) {
                     controller.runOneStep();
                     populateTables();
-                    controller.setProgramStateList(programStates);
                     populateIdentifiers();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information");
+                    alert.setHeaderText("No more programs to run");
+                    alert.setContentText("All program states have finished executing.");
+                    alert.showAndWait();
                 }
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("No more programs to run");
+                alert.setHeaderText("Error occurred during execution");
                 alert.setContentText(e.getMessage());
                 alert.showAndWait();
             }
@@ -228,5 +234,6 @@ public class ExecuteStatementController {
             alert.showAndWait();
         }
     }
+
 
 }
