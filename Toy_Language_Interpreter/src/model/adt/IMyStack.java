@@ -4,6 +4,7 @@ package model.adt;
 import exceptions.EmptyStackException;
 import model.statements.IStmt;
 
+import java.util.List;
 import java.util.Stack;
 
 public interface IMyStack<T>
@@ -13,4 +14,6 @@ public interface IMyStack<T>
     boolean isEmpty();
     T peek();
     Stack<T> getStack();
+
+    List<IStmt> toList();
 }

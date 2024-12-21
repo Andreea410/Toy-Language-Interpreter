@@ -1,13 +1,17 @@
 package view.gui.executewindow;
 
 import controller.Controller;
+import javafx.beans.Observable;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import model.adt.IMyHeap;
-import model.adt.MyPair;
+import model.adt.*;
+import model.statements.IStmt;
+import model.statements.IfStmt;
 import model.states.PrgState;
 import model.values.IValue;
 import model.values.StringValue;
@@ -24,6 +28,7 @@ import java.util.Objects;
 public class ExecuteStatementController {
 
     private Controller controller;
+    List<IStmt> statements;
 
     @FXML
     private TextField numberProgramStatesTextField;
@@ -71,8 +76,11 @@ public class ExecuteStatementController {
 
 
     @FXML
-    public void initialize() {
-        identifiersListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    public void initialize(IStmt programStatement) {
+
+        identifiersListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            changeProgramState(null);
+        });
 
         addressColumn.setCellValueFactory(cellData ->
                 new SimpleIntegerProperty(cellData.getValue().getFirst()).asObject());
@@ -85,6 +93,8 @@ public class ExecuteStatementController {
         valueColumnSymTable.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<>(cellData.getValue().getSecond())
         );
+
+        populateTables();
     }
 
     public void setController(Controller controller) {
@@ -150,14 +160,12 @@ public class ExecuteStatementController {
 
     private void populateExecutionStack()
     {
-        PrgState currentProgramState = getCurrentProgramState();
-        var exeStack = Objects.requireNonNull(currentProgramState).getExeStack();
-        ArrayList<String> exeStackContent = new ArrayList<>();
-        for(var stmt: exeStack.getStack())
-            exeStackContent.add(stmt.toString());
-        executionStackListView.getItems().clear();
-        for(String entry: exeStackContent)
-            executionStackListView.getItems().add(entry);
+        int selectedIndex = identifiersListView.getSelectionModel().getSelectedIndex();
+        if(selectedIndex == -1 || selectedIndex >= controller.getProgramStateListCount())
+            return;
+
+        ObservableList<IStmt> executionStackList = FXCollections.observableArrayList();
+        executionStackList.addAll(controller.getProgramStateList().get(selectedIndex).getExeStack().toList());
     }
 
     private void populateOutput()
@@ -202,45 +210,26 @@ public class ExecuteStatementController {
 
     private void populateNumberProgramStates()
     {
-        numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateList().size()));
+        numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateListCount()));
+    }
+
+    private void showErrorMessage(String message)
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Error");
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     @FXML
     public void handleRunOneStep(javafx.scene.input.MouseEvent mouseEvent)
     {
-        if(controller != null)
-        {
-            try {
-                List<PrgState> programStates = controller.getProgramStateList();
-                if(programStates.size() > 0) {
-                    controller.OneStepForAllPrg(programStates);
-                    populateTables();
-                    populateIdentifiers();
-                    populateNumberProgramStates();
-
-                } else {
-
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Information");
-                    alert.setHeaderText("No more programs to run");
-                    alert.setContentText("All program states have finished executing.");
-                    alert.showAndWait();
-                }
-            } catch (Exception e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Error occurred during execution");
-                alert.setContentText(e.getMessage());
-                alert.showAndWait();
-            }
-        }
-        else
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error");
-            alert.setContentText("No program loaded");
-            alert.showAndWait();
+        try {
+            controller.runOneStep();
+            populateTables();
+        } catch (Exception e) {
+            showErrorMessage(e.getMessage());
         }
     }
 

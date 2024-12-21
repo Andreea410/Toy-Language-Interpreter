@@ -22,10 +22,17 @@ public class Controller
 {
     private final IRepository repository;
     ExecutorService executor;
+    private PrgState prgState;
 
     public Controller(IRepository repo)
     {
         this.repository = repo;
+    }
+
+    public Controller(IRepository repo, PrgState prgState)
+    {
+        this.repository = repo;
+        this.prgState = prgState;
     }
 
     public void allStep() throws InterruptedException{
@@ -65,12 +72,16 @@ public class Controller
 
 
     public void OneStepForAllPrg(List<PrgState> prgStatess) throws ControllerException {
-        executor = Executors.newFixedThreadPool(2);
-        List<PrgState> prgStates = prgStatess.stream()
-                .filter(PrgState::isNotCompleted)
-                .collect(Collectors.toList());
 
-        List<Callable<PrgState>> callableList = prgStates.stream()
+        prgStatess.forEach(p -> {
+            try {
+                repository.logPrgStateExec(p);
+            } catch (RepoException e) {
+                System.out.println("Error logging program state: " + e.getMessage());
+            }
+        });
+
+        List<Callable<PrgState>> callableList = prgStatess.stream()
                 .filter(p -> !p.getExeStack().isEmpty())
                 .map((PrgState p) -> (Callable<PrgState>) (p::executeOneStep))
                 .toList();
@@ -93,9 +104,9 @@ public class Controller
             throw new ControllerException(e.getMessage());
         }
 
-        prgStates.addAll(newPrgList);
-        repository.setPrgList(prgStates);
-        prgStates.forEach(p -> {
+        prgStatess.addAll(newPrgList);
+        repository.setPrgList(prgStatess);
+        prgStatess.forEach(p -> {
             try {
                 repository.logPrgStateExec(p);
             } catch (RepoException e) {
@@ -105,62 +116,19 @@ public class Controller
     }
 
     public void runOneStep() throws EmptyStackException, IOException {
-        List<PrgState> programStates = this.repository.getPrgStatesList();
-        if (programStates.isEmpty()) {
-            throw new EmptyStackException("Execution stack is empty");
+        this.executor = Executors.newFixedThreadPool(2);
+        List<PrgState> programsList = removeCompletedPrgStates(repository.getPrgStatesList());
+
+        if (programsList.isEmpty()) {
+            throw new ControllerException("No programs to execute.");
         }
 
-        PrgState currentProgramState = programStates.get(0); // Assuming the first program state is the one being executed.
-        IMyStack<IStmt> exeStack = currentProgramState.getExeStack();
-
-        if (exeStack.isEmpty()) {
-            throw new EmptyStackException("Execution stack is empty");
-        }
-
-        IStmt currentStatement = exeStack.pop();
-        if (currentStatement instanceof ForkStatement) {
-            // Handle ForkStatement: create a new program state
-            ForkStatement forkStatement = (ForkStatement) currentStatement;
-            PrgState newProgramState =forkStatement.execute(programStates.get(0));
-
-            // Add the new program state to the repository and the current program state to the repository as well
-            this.repository.addProgram(newProgramState);
-
-            // Log the program state execution for both the current and the new forked state
-            repository.logPrgStateExec(currentProgramState);
-            repository.logPrgStateExec(newProgramState);
-            currentStatement.execute(programStates.get(0));
-        } else {
-            // Normal statement execution
-            currentStatement.execute(currentProgramState);
-            System.out.println(currentProgramState);
-            repository.logPrgStateExec(currentProgramState);
-        }
+        programsList.forEach(repository::clearLogFile);
+        programsList.forEach(System.out::println);
+        conservativeGarbageCollector(programsList);
+        OneStepForAllPrg(programsList);
+        programsList.forEach(System.out::println);
     }
-
-    private PrgState createForkedProgramState(PrgState currentProgramState, ForkStatement forkStatement) throws EmptyStackException {
-        // Create a new execution stack for the forked program state
-        IMyStack<IStmt> newExeStack = new MyStack<>();
-
-        // Copy the entire execution stack from the current program state (excluding the fork statement)
-        IMyStack<IStmt> stack = currentProgramState.getExeStack();
-        for (IStmt stmt : stack.getStack()) {
-            newExeStack.push(stmt);
-        }
-
-        // Copy the heap, symbol table, and other elements from the current program state
-        IMyDictionary<String, IValue> newSymTable = new MyDictionary<>(currentProgramState.getSymTable().getContent());
-        IMyHeap newHeap = new MyHeap(currentProgramState.getHeap().getMap());
-        IMyList<String> newOutput = new MyList<>(currentProgramState.getOutput().getList());
-        IMyDictionary<StringValue, BufferedReader> newFileTable = new MyDictionary<>(currentProgramState.getFileTable().getContent());
-
-        // Push the fork statement to the new program's execution stack
-        newExeStack.push(forkStatement);
-
-        // Create the new program state and return it
-        return new PrgState(newExeStack, newSymTable, newOutput, currentProgramState.getExeStack().peek(), newFileTable, newHeap);
-    }
-
 
 
     public void addProgram(IStmt statement)
@@ -245,6 +213,10 @@ public class Controller
     {
         PrgState currentProgramState = this.getProgramStateList().get(0);
         currentProgramState.getHeap().setContent(safeGarbageCollector(getAddrFromSymTable(currentProgramState.getSymTable().getContent().values()), currentProgramState.getHeap()));
+    }
+
+    public Integer getProgramStateListCount() {
+        return repository.getProgramStatesCount();
     }
 
 }

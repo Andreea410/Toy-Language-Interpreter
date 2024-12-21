@@ -13,6 +13,6 @@ public interface IRepository
     List<PrgState> getPrgStatesList();
     void setPrgList(List<PrgState> programStates);
     void clearLogFile(PrgState prgState) throws RepoException;
-
+    Integer getProgramStatesCount();
 
 }

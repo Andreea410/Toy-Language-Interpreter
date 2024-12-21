@@ -1,8 +1,11 @@
 package model.adt;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import exceptions.ADTException;
 import exceptions.EmptyStackException;
+import model.statements.IStmt;
 
 public class MyStack<T> implements IMyStack<T>{
 
@@ -47,6 +50,15 @@ public class MyStack<T> implements IMyStack<T>{
     @Override
     public Stack<T> getStack() {
         return stack;
+    }
+
+    @Override
+    public List<IStmt> toList() {
+        List<IStmt> list = new ArrayList<>();
+
+        for(T element: this.stack)
+            list.add((IStmt) element);
+        return list;
     }
 
     @Override

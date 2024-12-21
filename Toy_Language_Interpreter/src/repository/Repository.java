@@ -68,4 +68,9 @@ public class Repository implements IRepository
         this.programs = programStates;
     }
 
+    @Override
+    public Integer getProgramStatesCount() {
+        return this.programs.size();
+    }
+
 }
