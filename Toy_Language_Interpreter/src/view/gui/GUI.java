@@ -12,7 +12,6 @@ import view.gui.selectwindow.SelectStatementController;
 import java.io.IOException;
 
 public class GUI extends Application {
-
     @Override
     public void start(Stage primaryStage) {
 
