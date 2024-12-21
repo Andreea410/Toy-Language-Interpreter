@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -101,7 +102,8 @@ public class ExecuteStatementController {
         populateNumberProgramStates();
     }
 
-    private void changeProgramState(MouseEvent mouseEvent)
+    @FXML
+    private void changeProgramState(javafx.scene.input.MouseEvent mouseEvent)
     {
         populateExecutionStack();
         populateSymTable();
@@ -185,14 +187,18 @@ public class ExecuteStatementController {
         }
     }
 
-    private void populateIdentifiers()
-    {
+    private void populateIdentifiers() {
         List<PrgState> programStates = controller.getProgramStateList();
         List<Integer> identifiers = programStates.stream().map(PrgState::getId).toList();
+
+        identifiers = new ArrayList<>(new HashSet<>(identifiers));
+
         identifiersListView.getItems().clear();
-        for(Integer id: identifiers)
+        for (Integer id : identifiers) {
             identifiersListView.getItems().add(id);
+        }
     }
+
 
     private void populateNumberProgramStates()
     {
@@ -207,7 +213,7 @@ public class ExecuteStatementController {
             try {
                 List<PrgState> programStates = controller.getProgramStateList();
                 if(programStates.size() > 0) {
-                    controller.runOneStep();
+                    controller.OneStepForAllPrg(programStates);
                     populateTables();
                     populateIdentifiers();
                     populateNumberProgramStates();

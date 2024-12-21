@@ -40,7 +40,7 @@
             <Font name="Cambria Italic" size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="identifiersListView" layoutX="14.0" layoutY="243.0" prefHeight="170.0" prefWidth="200.0" />
+      <ListView fx:id="identifiersListView" layoutX="14.0" layoutY="243.0" prefHeight="170.0" prefWidth="200.0"  onMouseClicked="#changeProgramState"/>
       <Label layoutX="66.0" layoutY="217.0" prefHeight="22.0" prefWidth="96.0" text="Identifiers">
          <font>
             <Font name="Cambria Italic" size="18.0" />

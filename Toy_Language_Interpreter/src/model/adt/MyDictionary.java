@@ -13,6 +13,11 @@ public class MyDictionary<K,V> implements IMyDictionary<K,V>
         this.map = new HashMap<>();
     }
 
+    public MyDictionary(Map<K,V> newMap)
+    {
+        this.map = newMap;
+    }
+
     @Override
     public void insert(K key , V value)
     {
