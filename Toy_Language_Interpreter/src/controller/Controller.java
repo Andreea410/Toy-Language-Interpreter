@@ -33,6 +33,7 @@ public class Controller
     {
         this.repository = repo;
         this.prgState = prgState;
+
     }
 
     public void allStep() throws InterruptedException{
@@ -123,7 +124,7 @@ public class Controller
             throw new ControllerException("No programs to execute.");
         }
 
-        programsList.forEach(repository::clearLogFile);
+
         programsList.forEach(System.out::println);
         conservativeGarbageCollector(programsList);
         OneStepForAllPrg(programsList);

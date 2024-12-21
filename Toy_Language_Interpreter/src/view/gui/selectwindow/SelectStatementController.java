@@ -79,6 +79,7 @@ public class SelectStatementController implements Initializable {
         }
         else {
             IStmt selectedStatement = statements.get(selectedStmtIndex);
+            selectedStmtIndex++;
             IRepository repository = new Repository("log" + selectedStmtIndex + ".txt");
             Controller controller = new Controller(repository);
             controller.addProgram(selectedStatement);

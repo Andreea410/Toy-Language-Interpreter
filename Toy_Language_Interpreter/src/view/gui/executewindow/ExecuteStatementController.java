@@ -109,15 +109,12 @@ public class ExecuteStatementController {
 
     private PrgState getCurrentProgramState() {
         if (controller.getProgramStateList().isEmpty()) {
-            System.out.println("No program states available.");
             return null;
         }
         int id = identifiersListView.getSelectionModel().getSelectedIndex();
         if (id == -1) {
-            System.out.println("No program state selected, defaulting to index 0.");
             return controller.getProgramStateList().get(0);
         } else {
-            System.out.println("Selected program state index: " + id);
             return controller.getProgramStateList().get(id);
         }
     }
@@ -125,36 +122,17 @@ public class ExecuteStatementController {
 
     //Functions to populate the tables
 
-
     private void populateHeapTable() {
-        PrgState currentProgramState = getCurrentProgramState();
-        if (currentProgramState == null) {
-            System.out.println("Current program state is null.");
-            return;
-        }
+        ObservableList<MyPair<Integer, IValue>> heapData = FXCollections.observableArrayList(
+                controller.getProgramStateList().get(0).getHeap().getMap().entrySet().stream()
+                        .map(entry -> new MyPair<>(entry.getKey(), entry.getValue()))
+                        .toList()
+        );
 
-        IMyHeap heap = currentProgramState.getHeap();
-        if (heap == null) {
-            System.out.println("Heap is null.");
-            return;
-        }
+        addressColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getFirst()).asObject());
+        valueColumn.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getSecond()));
+        heapTableView.setItems(heapData);
 
-        Map<Integer, IValue> heapMap = heap.getMap();
-        if (heapMap.isEmpty()) {
-            System.out.println("Heap is empty.");
-            return;
-        }
-
-        ArrayList<MyPair<Integer, IValue>> heapContent = new ArrayList<>();
-        for (Map.Entry<Integer, IValue> entry : heapMap.entrySet()) {
-            heapContent.add(new MyPair<>(entry.getKey(), entry.getValue()));
-        }
-
-        System.out.println("Heap Content: " + heapContent);
-
-        heapTableView.getItems().clear();
-        heapTableView.getItems().addAll(heapContent);
-        heapTableView.refresh();
     }
 
 
@@ -222,15 +200,12 @@ public class ExecuteStatementController {
     }
 
     private void populateIdentifiers() {
-        List<PrgState> programStates = controller.getProgramStateList();
-        List<Integer> identifiers = programStates.stream().map(PrgState::getId).toList();
-
-        identifiers = new ArrayList<>(new HashSet<>(identifiers));
-
-        identifiersListView.getItems().clear();
-        for (Integer id : identifiers) {
-            identifiersListView.getItems().add(id);
+        ObservableList<Integer> identifiers = FXCollections.observableArrayList();
+        for (PrgState prgState : controller.getProgramStateList()) {
+            if(!prgState.getExeStack().isEmpty())
+                identifiers.add(prgState.getId());
         }
+        identifiersListView.setItems(identifiers);
     }
 
 
