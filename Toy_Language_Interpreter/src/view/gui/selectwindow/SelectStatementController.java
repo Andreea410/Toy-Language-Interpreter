@@ -1,18 +1,20 @@
 package view.gui.selectwindow;
 
 import controller.Controller;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 import model.adt.MyDictionary;
 import model.expressions.*;
 import model.statements.*;
-import model.states.PrgState;
 import model.types.BoolIType;
 import model.types.IntIType;
 import model.types.RefType;
@@ -24,6 +26,7 @@ import repository.IRepository;
 import repository.Repository;
 import view.gui.executewindow.ExecuteStatementController;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,27 +69,43 @@ public class SelectStatementController implements Initializable {
 
     @FXML
     private void handleExecuteButtonAction(ActionEvent event) {
-        System.out.println("Execute button clicked");
-        IStmt selectedStmt = statementsListView.getSelectionModel().getSelectedItem();
         int selectedStmtIndex = statementsListView.getSelectionModel().getSelectedIndex();
-        if(selectedStmt == null || selectedStmtIndex == -1) {
-            Platform.runLater(() -> {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("No statement selected");
-                alert.setContentText("Please select a statement to execute");
-                alert.showAndWait();
-            });
+        if(selectedStmtIndex == -1) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No statement selected");
+            alert.setContentText("Please select a statement from the list.");
+            alert.showAndWait();
         }
         else {
-            int id = statementsListView.getSelectionModel().getSelectedIndex();
-            id = id+1;
-            selectedStatement.typeCheck(new MyDictionary<>());
-            IRepository repository = new Repository("log" + id + ".txt");
+            IStmt selectedStatement = statements.get(selectedStmtIndex);
+            IRepository repository = new Repository("log" + selectedStmtIndex + ".txt");
             Controller controller = new Controller(repository);
             controller.addProgram(selectedStatement);
-            executeController.setController(controller);
+            showExecutionWindow(selectedStatement,controller);
         }
+    }
+
+
+    private void showExecutionWindow(IStmt selectedStatement,Controller controller) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gui/executewindow/ExecuteStatementWindow.fxml"));
+            Parent root = loader.load();
+
+            selectedStatement.typeCheck(new MyDictionary<>());
+
+            ExecuteStatementController executeStatementController = loader.getController();
+            executeStatementController.setController(controller);
+            executeStatementController.initialize(selectedStatement);
+
+            Stage stage = new Stage();
+            stage.setTitle("Execute Statement");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

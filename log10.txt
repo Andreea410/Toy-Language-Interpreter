@@ -1,4 +1,4 @@
-ID = 3
+ID = 2
 Execution Stack = {print(HeapRead(a))}
 SymTable = {a-> (1 int) | v-> 32}
 Output List = {10|30|32}
@@ -7,7 +7,7 @@ Heap = 1(int):-> 30
 
 ====================>
 
-ID = 3
+ID = 2
 Execution Stack = {}
 SymTable = {a-> (1 int) | v-> 32}
 Output List = {10|30|32|30}

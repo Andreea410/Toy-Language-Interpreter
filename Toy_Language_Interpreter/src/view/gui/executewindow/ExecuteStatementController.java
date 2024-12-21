@@ -1,6 +1,7 @@
 package view.gui.executewindow;
 
 import controller.Controller;
+import javafx.application.Platform;
 import javafx.beans.Observable;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -34,7 +35,7 @@ public class ExecuteStatementController {
     @FXML
     private TableColumn<MyPair<Integer,IValue>,Integer> addressColumn;
     @FXML
-    private TableColumn<MyPair<Integer,IValue>,IValue> valueColumn;
+    private TableColumn<MyPair<Integer,IValue>, IValue> valueColumn;
     @FXML
     private Label heapLabel;
 
@@ -73,21 +74,13 @@ public class ExecuteStatementController {
 
     @FXML
     public void initialize(IStmt programStatement) {
-        identifiersListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-
-        addressColumn.setCellValueFactory(cellData ->
-                new SimpleIntegerProperty(cellData.getValue().getFirst()).asObject());
-        valueColumn.setCellValueFactory(cellData ->
-                new SimpleObjectProperty<>(cellData.getValue().getSecond())
-        );
-
-        variableNameColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(cellData.getValue().getFirst()));
-        valueColumnSymTable.setCellValueFactory(cellData ->
-                new SimpleObjectProperty<>(cellData.getValue().getSecond())
-        );
-        runOneStepButton.setOnMouseClicked(this::handleRunOneStep);
+        populateTables();
+        identifiersListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            populateExecutionStack();
+            populateSymTable();
+        });
     }
+
 
     public void setController(Controller controller) {
         this.controller = controller;
@@ -115,43 +108,78 @@ public class ExecuteStatementController {
     }
 
     private PrgState getCurrentProgramState() {
-        if(controller.getProgramStateList().size() == 0)
+        if (controller.getProgramStateList().isEmpty()) {
+            System.out.println("No program states available.");
             return null;
-        else {
-            int id = identifiersListView.getSelectionModel().getSelectedIndex();
-            if(id == -1)
-                return controller.getProgramStateList().get(0);
-            else
-                return controller.getProgramStateList().get(id);
+        }
+        int id = identifiersListView.getSelectionModel().getSelectedIndex();
+        if (id == -1) {
+            System.out.println("No program state selected, defaulting to index 0.");
+            return controller.getProgramStateList().get(0);
+        } else {
+            System.out.println("Selected program state index: " + id);
+            return controller.getProgramStateList().get(id);
         }
     }
+
 
     //Functions to populate the tables
 
 
-    private void populateHeapTable()
-    {
+    private void populateHeapTable() {
         PrgState currentProgramState = getCurrentProgramState();
-        IMyHeap heap = Objects.requireNonNull(currentProgramState).getHeap();
-        ArrayList<MyPair<Integer, IValue>> heapContent =new ArrayList<>();
-        for(Integer key: heap.getMap().keySet())
-            heapContent.add(new MyPair<>(key,heap.getMap().get(key)));
+        if (currentProgramState == null) {
+            System.out.println("Current program state is null.");
+            return;
+        }
+
+        IMyHeap heap = currentProgramState.getHeap();
+        if (heap == null) {
+            System.out.println("Heap is null.");
+            return;
+        }
+
+        Map<Integer, IValue> heapMap = heap.getMap();
+        if (heapMap.isEmpty()) {
+            System.out.println("Heap is empty.");
+            return;
+        }
+
+        ArrayList<MyPair<Integer, IValue>> heapContent = new ArrayList<>();
+        for (Map.Entry<Integer, IValue> entry : heapMap.entrySet()) {
+            heapContent.add(new MyPair<>(entry.getKey(), entry.getValue()));
+        }
+
+        System.out.println("Heap Content: " + heapContent);
+
         heapTableView.getItems().clear();
-        for(MyPair<Integer,IValue> entry: heapContent)
-            heapTableView.getItems().add(entry);
+        heapTableView.getItems().addAll(heapContent);
+        heapTableView.refresh();
     }
 
-    private void populateSymTable()
-    {
-        PrgState currentProgramState = getCurrentProgramState();
-        var symTable = Objects.requireNonNull(currentProgramState).getSymTable();
-        ArrayList<MyPair<String, IValue>> symTableContent = new ArrayList<>();
-        for(String key: symTable.getContent().keySet())
-            symTableContent.add(new MyPair<>(key,symTable.getContent().get(key)));
-        SymTableView.getItems().clear();
-        for(MyPair<String,IValue> entry: symTableContent)
-            SymTableView.getItems().add(entry);
+
+
+
+    private void populateSymTable() {
+        int selectedProgramStateIndex = identifiersListView.getSelectionModel().getSelectedIndex();
+        if (selectedProgramStateIndex == -1 || selectedProgramStateIndex >= controller.getProgramStateList().size()) {
+            System.out.println("No program state selected.");
+            return;
+        }
+
+        ObservableList<MyPair<String, IValue>> symTableData = FXCollections.observableArrayList(
+                controller.getProgramStateList().get(selectedProgramStateIndex).getSymTable().getContent().entrySet().stream()
+                        .map(entry -> new MyPair<>(entry.getKey(), entry.getValue()))
+                        .toList()
+        );
+
+        variableNameColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getFirst()));
+        valueColumnSymTable.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getSecond()));
+        SymTableView.setItems(symTableData);
+        SymTableView.refresh();
+
     }
+
 
     private void populateExecutionStack()
     {
@@ -221,7 +249,7 @@ public class ExecuteStatementController {
     }
 
     @FXML
-    public void handleRunOneStep(javafx.scene.input.MouseEvent mouseEvent)
+    public void handleRunOneStep()
     {
         try {
             controller.runOneStep();

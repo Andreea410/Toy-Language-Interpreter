@@ -1,15 +1,15 @@
-ID = 1
-Execution Stack = {print(v)}
-SymTable = {v-> 2}
+ID = 2
+Execution Stack = {print(b)}
+SymTable = {a-> 17 | b-> 18}
 Output List = {}
 File Table = {}
 Heap = 
 ====================>
 
-ID = 1
+ID = 2
 Execution Stack = {}
-SymTable = {v-> 2}
-Output List = {2}
+SymTable = {a-> 17 | b-> 18}
+Output List = {18}
 File Table = {}
 Heap = 
 ====================>
