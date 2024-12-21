@@ -135,7 +135,7 @@ public class ExecuteStatementController {
     {
         PrgState currentProgramState = getCurrentProgramState();
         IMyHeap heap = Objects.requireNonNull(currentProgramState).getHeap();
-        ArrayList<MyPair<Integer, IValue>> heapContent =new ArrayList<>();
+        ArrayList<MyPair<Integer,IValue>> heapContent = new ArrayList<>();
         for(Integer key: heap.getMap().keySet())
             heapContent.add(new MyPair<>(key,heap.getMap().get(key)));
         heapTableView.getItems().clear();
@@ -145,35 +145,20 @@ public class ExecuteStatementController {
 
     private void populateSymTable()
     {
-        int selectedIndex = identifiersListView.getSelectionModel().getSelectedIndex();
-        if(selectedIndex == -1 || selectedIndex >= controller.getProgramStateListCount())
-            return;
-
-        ObservableList<Map.Entry<String,IValue>> symTableList = FXCollections.observableArrayList(
-                controller.getProgramStateList().get(selectedIndex).getSymTable().getContent().entrySet()
-        );
-
-        SymTableView.getItems().clear();
-        for(Map.Entry<String,IValue> entry: symTableList)
-            SymTableView.getItems().add(new MyPair<>(entry.getKey(),entry.getValue()));
-
-        SymTableView.refresh();
 
 
     }
 
     private void populateExecutionStack()
     {
-        int selectedIndex = identifiersListView.getSelectionModel().getSelectedIndex();
-        if(selectedIndex == -1 || selectedIndex >= controller.getProgramStateListCount())
-            return;
-
-        ObservableList<IStmt> executionStackList = FXCollections.observableArrayList();
-        executionStackList.addAll(controller.getProgramStateList().get(selectedIndex).getExeStack().toList());
-
+        PrgState currentProgramState = getCurrentProgramState();
+        IMyStack<IStmt> executionStack = Objects.requireNonNull(currentProgramState).getExeStack();
+        ArrayList<IStmt> executionStackContent = new ArrayList<>();
+        for(IStmt stmt: executionStack.getStack())
+            executionStackContent.add(stmt);
         executionStackListView.getItems().clear();
-        for(IStmt entry: executionStackList)
-            executionStackListView.getItems().add(entry.toString());
+        for(IStmt stmt: executionStackContent)
+            executionStackListView.getItems().add(stmt.toString());
 
     }
 

@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented new functions in stack">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/IRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/IRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/executewindow/ExecuteStatementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/executewindow/ExecuteStatementController.class" afterDir="false" />
-    </list>
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="changed all the execute functions in all statements to return null" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,15 +182,7 @@
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
       <workItem from="1734738457497" duration="3822000" />
-      <workItem from="1734794185919" duration="3545000" />
-    </task>
-    <task id="LOCAL-00051" summary="added HeapReadExpression">
-      <option name="closed" value="true" />
-      <created>1732460392613</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1732460392613</updated>
+      <workItem from="1734794185919" duration="4291000" />
     </task>
     <task id="LOCAL-00052" summary="added the new statement in the menu">
       <option name="closed" value="true" />
@@ -588,7 +568,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734796987887</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="changed all the execute functions in all statements to return null">
+      <option name="closed" value="true" />
+      <created>1734799041625</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1734799041625</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed the empty stack exception" />
     <MESSAGE value="almost finished A5" />
     <MESSAGE value="A5" />
     <MESSAGE value="finished A5" />
@@ -631,9 +618,19 @@
     <MESSAGE value="almost done" />
     <MESSAGE value="need to fix the fork statement" />
     <MESSAGE value="implemented new functions in stack" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented new functions in stack" />
+    <MESSAGE value="changed all the execute functions in all statements to return null" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed all the execute functions in all statements to return null" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java</url>
+          <line>237</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="repository.Repository" memberName="programs" />
