@@ -22,7 +22,7 @@ public class VariablesDeclarationStmt implements IStmt {
         if(prgState.getSymTable().contains(this.name))
             throw new ExpressionException("A variable with the same name already exists");
         prgState.getSymTable().insert(name,this.type.getDefaultValue());
-        return prgState;
+        return null;
     }
 
     @Override

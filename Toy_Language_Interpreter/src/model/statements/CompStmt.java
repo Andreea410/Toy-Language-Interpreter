@@ -28,7 +28,7 @@ public class CompStmt implements IStmt{
     {
         prgState.getExeStack().push(statement2);
         prgState.getExeStack().push(statement1);
-        return prgState;
+        return null;
     }
 
     @Override

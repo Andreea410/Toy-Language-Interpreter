@@ -19,10 +19,7 @@ import model.values.StringValue;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 
 public class ExecuteStatementController {
@@ -148,14 +145,21 @@ public class ExecuteStatementController {
 
     private void populateSymTable()
     {
-        PrgState currentProgramState = getCurrentProgramState();
-        var symTable = Objects.requireNonNull(currentProgramState).getSymTable();
-        ArrayList<MyPair<String, IValue>> symTableContent = new ArrayList<>();
-        for(String key: symTable.getContent().keySet())
-            symTableContent.add(new MyPair<>(key,symTable.getContent().get(key)));
+        int selectedIndex = identifiersListView.getSelectionModel().getSelectedIndex();
+        if(selectedIndex == -1 || selectedIndex >= controller.getProgramStateListCount())
+            return;
+
+        ObservableList<Map.Entry<String,IValue>> symTableList = FXCollections.observableArrayList(
+                controller.getProgramStateList().get(selectedIndex).getSymTable().getContent().entrySet()
+        );
+
         SymTableView.getItems().clear();
-        for(MyPair<String,IValue> entry: symTableContent)
-            SymTableView.getItems().add(entry);
+        for(Map.Entry<String,IValue> entry: symTableList)
+            SymTableView.getItems().add(new MyPair<>(entry.getKey(),entry.getValue()));
+
+        SymTableView.refresh();
+
+
     }
 
     private void populateExecutionStack()
@@ -166,6 +170,11 @@ public class ExecuteStatementController {
 
         ObservableList<IStmt> executionStackList = FXCollections.observableArrayList();
         executionStackList.addAll(controller.getProgramStateList().get(selectedIndex).getExeStack().toList());
+
+        executionStackListView.getItems().clear();
+        for(IStmt entry: executionStackList)
+            executionStackListView.getItems().add(entry.toString());
+
     }
 
     private void populateOutput()

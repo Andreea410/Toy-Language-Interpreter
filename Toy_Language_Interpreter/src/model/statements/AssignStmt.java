@@ -35,7 +35,7 @@ public class AssignStmt implements IStmt{
         if(!value.getType().equals(evalValue.getType()))
             throw new StatementException("Value type mismatch");
         prgState.getSymTable().insert(variableName,evalValue);
-        return prgState;
+        return null;
     }
 
     @Override

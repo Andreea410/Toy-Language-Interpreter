@@ -45,7 +45,7 @@ public class CloseReadFileStatement implements IStmt
             throw new StatementException("The file can't be closed");
         }
         fileTable.remove(filename);
-        return prgState;
+        return null;
     }
 
     @Override

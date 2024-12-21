@@ -36,7 +36,7 @@ public class IfStmt implements IStmt{
             state.getExeStack().push(thenStatement);
         else
             state.getExeStack().push(elseStatement);
-        return state;
+        return null;
     }
 
     @Override

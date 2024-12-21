@@ -33,7 +33,7 @@ public class HeapWriteStatement implements IStmt{
         if(!evaluated.getType().equals(referenceValue.getLocationType()))
             throw new StatementException(String.format("Heap Error: %s is not of type %s.",evaluated,referenceValue.getLocationType()));
         prgState.getHeap().update(referenceValue.getAddress(),evaluated);
-        return prgState;
+        return null;
     }
 
     @Override

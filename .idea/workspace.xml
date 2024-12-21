@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="need to fix the fork statement">
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="implemented new functions in stack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/IRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/selectwindow/SelectStatementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/IMyStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/model/adt/MyStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/IRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/IRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/repository/Repository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/executewindow/ExecuteStatementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/executewindow/ExecuteStatementController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,15 +194,7 @@
       <workItem from="1734464646559" duration="246000" />
       <workItem from="1734464925452" duration="1632000" />
       <workItem from="1734738457497" duration="3822000" />
-      <workItem from="1734794185919" duration="1903000" />
-    </task>
-    <task id="LOCAL-00050" summary="added the heap in every eval function">
-      <option name="closed" value="true" />
-      <created>1732454370383</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1732454370383</updated>
+      <workItem from="1734794185919" duration="3545000" />
     </task>
     <task id="LOCAL-00051" summary="added HeapReadExpression">
       <option name="closed" value="true" />
@@ -586,7 +580,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734740700258</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="implemented new functions in stack">
+      <option name="closed" value="true" />
+      <created>1734796987887</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1734796987887</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="trying to find we the stack gets empty and the execution doesn t stop.Meanwhile cleared the file before writting in it" />
     <MESSAGE value="fixed the empty stack exception" />
     <MESSAGE value="almost finished A5" />
     <MESSAGE value="A5" />
@@ -629,7 +630,8 @@
     <MESSAGE value="fixed the runOneStep function" />
     <MESSAGE value="almost done" />
     <MESSAGE value="need to fix the fork statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="need to fix the fork statement" />
+    <MESSAGE value="implemented new functions in stack" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented new functions in stack" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -34,7 +34,7 @@ public class WhileStatement implements IStmt{
             prgState.getExeStack().push(new WhileStatement(this.expression,this.statement));
             prgState.getExeStack().push(statement);
         }
-        return prgState;
+        return null;
     }
 
     @Override

@@ -41,7 +41,7 @@ public class HeapAllocationStatement implements IStmt
 
         int address = prgState.getHeap().add(value);
         prgState.getSymTable().insert(var ,new RefValue(address,value.getType()));
-        return prgState;
+        return null;
     }
 
     @Override

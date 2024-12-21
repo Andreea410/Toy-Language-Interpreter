@@ -40,7 +40,7 @@ public class OpenReadFileStatement implements IStmt {
         {
             BufferedReader reader = new BufferedReader(new FileReader(filename.getValue()));
             fileTable.insert(filename,reader);
-            return prgState;
+            return null;
         }
         catch(IOException e)
         {

@@ -52,7 +52,7 @@ public class ReadFileStatement implements IStmt
 
             int parser = Integer.parseInt(read);
             table.insert(variableName, new IntIValue(parser));
-            return prgState;
+            return null;
         }
         catch (IOException e)
         {
