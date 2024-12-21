@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="changed all the execute functions in all statements to return null" />
+    <list default="true" id="d56a402e-05f9-4d31-878d-f787a64e554f" name="Changes" comment="changed all the execute functions in all statements to return null">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/executewindow/ExecuteStatementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Toy_Language_Interpreter/view/gui/executewindow/ExecuteStatementController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,29 +55,29 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloWorldFX.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Interpreter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/New folder&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GUI.executor": "Debug",
+    "Application.HelloWorldFX.executor": "Run",
+    "Application.Interpreter.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/New folder",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "E:/CS-UBB/SEMESTRUL 3/MAP/ASSIGNMENTS/Toy-Language-Interpreter/Toy_Language_Interpreter/src/Main.java",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CS-UBB\SEMESTRUL 3\MAP\ASSIGNMENTS\Toy-Language-Interpreter\Toy_Language_Interpreter\src\model" />
@@ -183,14 +189,6 @@
       <workItem from="1734464925452" duration="1632000" />
       <workItem from="1734738457497" duration="3822000" />
       <workItem from="1734794185919" duration="4291000" />
-    </task>
-    <task id="LOCAL-00052" summary="added the new statement in the menu">
-      <option name="closed" value="true" />
-      <created>1732460559884</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1732460559884</updated>
     </task>
     <task id="LOCAL-00053" summary="added function toString for the new statements and expressions">
       <option name="closed" value="true" />
@@ -576,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734799041625</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="changed all the execute functions in all statements to return null">
+      <option name="closed" value="true" />
+      <created>1734802159263</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1734802159267</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,15 +628,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="changed all the execute functions in all statements to return null" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Toy_Language_Interpreter/src/view/gui/executewindow/ExecuteStatementController.java</url>
-          <line>237</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="repository.Repository" memberName="programs" />

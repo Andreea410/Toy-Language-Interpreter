@@ -25,7 +25,6 @@ import java.util.*;
 public class ExecuteStatementController {
 
     private Controller controller;
-    List<IStmt> statements;
 
     @FXML
     private TextField numberProgramStatesTextField;
@@ -74,10 +73,7 @@ public class ExecuteStatementController {
 
     @FXML
     public void initialize(IStmt programStatement) {
-
-        identifiersListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            changeProgramState(null);
-        });
+        identifiersListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         addressColumn.setCellValueFactory(cellData ->
                 new SimpleIntegerProperty(cellData.getValue().getFirst()).asObject());
@@ -90,8 +86,7 @@ public class ExecuteStatementController {
         valueColumnSymTable.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<>(cellData.getValue().getSecond())
         );
-
-        populateTables();
+        runOneStepButton.setOnMouseClicked(this::handleRunOneStep);
     }
 
     public void setController(Controller controller) {
@@ -108,6 +103,9 @@ public class ExecuteStatementController {
         populateIdentifiers();
         populateNumberProgramStates();
     }
+
+
+    //Functions to populate the tables
 
     @FXML
     private void changeProgramState(javafx.scene.input.MouseEvent mouseEvent)
@@ -135,7 +133,7 @@ public class ExecuteStatementController {
     {
         PrgState currentProgramState = getCurrentProgramState();
         IMyHeap heap = Objects.requireNonNull(currentProgramState).getHeap();
-        ArrayList<MyPair<Integer,IValue>> heapContent = new ArrayList<>();
+        ArrayList<MyPair<Integer, IValue>> heapContent =new ArrayList<>();
         for(Integer key: heap.getMap().keySet())
             heapContent.add(new MyPair<>(key,heap.getMap().get(key)));
         heapTableView.getItems().clear();
@@ -145,8 +143,14 @@ public class ExecuteStatementController {
 
     private void populateSymTable()
     {
-
-
+        PrgState currentProgramState = getCurrentProgramState();
+        var symTable = Objects.requireNonNull(currentProgramState).getSymTable();
+        ArrayList<MyPair<String, IValue>> symTableContent = new ArrayList<>();
+        for(String key: symTable.getContent().keySet())
+            symTableContent.add(new MyPair<>(key,symTable.getContent().get(key)));
+        SymTableView.getItems().clear();
+        for(MyPair<String,IValue> entry: symTableContent)
+            SymTableView.getItems().add(entry);
     }
 
     private void populateExecutionStack()
@@ -204,7 +208,7 @@ public class ExecuteStatementController {
 
     private void populateNumberProgramStates()
     {
-        numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateListCount()));
+        numberProgramStatesTextField.setText(String.valueOf(controller.getProgramStateList().size()));
     }
 
     private void showErrorMessage(String message)
