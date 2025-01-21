@@ -36,6 +36,7 @@ public class NewBarrierStatement implements IStmt{
             IMyHeap heap = prgState.getHeap();
             IMyBarrierTable barrierTable = prgState.getBarrierTable();
 
+
             IntIValue threads = (IntIValue) exp.eval(symTable, heap);
             int nr = threads.getVal();
             int freeAddress = barrierTable.getFreeLocation();
