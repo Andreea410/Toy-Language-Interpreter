@@ -18,7 +18,6 @@
             </font>
          </Label>
 
-         <!-- ListView with flexible width and anchored resizing -->
          <ListView fx:id="statementsListView" prefHeight="278.0" prefWidth="582.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
 
          <!-- Button at the bottom -->

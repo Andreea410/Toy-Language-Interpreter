@@ -19,6 +19,7 @@ public class PrgState {
     protected IStmt originalProgram;
     private final IMyDictionary<StringValue, BufferedReader> fileTable;
     private IMyHeap heap;
+    private IMyBarrierTable barrierTable;
 
 
     //CONSTRUCTOR
@@ -32,10 +33,11 @@ public class PrgState {
         this.originalProgram = statement.deepCopy();
         exeStack.push(statement);
         this.id = getNewId();
+        this.barrierTable = new MyBarrierTable();
     }
 
     //CONSTRUCTOR
-    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , IMyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap)
+    public PrgState(IMyStack<IStmt> e , IMyDictionary<String,IValue> dictionary , IMyList<String> list , IStmt InitialStatement , IMyDictionary<StringValue , BufferedReader> fileTable , IMyHeap heap, IMyBarrierTable barrierTable)
     {
         this.exeStack = e;
         this.symTable = dictionary;
@@ -45,6 +47,7 @@ public class PrgState {
         this.originalProgram = InitialStatement.deepCopy();
         exeStack.push(InitialStatement);
         this.id = getNewId();
+        this.barrierTable = barrierTable;
     }
 
     public IMyDictionary<StringValue,BufferedReader> getFileTable()
@@ -94,6 +97,9 @@ public class PrgState {
                 "Heap = " +
                 HeapToString() +
                 "\n" +
+                "Barrier Table = " +
+                barrierTable.toString() +
+                "\n" +
                 "====================>" +
                 "\n";
     }
@@ -141,4 +147,16 @@ public class PrgState {
     {
         this.exeStack = newExeStack;
     }
+
+
+    public IMyBarrierTable getBarrierTable()
+    {
+        return this.barrierTable;
+    }
+
+    public void setBarrierTable(IMyBarrierTable table)
+    {
+        this.barrierTable = table;
+    }
+
 }

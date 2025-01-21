@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class ExecuteStatementController {
@@ -64,6 +65,16 @@ public class ExecuteStatementController {
     private Label symTableLabel;
 
     @FXML
+    private TableView<MyPair<Integer, MyPair<Integer , List<Integer>>>> barrierTableView;
+    @FXML
+    private TableColumn<MyPair<Integer, MyPair<Integer , List<Integer>>>, Integer> barrierTableIndexColumn;
+    @FXML
+    private TableColumn<MyPair<Integer, MyPair<Integer , List<Integer>>>, Integer> barrierTableValueColumn;
+    @FXML
+    private TableColumn<MyPair<Integer, MyPair<Integer , List<Integer>>>, String> barrierTableListValuesColumn;
+
+
+    @FXML
     private ListView<String> executionStackListView;
     @FXML
     private Label executionStackLabel;
@@ -95,6 +106,7 @@ public class ExecuteStatementController {
         populateFileTable();
         populateIdentifiers();
         populateNumberProgramStates();
+        populateBarrierTable();
     }
 
 
@@ -135,7 +147,18 @@ public class ExecuteStatementController {
 
     }
 
+    private void populateBarrierTable() {
+        ObservableList<MyPair<Integer, MyPair<Integer, List<Integer>>>> barrierData = FXCollections.observableArrayList(
+                controller.getProgramStateList().get(0).getBarrierTable().getContent().entrySet().stream()
+                        .map(entry -> new MyPair<>(entry.getKey(), entry.getValue()))
+                        .collect(Collectors.toList())
+        );
 
+        barrierTableIndexColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getFirst()).asObject());
+        barrierTableValueColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getSecond().getFirst()).asObject());
+        barrierTableListValuesColumn.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getSecond().getSecond().toString()));
+        barrierTableView.setItems(barrierData);
+    }
 
 
     private void populateSymTable() {

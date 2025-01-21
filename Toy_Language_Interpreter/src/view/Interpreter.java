@@ -210,6 +210,91 @@ public class Interpreter
         Controller controller11 = new Controller(repo11);
         controller11.addProgram(statement11);
 
+
+        IStmt statement12 = new CompStmt(
+                new VariablesDeclarationStmt("v1", new RefType(new IntIType())), // Ref int v1;
+                new CompStmt(
+                        new VariablesDeclarationStmt("v2", new RefType(new IntIType())), // Ref int v2;
+                        new CompStmt(
+                                new VariablesDeclarationStmt("v3", new RefType(new IntIType())), // Ref int v3;
+                                new CompStmt(
+                                        new VariablesDeclarationStmt("cnt", new IntIType()), // int cnt;
+                                        new CompStmt(
+                                                new HeapAllocationStatement(new ValueExpression(new IntIValue(2)), "v1"), // new(v1, 2);
+                                                new CompStmt(
+                                                        new HeapAllocationStatement(new ValueExpression(new IntIValue(3)), "v2"), // new(v2, 3);
+                                                        new CompStmt(
+                                                                new HeapAllocationStatement(new ValueExpression(new IntIValue(4)), "v3"), // new(v3, 4);
+                                                                new CompStmt(
+                                                                        new NewBarrierStatement("cnt",new HeapReadExpression(new VariableExpression("v2")) ), // createBarrier(cnt, rH(v2));
+                                                                        new CompStmt(
+                                                                                // First Fork
+                                                                                new ForkStatement(
+                                                                                        new CompStmt(
+                                                                                                new AwaitStatement("cnt"), // barrierAwait(cnt);
+                                                                                                new CompStmt(
+                                                                                                        new HeapWriteStatement(
+                                                                                                                new ArithmeticalExpression(
+                                                                                                                        new HeapReadExpression(new VariableExpression("v1")),
+                                                                                                                        ArithmeticalOperator.MULTIPLY,
+                                                                                                                        new ValueExpression(new IntIValue(10))
+                                                                                                                ),
+                                                                                                                "v1"
+                                                                                                        ), // v1 = rH(v1) * 10;
+                                                                                                        new PrintStm(new HeapReadExpression(new VariableExpression("v1"))) // print(rH(v1));
+                                                                                                )
+                                                                                        )
+                                                                                ),
+                                                                                new CompStmt(
+                                                                                        // Second Fork
+                                                                                        new ForkStatement(
+                                                                                                new CompStmt(
+                                                                                                        new AwaitStatement("cnt"), // barrierAwait(cnt);
+                                                                                                        new CompStmt(
+                                                                                                                new HeapWriteStatement(
+                                                                                                                        new ArithmeticalExpression(
+                                                                                                                                new HeapReadExpression(new VariableExpression("v2")),
+                                                                                                                                ArithmeticalOperator.MULTIPLY,
+                                                                                                                                new ValueExpression(new IntIValue(10))
+                                                                                                                        ),
+                                                                                                                        "v2"
+                                                                                                                ), // v2 = rH(v2) * 10;
+                                                                                                                new CompStmt(
+                                                                                                                        new HeapWriteStatement(
+                                                                                                                                new ArithmeticalExpression(
+                                                                                                                                        new HeapReadExpression(new VariableExpression("v2")),
+                                                                                                                                        ArithmeticalOperator.MULTIPLY,
+                                                                                                                                        new ValueExpression(new IntIValue(10))
+                                                                                                                                ),
+                                                                                                                                "v2"
+                                                                                                                        ), // v2 = rH(v2) * 10;
+                                                                                                                        new PrintStm(new HeapReadExpression(new VariableExpression("v2"))) // print(rH(v2));
+                                                                                                                )
+                                                                                                        )
+                                                                                                )
+                                                                                        ),
+                                                                                        new CompStmt(
+                                                                                                // Main Thread Continues
+                                                                                                new AwaitStatement("cnt"), // barrierAwait(cnt);
+                                                                                                new PrintStm(new HeapReadExpression(new VariableExpression("v3"))) // print(rH(v3));
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
+        IRepository repo12 = new Repository("log12.txt");
+        Controller controller12 = new Controller(repo12);
+        controller12.addProgram(statement12);
+
+
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new RunExampleCommand("1", statement1.toString(), controller1));
         menu.addCommand(new RunExampleCommand("2", statement2.toString(), controller2));
@@ -222,7 +307,10 @@ public class Interpreter
         menu.addCommand(new RunExampleCommand("9", statement9.toString(), controller9));
         menu.addCommand(new RunExampleCommand("10", statement10.toString(), controller10));
         menu.addCommand(new RunExampleCommand("11", statement11.toString(),controller11));
+        menu.addCommand(new RunExampleCommand("12", statement12.toString(),controller12));
+
         menu.addCommand(new ExitCommand("0", "Exit"));
+
 
         menu.show();
 
