@@ -39,7 +39,7 @@ public class LogicalExpression implements IExp{
                     new BoolValue(((BoolValue) evaluatedExpressionLeft).getVal() && ((BoolValue) evaluatedExpressionRight).getVal());
             case LogicalOperator.OR ->
                     new BoolValue(((BoolValue) evaluatedExpressionLeft).getVal() || ((BoolValue) evaluatedExpressionRight).getVal());
-
+            case LogicalOperator.NOT -> new BoolValue(!((BoolValue) evaluatedExpressionLeft).getVal());
         };
 
 

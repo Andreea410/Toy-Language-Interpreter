@@ -221,6 +221,69 @@ public class SelectStatementController implements Initializable {
 
         statements.add(statement10);
 
+        // int v; int x; int y; v=0; (repeat (fork(print(v); v = v-1); v=v +1) until v==3); x =1 ; nop; y=3; nop; print(v*10)
+        IStmt statement11 = new CompStmt(
+                new VariablesDeclarationStmt("v", new IntIType()),
+                new CompStmt(
+                        new VariablesDeclarationStmt("x", new IntIType()),
+                        new CompStmt(
+                                new VariablesDeclarationStmt("y", new IntIType()),
+                                new CompStmt(
+                                        new AssignStmt("v", new ValueExpression(new IntIValue(0))),
+                                        new CompStmt(
+                                                new RepeatUntilStatement(
+                                                        new CompStmt(
+                                                                new ForkStatement(
+                                                                        new CompStmt(
+                                                                                new PrintStm(new VariableExpression("v")),
+                                                                                new AssignStmt("v", new ArithmeticalExpression(
+                                                                                        new VariableExpression("v"),
+                                                                                        ArithmeticalOperator.SUBTRACT,
+                                                                                        new ValueExpression(new IntIValue(1)))
+                                                                                )
+                                                                        )
+                                                                ),
+                                                                new AssignStmt("v", new ArithmeticalExpression(
+                                                                        new VariableExpression("v"),
+                                                                        ArithmeticalOperator.ADD,
+                                                                        new ValueExpression(new IntIValue(1))
+                                                                ))
+                                                        ),
+                                                        new RelationalExpression(
+                                                                new VariableExpression("v"),
+                                                                "==",
+                                                                new ValueExpression(new IntIValue(3))
+                                                        )
+                                                ),
+                                                new CompStmt(
+                                                        new AssignStmt("x", new ValueExpression(new IntIValue(1))),
+                                                        new CompStmt(
+                                                                new NopStmt(),
+                                                                new CompStmt(
+                                                                        new AssignStmt("y", new ValueExpression(new IntIValue(3))),
+                                                                        new CompStmt(
+                                                                                new NopStmt(),
+                                                                                new PrintStm(
+                                                                                        new ArithmeticalExpression(
+                                                                                                new VariableExpression("v"),
+                                                                                                ArithmeticalOperator.MULTIPLY,
+                                                                                                new ValueExpression(new IntIValue(10))
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
+        statements.add(statement11);
+
+
+
     }
 
 

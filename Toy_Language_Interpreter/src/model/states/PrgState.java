@@ -136,4 +136,9 @@ public class PrgState {
     {
         return this.id;
     }
+
+    public void setExeStack(IMyStack<IStmt> newExeStack)
+    {
+        this.exeStack = newExeStack;
+    }
 }

@@ -147,6 +147,69 @@ public class Interpreter
         Controller controller10 = new Controller(repo10);
         controller10.addProgram(statement10);
 
+        // int v; int x; int y; v=0; (repeat (fork(print(v); v = v-1); v=v +1) until v==3); x =1 ; nop; y=3; nop; print(v*10)
+        IStmt statement11 = new CompStmt(
+                new VariablesDeclarationStmt("v", new IntIType()),
+                new CompStmt(
+                        new VariablesDeclarationStmt("x", new IntIType()),
+                        new CompStmt(
+                                new VariablesDeclarationStmt("y", new IntIType()),
+                                new CompStmt(
+                                        new AssignStmt("v", new ValueExpression(new IntIValue(0))),
+                                        new CompStmt(
+                                                new RepeatUntilStatement(
+                                                        new CompStmt(
+                                                                new ForkStatement(
+                                                                        new CompStmt(
+                                                                                new PrintStm(new VariableExpression("v")),
+                                                                                new AssignStmt("v", new ArithmeticalExpression(
+                                                                                        new VariableExpression("v"),
+                                                                                        ArithmeticalOperator.SUBTRACT,
+                                                                                        new ValueExpression(new IntIValue(1)))
+                                                                                )
+                                                                        )
+                                                                ),
+                                                                new AssignStmt("v", new ArithmeticalExpression(
+                                                                        new VariableExpression("v"),
+                                                                        ArithmeticalOperator.ADD,
+                                                                        new ValueExpression(new IntIValue(1))
+                                                                ))
+                                                        ),
+                                                        new RelationalExpression(
+                                                                new VariableExpression("v"),
+                                                                "==",
+                                                                new ValueExpression(new IntIValue(3))
+                                                        )
+                                                ),
+                                                new CompStmt(
+                                                        new AssignStmt("x", new ValueExpression(new IntIValue(1))),
+                                                        new CompStmt(
+                                                                new NopStmt(),
+                                                                new CompStmt(
+                                                                        new AssignStmt("y", new ValueExpression(new IntIValue(3))),
+                                                                        new CompStmt(
+                                                                                new NopStmt(),
+                                                                                new PrintStm(
+                                                                                        new ArithmeticalExpression(
+                                                                                                new VariableExpression("v"),
+                                                                                                ArithmeticalOperator.MULTIPLY,
+                                                                                                new ValueExpression(new IntIValue(10))
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
+        IRepository repo11 = new Repository("log11.txt");
+        Controller controller11 = new Controller(repo11);
+        controller11.addProgram(statement11);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new RunExampleCommand("1", statement1.toString(), controller1));
         menu.addCommand(new RunExampleCommand("2", statement2.toString(), controller2));
@@ -158,6 +221,7 @@ public class Interpreter
         menu.addCommand(new RunExampleCommand("8", statement8.toString(), controller8));
         menu.addCommand(new RunExampleCommand("9", statement9.toString(), controller9));
         menu.addCommand(new RunExampleCommand("10", statement10.toString(), controller10));
+        menu.addCommand(new RunExampleCommand("11", statement11.toString(),controller11));
         menu.addCommand(new ExitCommand("0", "Exit"));
 
         menu.show();
