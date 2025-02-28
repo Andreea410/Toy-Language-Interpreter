@@ -1,88 +1,84 @@
-## Overview  
-This project extends the **Toy Language Interpreter** by adding a **JavaFX-based GUI** and a **Type Checker** to ensure type safety before execution. The GUI enhances usability, allowing users to interact with the interpreter visually, while the Type Checker prevents runtime errors by verifying type correctness.  
+# Toy Language Interpreter with JavaFX  
 
----
+## Overview  
+
+This project extends the **Toy Language Interpreter** by integrating:  
+
+- A **JavaFX-based GUI** for an interactive user experience  
+- A **Type Checker** to ensure type safety before execution, preventing runtime errors  
+
+The interpreter supports dynamic program execution while offering a real-time visualization of program state, memory, and execution flow.  
 
 ## Features  
 
-### 1. **Program Selection Window**  
-- Displays a list of available **Toy Language programs** (IStmt).  
-- Allows users to **select a program** for execution.  
+### 1. Program Selection Window  
 
-### 2. **Main Execution Window**  
-This window provides a real-time visualization of the interpreter’s state, including:  
+- Displays a list of predefined **Toy Language programs** (`IStmt`)  
+- Allows users to **select a program** and execute it step by step  
 
-#### 📌 **Number of PrgStates**  
-- A TextField displays the count of active PrgState instances.  
+### 2. Main Execution Window  
 
-#### 📌 **Heap Table**  
-- A TableView with:  
-  - Address (Memory Location)  
-  - Value (Stored Data)  
+This window provides a **real-time visualization** of the interpreter’s state, including:  
 
-#### 📌 **Output List**  
-- A ListView displaying program output dynamically.  
+#### PrgState Management  
 
-#### 📌 **File Table**  
-- Shows the list of **open files** managed by the interpreter.  
+- Displays the **number of active PrgState instances**  
+- Lists **active PrgState IDs** for multi-threaded execution  
 
-#### 📌 **PrgState Identifiers**  
-- A ListView containing IDs of all active PrgState instances.  
+#### Heap Table  
 
-#### 📌 **Symbol Table**  
-- A TableView with:  
-  - Variable Name  
-  - Value  
-- Displays the **SymTable** of the currently selected PrgState.  
+- Shows **memory addresses** and their corresponding **stored values** dynamically  
 
-#### 🚀 **Execution Stack**  
-- A ListView representing the **ExeStack** of the selected PrgState, with the **top element displayed first**.  
+#### Symbol Table  
 
-#### 🚀 **Run One Step Button**  
-- Executes **one step** of all PrgState instances using oneStepForAllPrg().  
-- Updates all tables and lists dynamically.  
-- Uses a **dedicated service** to manage state changes efficiently.  
+- Displays **variable names** alongside their **current values**, updating in real time  
 
----
+#### Execution Stack (ExeStack)  
 
-## 3. **Type Checker** 
-Ensures that programs are **type-safe** before execution.  
+- Shows the **remaining execution steps** in the currently selected `PrgState`, with the **top element displayed first**  
 
-###  **Expression Type Checking**  
-Each expression implements:  
+#### Output List  
 
-- **ValueExp**:  
-  Returns the type of the stored value.
+- Dynamically updates with program **output values**  
 
-- **VarExp**:  
-  Looks up the type of a variable.
+#### File Table  
 
-- **ArithExp**:  
-  Ensures both operands are integers.
+- Displays **open files** being managed by the interpreter  
 
-- **LogicExp**:  
-  Ensures both operands are booleans.
+#### Step-by-Step Execution  
 
-- **RelationalExp**:  
-  Validates the types of the operands.
+- A **"Run One Step"** button executes the next instruction for all active `PrgState` instances  
+- Uses **oneStepForAllPrg()** for synchronized updates across tables  
+- Runs in a **dedicated service** for efficient GUI updates  
 
-- **RHExp**:  
-  Ensures that the referenced value is of `RefType`.
+## 3. Type Checker (Static Analysis)  
 
-##  Execution Guard
-The Type Checker runs before execution.  
-Programs execute only if type-safe; otherwise, an exception is raised.
+Before execution, the Type Checker ensures that **all expressions and statements adhere to type rules** to prevent runtime errors.  
 
-##  Project Structure
-- `controller/` → Handles user interactions and GUI updates.
-- `view/` → Contains JavaFX components for the interface.
-- `model/` → Implements interpreter logic (statements, expressions).
-- `repository/` → Manages storage of PrgState instances.
-- `service/` → Wraps the repository and synchronizes GUI state changes.
+### Expression Type Checking  
 
-## 🛠️ How to Run
+Each expression implements a **type inference function**:  
 
-### Clone the Repository
-```sh
-git clone https://github.com/yourusername/interpreter-javafx.git
-cd interpreter-javafx
+| Expression        | Type Checking Rule |
+|------------------|------------------|
+| **ValueExp**     | Returns the **type** of the stored value |
+| **VarExp**       | Looks up the **type** of the variable |
+| **ArithExp**     | Ensures both operands are **integers** |
+| **LogicExp**     | Ensures both operands are **booleans** |
+| **RelationalExp** | Validates the types of **both operands** |
+| **RHExp**        | Ensures that the referenced value is of **RefType** |
+
+### Execution Guard  
+
+The **Type Checker runs before execution**. If a program contains **type errors**, execution is **blocked**, and an **exception is raised**.  
+
+## Project Structure  
+
+The project follows the **MVC (Model-View-Controller) architecture**:  
+
+- `controller/` - Manages user interactions and updates the GUI  
+- `view/` - Contains JavaFX components (UI elements)  
+- `model/` - Implements the interpreter logic (statements, expressions)  
+- `repository/` - Handles storage of `PrgState` instances  
+- `service/` - Connects repository and controller for state synchronization  
+
